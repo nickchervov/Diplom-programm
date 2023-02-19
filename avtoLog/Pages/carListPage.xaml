@@ -1,0 +1,62 @@
+﻿<Page x:Class="avtoLog.Pages.carListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:avtoLog.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="carListPage">
+
+    <StackPanel Orientation="Horizontal">
+        <StackPanel x:Name="contextMenu" MinWidth="200"  Orientation="Vertical" Background="LightGray">
+            <DockPanel HorizontalAlignment="Left" MinWidth="200">
+                <Image Source="/Images/Unknown_person.jpg" Width="75" Height="75" DockPanel.Dock="Left" Margin="0,0,10,0" />
+                <TextBlock x:Name="userName" Text="Никита" VerticalAlignment="Center" Margin="0,0,3,0"/>
+                <Button x:Name="btnLogout" BorderBrush="Transparent" Width="25" Height="25" HorizontalAlignment="Right" Click="btnLogout_Click">
+                    <Image Source="/Images/logout.png" Width="25" Height="25"/>
+                </Button>
+            </DockPanel>
+
+            <DockPanel MinWidth="200" Margin="0,50,0,0">
+                <Button x:Name="btnChange" Content="Изменить запись" MinWidth="199"/>
+            </DockPanel>
+
+            <DockPanel MinWidth="200" Margin="0,10,0,0">
+                <Button x:Name="btnAdd" Content="Добавить запись" MinWidth="199"/>
+            </DockPanel>
+
+            <DockPanel MinWidth="200" Margin="0,10,0,0">
+                <Button x:Name="btnDelete" Content="Удалить запись" MinWidth="199"/>
+            </DockPanel>
+        </StackPanel>
+
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="btnOpenMenu" BorderBrush="Transparent" Width="25" Height="25" HorizontalAlignment="Right" Margin="0,0,5,0" Click="btnOpenMenu_Click">
+                    <Image Source="/Images/contextMenu.png" Width="25" Height="25"/>
+                </Button>
+                <TextBlock Text="Поиск" VerticalAlignment="Center" Margin="300,0,15,0"/>
+                <TextBox x:Name="searchBox">
+                    <TextBox.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="10"/>
+                        </Style>
+                    </TextBox.Resources>
+                </TextBox>
+                <ComboBox MinWidth="150" Margin="15,0,15,0">
+                    
+                </ComboBox>
+                <ComboBox MinWidth="150">
+
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <ListView>
+                    
+                </ListView>
+            </StackPanel>
+        </StackPanel>
+    </StackPanel>
+</Page>
