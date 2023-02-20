@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="25c3babb6c1a469294f400adadcb2b91" Name="Diagram1">
+        <EntityTypeShape EntityType="autoLogDbModel.Departments" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="autoLogDbModel.Employees" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="autoLogDbModel.Position" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="autoLogDbModel.Transport" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="autoLogDbModel.TransportStatus" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="autoLogDbModel.TransportTypes" Width="1.5" PointX="3.75" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="autoLogDbModel.FK__Employees__Depar__0E240DFC" ManuallyRouted="false" />
+        <AssociationConnector Association="autoLogDbModel.FK__Transport__Depar__11F49EE0" ManuallyRouted="false" />
+        <AssociationConnector Association="autoLogDbModel.FK__Employees__Posit__0D2FE9C3" ManuallyRouted="false" />
+        <AssociationConnector Association="autoLogDbModel.FK__Transport__Trans__11007AA7" ManuallyRouted="false" />
+        <AssociationConnector Association="autoLogDbModel.FK_Transport_TransportStatus" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

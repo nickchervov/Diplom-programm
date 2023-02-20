@@ -19,3 +19,31 @@ E:\Проекты\VisualStudioProjects\avtoLog\avtoLog\obj\Debug\Pages\logInPage
 E:\Проекты\VisualStudioProjects\avtoLog\avtoLog\obj\Debug\App.baml
 E:\Проекты\VisualStudioProjects\avtoLog\avtoLog\obj\Debug\Pages\carListPage.g.cs
 E:\Проекты\VisualStudioProjects\avtoLog\avtoLog\obj\Debug\Pages\carListPage.baml
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\bin\Debug\avtoLog.exe.config
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\bin\Debug\avtoLog.exe
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\bin\Debug\avtoLog.pdb
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\avtoLog.csproj.AssemblyReference.cache
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\avtoLog.csproj.SuggestedBindingRedirects.cache
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\MainWindow.g.cs
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\Pages\carListPage.g.cs
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\Pages\logInPage.g.cs
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\App.g.cs
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\avtoLog_MarkupCompile.cache
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\avtoLog_MarkupCompile.lref
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\App.baml
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\MainWindow.baml
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\Pages\carListPage.baml
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\Pages\logInPage.baml
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\avtoLog.g.resources
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\avtoLog.Properties.Resources.resources
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\avtoLog.csproj.GenerateResource.cache
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\avtoLog.csproj.CoreCompileInputs.cache
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\avtoLog.exe
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\avtoLog.pdb
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\bin\Debug\EntityFramework.dll
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\bin\Debug\EntityFramework.xml
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\avtoLog_Content.g.cs
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\avtoLog.csproj.CopyComplete

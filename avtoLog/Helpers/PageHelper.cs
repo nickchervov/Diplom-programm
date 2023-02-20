@@ -1,4 +1,5 @@
-﻿using System;
+﻿using avtoLog.DbModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,6 @@ namespace avtoLog.Helpers
     {
         public static Frame MainFrame;
         
-        
+        public static dbAutoLogEntities DbConnect = new dbAutoLogEntities();
     }
 }

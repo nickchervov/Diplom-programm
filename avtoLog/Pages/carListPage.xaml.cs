@@ -1,7 +1,10 @@
-﻿using avtoLog.Helpers;
+﻿using avtoLog.DbModel;
+using avtoLog.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -21,11 +24,18 @@ namespace avtoLog.Pages
     /// </summary>
     public partial class carListPage : Page
     {
+        DbSet<Transport> cars;
+
         public carListPage()
         {
             InitializeComponent();
 
             contextMenuCollapsed();
+
+            cars = PageHelper.DbConnect.Transport;
+
+            lvCars.ItemsSource = cars.ToList();
+
         }
 
         private void btnOpenMenu_Click(object sender, RoutedEventArgs e)
@@ -48,6 +58,25 @@ namespace avtoLog.Pages
         private void contextMenuCollapsed()
         {
             contextMenu.Visibility = Visibility.Collapsed;
+        }
+
+        private void statusColor(TextBlock status)
+        {
+            if (status.Text == "Занят")
+            {
+                status.Foreground = Brushes.Red;
+            } else if (status.Text == "Свободен")
+            {
+                status.Foreground = Brushes.Green;
+            } else
+            {
+                status.Foreground = Brushes.Yellow;
+            }
+        }
+
+        private void searchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

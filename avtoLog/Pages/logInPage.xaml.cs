@@ -28,7 +28,13 @@ namespace avtoLog.Pages
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            PageHelper.MainFrame.Navigate(new carListPage());
+            if (PageHelper.DbConnect.Employees.Where(x => x.Login == tbLogin.Text && x.Password == pbPassword.Password).FirstOrDefault() != null)
+            {
+                PageHelper.MainFrame.Navigate(new carListPage());
+            } else
+            {
+                MessageBox.Show("Неправильный логин и пароль", "Ошибка!");
+            }
         }
     }
 }

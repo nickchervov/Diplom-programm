@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\Проекты\VisualStudioProjects\avtoLog\avtoLog\obj\Debug\
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\obj\Debug\
 avtoLog
 none
 false
 DEBUG;TRACE
-E:\Проекты\VisualStudioProjects\avtoLog\avtoLog\App.xaml
+C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\App.xaml
 31888155580
-
-91899933254
-13-1310406943
+2-1697380749
+18-352188673
+18108106423
 MainWindow.xaml;Pages\carListPage.xaml;Pages\logInPage.xaml;
 
-True
+False
 

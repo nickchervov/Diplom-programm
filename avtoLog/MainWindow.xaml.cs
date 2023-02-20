@@ -28,7 +28,7 @@ namespace avtoLog
 
             PageHelper.MainFrame = mainFrame;
 
-            PageHelper.MainFrame.Navigate(new logInPage());
+            PageHelper.MainFrame.Navigate(new carListPage());
         }
     }
 }
