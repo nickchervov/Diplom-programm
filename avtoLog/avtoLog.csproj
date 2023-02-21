@@ -72,45 +72,53 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DbModel\DbModel.Context.cs">
+    <Compile Include="DbModel\avtoLogDbEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbModel.Context.tt</DependentUpon>
+      <DependentUpon>avtoLogDbEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DbModel\DbModel.cs">
+    <Compile Include="DbModel\avtoLogDbEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>avtoLogDbEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="DbModel\DbModel.Designer.cs">
+    <Compile Include="DbModel\avtoLogDbEntities.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DbModel.edmx</DependentUpon>
+      <DependentUpon>avtoLogDbEntities.edmx</DependentUpon>
     </Compile>
     <Compile Include="DbModel\Departments.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>avtoLogDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DbModel\Employees.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>avtoLogDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DbModel\Position.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>avtoLogDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DbModel\Transport.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>avtoLogDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DbModel\TransportStatus.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>avtoLogDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="DbModel\TransportTypes.cs">
-      <DependentUpon>DbModel.tt</DependentUpon>
+      <DependentUpon>avtoLogDbEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Helpers\PageHelper.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\addCarPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\carListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\changeCarPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,8 +128,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\addCarPage.xaml.cs">
+      <DependentUpon>addCarPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\carListPage.xaml.cs">
       <DependentUpon>carListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\changeCarPage.xaml.cs">
+      <DependentUpon>changeCarPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\logInPage.xaml.cs">
       <DependentUpon>logInPage.xaml</DependentUpon>
@@ -143,12 +157,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DbModel\DbModel.edmx">
+    <EntityDeploy Include="DbModel\avtoLogDbEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DbModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>avtoLogDbEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DbModel\DbModel.edmx.diagram">
-      <DependentUpon>DbModel.edmx</DependentUpon>
+    <None Include="DbModel\avtoLogDbEntities.edmx.diagram">
+      <DependentUpon>avtoLogDbEntities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -175,19 +189,25 @@
     <Resource Include="Images\contextMenu.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DbModel\DbModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>DbModel.Context.cs</LastGenOutput>
-      <DependentUpon>DbModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="DbModel\DbModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DbModel.edmx</DependentUpon>
-      <LastGenOutput>DbModel.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="DbModel\avtoLogDbEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>avtoLogDbEntities.edmx</DependentUpon>
+      <LastGenOutput>avtoLogDbEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DbModel\avtoLogDbEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>avtoLogDbEntities.edmx</DependentUpon>
+      <LastGenOutput>avtoLogDbEntities.cs</LastGenOutput>
+    </Content>
+    <Resource Include="ODK.png" />
+    <Resource Include="Images\kamaz.png" />
+    <Resource Include="Images\gaz.png" />
+    <Resource Include="Images\gaznext.png" />
+    <Resource Include="Images\lexus.png" />
+    <Resource Include="Images\camry.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

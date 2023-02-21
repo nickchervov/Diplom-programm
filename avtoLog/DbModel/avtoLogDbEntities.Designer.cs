@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\student\Desktop\дипломное приложение\Diplom-programm\avtoLog\DbModel\DbModel.edmx" включено. 
+﻿// Создание кода T4 для модели "E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\DbModel\avtoLogDbEntities.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

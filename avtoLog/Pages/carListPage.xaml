@@ -19,15 +19,15 @@
             </DockPanel>
 
             <DockPanel MinWidth="200" Margin="0,50,0,0">
-                <Button x:Name="btnChange" Content="Изменить запись" MinWidth="199"/>
+                <Button x:Name="btnChange" Content="Изменить запись" MinWidth="199" Click="btnChange_Click"/>
             </DockPanel>
 
             <DockPanel MinWidth="200" Margin="0,10,0,0">
-                <Button x:Name="btnAdd" Content="Добавить запись" MinWidth="199"/>
+                <Button x:Name="btnAdd" Content="Добавить запись" MinWidth="199" Click="btnAdd_Click"/>
             </DockPanel>
 
             <DockPanel MinWidth="200" Margin="0,10,0,0">
-                <Button x:Name="btnDelete" Content="Удалить запись" MinWidth="199"/>
+                <Button x:Name="btnDelete" Content="Удалить запись" MinWidth="199" Click="btnDelete_Click"/>
             </DockPanel>
         </StackPanel>
 
@@ -36,7 +36,7 @@
                 <Button x:Name="btnOpenMenu" BorderBrush="Transparent" Width="25" Height="25" HorizontalAlignment="Right" Margin="0,0,5,0" Click="btnOpenMenu_Click">
                     <Image Source="/Images/contextMenu.png" Width="25" Height="25"/>
                 </Button>
-                <TextBlock Text="Поиск" VerticalAlignment="Center" Margin="300,0,15,0"/>
+                <TextBlock Text="Поиск" VerticalAlignment="Center" Margin="450,0,15,0"/>
                 <TextBox x:Name="searchBox" TextChanged="searchBox_TextChanged">
                     <TextBox.Resources>
                         <Style TargetType="Border">
@@ -44,15 +44,15 @@
                         </Style>
                     </TextBox.Resources>
                 </TextBox>
-                <ComboBox MinWidth="150" Margin="15,0,15,0">
+                <!--<ComboBox MinWidth="150" Margin="15,0,15,0">
                     
                 </ComboBox>
                 <ComboBox MinWidth="150">
 
-                </ComboBox>
+                </ComboBox>-->
             </StackPanel>
 
-            <ListView x:Name="lvCars" FontSize="18" Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView x:Name="lvCars" MaxWidth="1350" MaxHeight="700" FontSize="18" Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                 <!--<ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                          <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -71,7 +71,7 @@
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5">
                                 <StackPanel>
                                     <!--ФОТО-->
-                                    <Image Source="/Images/Unknown_person.jpg" Width="125" Height="125" />
+                                    <Image Source="{Binding Path= Photo}" Width="125" Height="125"/>
                                 </StackPanel>
 
                                 <StackPanel VerticalAlignment="Center">

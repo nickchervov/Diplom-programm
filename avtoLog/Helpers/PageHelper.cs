@@ -12,6 +12,8 @@ namespace avtoLog.Helpers
     {
         public static Frame MainFrame;
         
-        public static dbAutoLogEntities DbConnect = new dbAutoLogEntities();
+        public static avtoLogDbEntities DbConnect = new avtoLogDbEntities();
+
+        public static int role;
     }
 }

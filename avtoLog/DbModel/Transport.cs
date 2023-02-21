@@ -22,9 +22,10 @@ namespace avtoLog.DbModel
         public int StatusId { get; set; }
         public string GovNumber { get; set; }
         public string VinNumber { get; set; }
+        public string Photo { get; set; }
     
         public virtual Departments Departments { get; set; }
-        public virtual TransportTypes TransportTypes { get; set; }
         public virtual TransportStatus TransportStatus { get; set; }
+        public virtual TransportTypes TransportTypes { get; set; }
     }
 }

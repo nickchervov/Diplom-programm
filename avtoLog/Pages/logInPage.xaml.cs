@@ -28,10 +28,28 @@ namespace avtoLog.Pages
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (PageHelper.DbConnect.Employees.Where(x => x.Login == tbLogin.Text && x.Password == pbPassword.Password).FirstOrDefault() != null)
+            if (PageHelper.DbConnect.Employees.Where(x => x.Login == tbLogin.Text && x.Password == pbPassword.Password && x.PositionId == 1).FirstOrDefault() != null)
             {
+                PageHelper.role = 1;
+
                 PageHelper.MainFrame.Navigate(new carListPage());
-            } else
+            } else if (PageHelper.DbConnect.Employees.Where(x => x.Login == tbLogin.Text && x.Password == pbPassword.Password && x.PositionId == 2).FirstOrDefault() != null)
+            {
+                PageHelper.role = 1;
+
+                PageHelper.MainFrame.Navigate(new carListPage());
+            } else if (PageHelper.DbConnect.Employees.Where(x => x.Login == tbLogin.Text && x.Password == pbPassword.Password && x.PositionId == 3).FirstOrDefault() != null)
+            {
+                PageHelper.role = 1;
+
+                PageHelper.MainFrame.Navigate(new carListPage());
+            } else if (PageHelper.DbConnect.Employees.Where(x => x.Login == tbLogin.Text && x.Password == pbPassword.Password && x.PositionId > 3).FirstOrDefault() != null)
+            {
+                PageHelper.role = 0;
+
+                PageHelper.MainFrame.Navigate(new carListPage());
+            }
+            else
             {
                 MessageBox.Show("Неправильный логин и пароль", "Ошибка!");
             }

@@ -13,10 +13,10 @@ namespace avtoLog.DbModel
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class dbAutoLogEntities : DbContext
+    public partial class avtoLogDbEntities : DbContext
     {
-        public dbAutoLogEntities()
-            : base("name=dbAutoLogEntities")
+        public avtoLogDbEntities()
+            : base("name=avtoLogDbEntities")
         {
         }
     

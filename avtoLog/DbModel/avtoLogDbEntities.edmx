@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище autoLogDbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище kursDbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Departments">
           <Key>
             <PropertyRef Name="Id" />
@@ -45,6 +45,7 @@
           <Property Name="StatusId" Type="int" Nullable="false" />
           <Property Name="GovNumber" Type="nvarchar" MaxLength="7" Nullable="false" />
           <Property Name="VinNumber" Type="nvarchar" MaxLength="17" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="TransportStatus">
           <Key>
@@ -60,7 +61,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TypesName" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Employees__Depar__0E240DFC">
+        <Association Name="FK__Employees__Depar__46E78A0C">
           <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
           <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
           <ReferentialConstraint>
@@ -72,7 +73,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Employees__Posit__0D2FE9C3">
+        <Association Name="FK__Employees__Posit__45F365D3">
           <End Role="Position" Type="Self.Position" Multiplicity="1" />
           <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
           <ReferentialConstraint>
@@ -84,7 +85,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Transport__Depar__11F49EE0">
+        <Association Name="FK__Transport__Depar__4AB81AF0">
           <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
           <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
           <ReferentialConstraint>
@@ -96,19 +97,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Transport__Trans__11007AA7">
-          <End Role="TransportTypes" Type="Self.TransportTypes" Multiplicity="1" />
-          <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TransportTypes">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Transport">
-              <PropertyRef Name="TransportTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Transport_TransportStatus">
+        <Association Name="FK__Transport__Statu__4BAC3F29">
           <End Role="TransportStatus" Type="Self.TransportStatus" Multiplicity="1" />
           <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
           <ReferentialConstraint>
@@ -120,31 +109,43 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище autoLogDbModelContainer">
+        <Association Name="FK__Transport__Trans__49C3F6B7">
+          <End Role="TransportTypes" Type="Self.TransportTypes" Multiplicity="1" />
+          <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransportTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Transport">
+              <PropertyRef Name="TransportTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище kursDbModelContainer">
           <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Transport" EntityType="Self.Transport" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TransportStatus" EntityType="Self.TransportStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TransportTypes" EntityType="Self.TransportTypes" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Employees__Depar__0E240DFC" Association="Self.FK__Employees__Depar__0E240DFC">
+          <AssociationSet Name="FK__Employees__Depar__46E78A0C" Association="Self.FK__Employees__Depar__46E78A0C">
             <End Role="Departments" EntitySet="Departments" />
             <End Role="Employees" EntitySet="Employees" />
           </AssociationSet>
-          <AssociationSet Name="FK__Employees__Posit__0D2FE9C3" Association="Self.FK__Employees__Posit__0D2FE9C3">
+          <AssociationSet Name="FK__Employees__Posit__45F365D3" Association="Self.FK__Employees__Posit__45F365D3">
             <End Role="Position" EntitySet="Position" />
             <End Role="Employees" EntitySet="Employees" />
           </AssociationSet>
-          <AssociationSet Name="FK__Transport__Depar__11F49EE0" Association="Self.FK__Transport__Depar__11F49EE0">
+          <AssociationSet Name="FK__Transport__Depar__4AB81AF0" Association="Self.FK__Transport__Depar__4AB81AF0">
             <End Role="Departments" EntitySet="Departments" />
             <End Role="Transport" EntitySet="Transport" />
           </AssociationSet>
-          <AssociationSet Name="FK__Transport__Trans__11007AA7" Association="Self.FK__Transport__Trans__11007AA7">
-            <End Role="TransportTypes" EntitySet="TransportTypes" />
+          <AssociationSet Name="FK__Transport__Statu__4BAC3F29" Association="Self.FK__Transport__Statu__4BAC3F29">
+            <End Role="TransportStatus" EntitySet="TransportStatus" />
             <End Role="Transport" EntitySet="Transport" />
           </AssociationSet>
-          <AssociationSet Name="FK_Transport_TransportStatus" Association="Self.FK_Transport_TransportStatus">
-            <End Role="TransportStatus" EntitySet="TransportStatus" />
+          <AssociationSet Name="FK__Transport__Trans__49C3F6B7" Association="Self.FK__Transport__Trans__49C3F6B7">
+            <End Role="TransportTypes" EntitySet="TransportTypes" />
             <End Role="Transport" EntitySet="Transport" />
           </AssociationSet>
         </EntityContainer>
@@ -152,15 +153,15 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="autoLogDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="kursDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Departments">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="DepartmentName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Employees" Relationship="Self.FK__Employees__Depar__0E240DFC" FromRole="Departments" ToRole="Employees" />
-          <NavigationProperty Name="Transport" Relationship="Self.FK__Transport__Depar__11F49EE0" FromRole="Departments" ToRole="Transport" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK__Employees__Depar__46E78A0C" FromRole="Departments" ToRole="Employees" />
+          <NavigationProperty Name="Transport" Relationship="Self.FK__Transport__Depar__4AB81AF0" FromRole="Departments" ToRole="Transport" />
         </EntityType>
         <EntityType Name="Employees">
           <Key>
@@ -175,8 +176,8 @@
           <Property Name="Login" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Departments" Relationship="Self.FK__Employees__Depar__0E240DFC" FromRole="Employees" ToRole="Departments" />
-          <NavigationProperty Name="Position" Relationship="Self.FK__Employees__Posit__0D2FE9C3" FromRole="Employees" ToRole="Position" />
+          <NavigationProperty Name="Departments" Relationship="Self.FK__Employees__Depar__46E78A0C" FromRole="Employees" ToRole="Departments" />
+          <NavigationProperty Name="Position" Relationship="Self.FK__Employees__Posit__45F365D3" FromRole="Employees" ToRole="Position" />
         </EntityType>
         <EntityType Name="Position">
           <Key>
@@ -184,7 +185,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="PositionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Employees" Relationship="Self.FK__Employees__Posit__0D2FE9C3" FromRole="Position" ToRole="Employees" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK__Employees__Posit__45F365D3" FromRole="Position" ToRole="Employees" />
         </EntityType>
         <EntityType Name="Transport">
           <Key>
@@ -198,9 +199,10 @@
           <Property Name="StatusId" Type="Int32" Nullable="false" />
           <Property Name="GovNumber" Type="String" MaxLength="7" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="VinNumber" Type="String" MaxLength="17" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Departments" Relationship="Self.FK__Transport__Depar__11F49EE0" FromRole="Transport" ToRole="Departments" />
-          <NavigationProperty Name="TransportTypes" Relationship="Self.FK__Transport__Trans__11007AA7" FromRole="Transport" ToRole="TransportTypes" />
-          <NavigationProperty Name="TransportStatus" Relationship="Self.FK_Transport_TransportStatus" FromRole="Transport" ToRole="TransportStatus" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Departments" Relationship="Self.FK__Transport__Depar__4AB81AF0" FromRole="Transport" ToRole="Departments" />
+          <NavigationProperty Name="TransportStatus" Relationship="Self.FK__Transport__Statu__4BAC3F29" FromRole="Transport" ToRole="TransportStatus" />
+          <NavigationProperty Name="TransportTypes" Relationship="Self.FK__Transport__Trans__49C3F6B7" FromRole="Transport" ToRole="TransportTypes" />
         </EntityType>
         <EntityType Name="TransportStatus">
           <Key>
@@ -208,7 +210,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="StatusName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Transport" Relationship="Self.FK_Transport_TransportStatus" FromRole="TransportStatus" ToRole="Transport" />
+          <NavigationProperty Name="Transport" Relationship="Self.FK__Transport__Statu__4BAC3F29" FromRole="TransportStatus" ToRole="Transport" />
         </EntityType>
         <EntityType Name="TransportTypes">
           <Key>
@@ -216,9 +218,9 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TypesName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Transport" Relationship="Self.FK__Transport__Trans__11007AA7" FromRole="TransportTypes" ToRole="Transport" />
+          <NavigationProperty Name="Transport" Relationship="Self.FK__Transport__Trans__49C3F6B7" FromRole="TransportTypes" ToRole="Transport" />
         </EntityType>
-        <Association Name="FK__Employees__Depar__0E240DFC">
+        <Association Name="FK__Employees__Depar__46E78A0C">
           <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
           <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
           <ReferentialConstraint>
@@ -230,7 +232,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Transport__Depar__11F49EE0">
+        <Association Name="FK__Transport__Depar__4AB81AF0">
           <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
           <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
           <ReferentialConstraint>
@@ -242,7 +244,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Employees__Posit__0D2FE9C3">
+        <Association Name="FK__Employees__Posit__45F365D3">
           <End Role="Position" Type="Self.Position" Multiplicity="1" />
           <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
           <ReferentialConstraint>
@@ -254,19 +256,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Transport__Trans__11007AA7">
-          <End Role="TransportTypes" Type="Self.TransportTypes" Multiplicity="1" />
-          <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TransportTypes">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Transport">
-              <PropertyRef Name="TransportTypeId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Transport_TransportStatus">
+        <Association Name="FK__Transport__Statu__4BAC3F29">
           <End Role="TransportStatus" Type="Self.TransportStatus" Multiplicity="1" />
           <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
           <ReferentialConstraint>
@@ -278,31 +268,43 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="dbAutoLogEntities" annotation:LazyLoadingEnabled="true">
+        <Association Name="FK__Transport__Trans__49C3F6B7">
+          <End Role="TransportTypes" Type="Self.TransportTypes" Multiplicity="1" />
+          <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TransportTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Transport">
+              <PropertyRef Name="TransportTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="avtoLogDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Departments" EntityType="Self.Departments" />
           <EntitySet Name="Employees" EntityType="Self.Employees" />
           <EntitySet Name="Position" EntityType="Self.Position" />
           <EntitySet Name="Transport" EntityType="Self.Transport" />
           <EntitySet Name="TransportStatus" EntityType="Self.TransportStatus" />
           <EntitySet Name="TransportTypes" EntityType="Self.TransportTypes" />
-          <AssociationSet Name="FK__Employees__Depar__0E240DFC" Association="Self.FK__Employees__Depar__0E240DFC">
+          <AssociationSet Name="FK__Employees__Depar__46E78A0C" Association="Self.FK__Employees__Depar__46E78A0C">
             <End Role="Departments" EntitySet="Departments" />
             <End Role="Employees" EntitySet="Employees" />
           </AssociationSet>
-          <AssociationSet Name="FK__Transport__Depar__11F49EE0" Association="Self.FK__Transport__Depar__11F49EE0">
+          <AssociationSet Name="FK__Transport__Depar__4AB81AF0" Association="Self.FK__Transport__Depar__4AB81AF0">
             <End Role="Departments" EntitySet="Departments" />
             <End Role="Transport" EntitySet="Transport" />
           </AssociationSet>
-          <AssociationSet Name="FK__Employees__Posit__0D2FE9C3" Association="Self.FK__Employees__Posit__0D2FE9C3">
+          <AssociationSet Name="FK__Employees__Posit__45F365D3" Association="Self.FK__Employees__Posit__45F365D3">
             <End Role="Position" EntitySet="Position" />
             <End Role="Employees" EntitySet="Employees" />
           </AssociationSet>
-          <AssociationSet Name="FK__Transport__Trans__11007AA7" Association="Self.FK__Transport__Trans__11007AA7">
-            <End Role="TransportTypes" EntitySet="TransportTypes" />
+          <AssociationSet Name="FK__Transport__Statu__4BAC3F29" Association="Self.FK__Transport__Statu__4BAC3F29">
+            <End Role="TransportStatus" EntitySet="TransportStatus" />
             <End Role="Transport" EntitySet="Transport" />
           </AssociationSet>
-          <AssociationSet Name="FK_Transport_TransportStatus" Association="Self.FK_Transport_TransportStatus">
-            <End Role="TransportStatus" EntitySet="TransportStatus" />
+          <AssociationSet Name="FK__Transport__Trans__49C3F6B7" Association="Self.FK__Transport__Trans__49C3F6B7">
+            <End Role="TransportTypes" EntitySet="TransportTypes" />
             <End Role="Transport" EntitySet="Transport" />
           </AssociationSet>
         </EntityContainer>
@@ -311,9 +313,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище autoLogDbModelContainer" CdmEntityContainer="dbAutoLogEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище kursDbModelContainer" CdmEntityContainer="avtoLogDbEntities">
           <EntitySetMapping Name="Departments">
-            <EntityTypeMapping TypeName="autoLogDbModel.Departments">
+            <EntityTypeMapping TypeName="kursDbModel.Departments">
               <MappingFragment StoreEntitySet="Departments">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
@@ -321,7 +323,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employees">
-            <EntityTypeMapping TypeName="autoLogDbModel.Employees">
+            <EntityTypeMapping TypeName="kursDbModel.Employees">
               <MappingFragment StoreEntitySet="Employees">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
@@ -336,7 +338,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Position">
-            <EntityTypeMapping TypeName="autoLogDbModel.Position">
+            <EntityTypeMapping TypeName="kursDbModel.Position">
               <MappingFragment StoreEntitySet="Position">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="PositionName" ColumnName="PositionName" />
@@ -344,7 +346,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Transport">
-            <EntityTypeMapping TypeName="autoLogDbModel.Transport">
+            <EntityTypeMapping TypeName="kursDbModel.Transport">
               <MappingFragment StoreEntitySet="Transport">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Brand" ColumnName="Brand" />
@@ -354,11 +356,12 @@
                 <ScalarProperty Name="StatusId" ColumnName="StatusId" />
                 <ScalarProperty Name="GovNumber" ColumnName="GovNumber" />
                 <ScalarProperty Name="VinNumber" ColumnName="VinNumber" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TransportStatus">
-            <EntityTypeMapping TypeName="autoLogDbModel.TransportStatus">
+            <EntityTypeMapping TypeName="kursDbModel.TransportStatus">
               <MappingFragment StoreEntitySet="TransportStatus">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="StatusName" ColumnName="StatusName" />
@@ -366,7 +369,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TransportTypes">
-            <EntityTypeMapping TypeName="autoLogDbModel.TransportTypes">
+            <EntityTypeMapping TypeName="kursDbModel.TransportTypes">
               <MappingFragment StoreEntitySet="TransportTypes">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="TypesName" ColumnName="TypesName" />
