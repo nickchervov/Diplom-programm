@@ -1,4 +1,5 @@
-﻿using avtoLog.Helpers;
+﻿using avtoLog.DbModel;
+using avtoLog.Helpers;
 using avtoLog.Pages;
 using System;
 using System.Collections.Generic;

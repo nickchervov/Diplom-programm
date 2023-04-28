@@ -1,0 +1,12 @@
+E:\Проекты\VisualStudioProjects\Diplom-programm\loginCheckerClass\bin\Debug\net6.0\loginCheckerClass.deps.json
+E:\Проекты\VisualStudioProjects\Diplom-programm\loginCheckerClass\bin\Debug\net6.0\loginCheckerClass.dll
+E:\Проекты\VisualStudioProjects\Diplom-programm\loginCheckerClass\bin\Debug\net6.0\loginCheckerClass.pdb
+E:\Проекты\VisualStudioProjects\Diplom-programm\loginCheckerClass\obj\Debug\net6.0\loginCheckerClass.csproj.AssemblyReference.cache
+E:\Проекты\VisualStudioProjects\Diplom-programm\loginCheckerClass\obj\Debug\net6.0\loginCheckerClass.GeneratedMSBuildEditorConfig.editorconfig
+E:\Проекты\VisualStudioProjects\Diplom-programm\loginCheckerClass\obj\Debug\net6.0\loginCheckerClass.AssemblyInfoInputs.cache
+E:\Проекты\VisualStudioProjects\Diplom-programm\loginCheckerClass\obj\Debug\net6.0\loginCheckerClass.AssemblyInfo.cs
+E:\Проекты\VisualStudioProjects\Diplom-programm\loginCheckerClass\obj\Debug\net6.0\loginCheckerClass.csproj.CoreCompileInputs.cache
+E:\Проекты\VisualStudioProjects\Diplom-programm\loginCheckerClass\obj\Debug\net6.0\loginCheckerClass.dll
+E:\Проекты\VisualStudioProjects\Diplom-programm\loginCheckerClass\obj\Debug\net6.0\refint\loginCheckerClass.dll
+E:\Проекты\VisualStudioProjects\Diplom-programm\loginCheckerClass\obj\Debug\net6.0\loginCheckerClass.pdb
+E:\Проекты\VisualStudioProjects\Diplom-programm\loginCheckerClass\obj\Debug\net6.0\ref\loginCheckerClass.dll

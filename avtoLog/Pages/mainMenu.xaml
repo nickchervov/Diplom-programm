@@ -1,0 +1,66 @@
+﻿<Page x:Class="avtoLog.Pages.mainMenu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:avtoLog.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="mainMenu">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel HorizontalAlignment="Right" Margin="0,0,30,0">
+            <TextBlock Text="Документы" HorizontalAlignment="Center" Margin="0,0,0,15"/>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="waybillListBtn" Content="Путевые листы" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="waybillListBtn_Click" />
+                <Button x:Name="newWaybillBtn" Content="+Новый" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newWaybillBtn_Click" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="transportListBtn" Content="Автотранспорт" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="transportListBtn_Click"/>
+                <Button x:Name="newTsBtn"  Content="+Новый" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newTsBtn_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="orgListBTN" Content="Организация" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="orgListBTN_Click"/>
+                <Button x:Name="newOrgBtn"  Content="+Новая" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newOrgBtn_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="depListBTN" Content="Подразделения" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="depListBTN_Click"/>
+                <Button x:Name="newDepBtn"  Content="+Новое" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newDepBtn_Click"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel HorizontalAlignment="Left" Grid.Column="1" Margin="30,0,0,0">
+            <TextBlock Text="Справочники" HorizontalAlignment="Center" Margin="0,0,0,15"/>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="empListBtn" Content="Сотрудники" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="empListBtn_Click" />
+                <Button x:Name="newEmpBtn" Content="+Новый" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newEmpBtn_Click" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="driLicListBtn" Content="Водительское удостоверение" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="driLicListBtn_Click"/>
+                <Button x:Name="newDriLicBtn"  Content="+Новое" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newDriLicBtn_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="driListBTN" Content="Водители" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="driListBTN_Click"/>
+                <Button x:Name="newDriBtn"  Content="+Новый" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newDriBtn_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="disListBTN" Content="Диспетчеры" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="disListBTN_Click"/>
+                <Button x:Name="newDisBtn"  Content="+Новый" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newDisBtn_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="tsTypesListBTN" Content="Виды транспорта" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="tsTypesListBTN_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="mesTypesListBTN" Content="Виды перемещения" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="mesTypesListBTN_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="transTypesListBTN" Content="Виды транспортировки" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="transTypesListBTN_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

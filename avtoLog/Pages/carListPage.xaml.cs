@@ -32,49 +32,10 @@ namespace avtoLog.Pages
         {
             InitializeComponent();
 
-            contextMenuCollapsed();
-
             connectingDb();
 
-            identityRole();
-
         }
 
-        private void btnOpenMenu_Click(object sender, RoutedEventArgs e)
-        {
-            if (contextMenu.Visibility == Visibility.Collapsed)
-            {
-                contextMenu.Visibility = Visibility.Visible;
-            } else
-            {
-                contextMenu.Visibility = Visibility.Collapsed;
-            }
-        }
-
-        private void btnLogout_Click(object sender, RoutedEventArgs e)
-        {
-            PageHelper.MainFrame.Navigate(new logInPage());
-        }
-
-
-        private void contextMenuCollapsed()
-        {
-            contextMenu.Visibility = Visibility.Collapsed;
-        }
-
-        //private void statusColor(TextBlock status)
-        //{
-        //    if (status.Text == "Занят")
-        //    {
-        //        status.Foreground = Brushes.Red;
-        //    } else if (status.Text == "Свободен")
-        //    {
-        //        status.Foreground = Brushes.Green;
-        //    } else
-        //    {
-        //        status.Foreground = Brushes.Yellow;
-        //    }
-        //}
 
         private void searchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -104,15 +65,6 @@ namespace avtoLog.Pages
             }
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-            if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите добавить запись?", "Внимание!", MessageBoxButton.YesNo))
-            {
-                PageHelper.MainFrame.Navigate(new addCarPage());
-            }
-            else return;
-        }
-
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
             var selected = lvCars.SelectedItem as Transport;
@@ -129,27 +81,22 @@ namespace avtoLog.Pages
             }
         }
 
-        private void identityRole()
-        {
-            if (PageHelper.role == 1)
-            {
-                btnDelete.Visibility = Visibility.Visible;
-                btnChange.Visibility = Visibility.Visible;
-                btnAdd.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                btnDelete.Visibility = Visibility.Hidden;
-                btnChange.Visibility = Visibility.Hidden;
-                btnAdd.Visibility = Visibility.Hidden;
-            }
-        }
-
         private void connectingDb()
         {
             cars = PageHelper.DbConnect.Transport;
 
             lvCars.ItemsSource = cars.ToList();
         }
+
+        private void btnBackImg_Click(object sender, RoutedEventArgs e)
+        {
+            PageHelper.MainFrame.Navigate(new mainMenu());
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            PageHelper.MainFrame.Navigate(new mainMenu());
+        }
+
     }
 }

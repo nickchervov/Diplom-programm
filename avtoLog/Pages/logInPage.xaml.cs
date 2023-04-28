@@ -32,22 +32,22 @@ namespace avtoLog.Pages
             {
                 PageHelper.role = 1;
 
-                PageHelper.MainFrame.Navigate(new carListPage());
+                PageHelper.MainFrame.Navigate(new mainMenu());
             } else if (PageHelper.DbConnect.Employees.Where(x => x.Login == tbLogin.Text && x.Password == pbPassword.Password && x.PositionId == 2).FirstOrDefault() != null)
             {
                 PageHelper.role = 1;
 
-                PageHelper.MainFrame.Navigate(new carListPage());
+                PageHelper.MainFrame.Navigate(new mainMenu());
             } else if (PageHelper.DbConnect.Employees.Where(x => x.Login == tbLogin.Text && x.Password == pbPassword.Password && x.PositionId == 3).FirstOrDefault() != null)
             {
                 PageHelper.role = 1;
 
-                PageHelper.MainFrame.Navigate(new carListPage());
+                PageHelper.MainFrame.Navigate(new mainMenu());
             } else if (PageHelper.DbConnect.Employees.Where(x => x.Login == tbLogin.Text && x.Password == pbPassword.Password && x.PositionId > 3).FirstOrDefault() != null)
             {
                 PageHelper.role = 0;
 
-                PageHelper.MainFrame.Navigate(new carListPage());
+                PageHelper.MainFrame.Navigate(new mainMenu());
             }
             else
             {

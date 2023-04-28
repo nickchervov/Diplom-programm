@@ -8,89 +8,77 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="carListPage">
 
-    <StackPanel Orientation="Horizontal">
-        <StackPanel x:Name="contextMenu" MinWidth="200"  Orientation="Vertical" Background="LightGray">
-            <DockPanel HorizontalAlignment="Left" MinWidth="200">
-                <Image Source="/Images/Unknown_person.jpg" Width="75" Height="75" DockPanel.Dock="Left" Margin="0,0,10,0" />
-                <TextBlock x:Name="userName" Text="Никита" VerticalAlignment="Center" Margin="0,0,3,0"/>
-                <Button x:Name="btnLogout" BorderBrush="Transparent" Width="25" Height="25" HorizontalAlignment="Right" Click="btnLogout_Click">
-                    <Image Source="/Images/logout.png" Width="25" Height="25"/>
-                </Button>
-            </DockPanel>
-
-            <DockPanel MinWidth="200" Margin="0,50,0,0">
-                <Button x:Name="btnChange" Content="Изменить запись" MinWidth="199" Click="btnChange_Click"/>
-            </DockPanel>
-
-            <DockPanel MinWidth="200" Margin="0,10,0,0">
-                <Button x:Name="btnAdd" Content="Добавить запись" MinWidth="199" Click="btnAdd_Click"/>
-            </DockPanel>
-
-            <DockPanel MinWidth="200" Margin="0,10,0,0">
-                <Button x:Name="btnDelete" Content="Удалить запись" MinWidth="199" Click="btnDelete_Click"/>
-            </DockPanel>
-        </StackPanel>
-
-        <StackPanel Margin="10,0,0,0">
-            <StackPanel Orientation="Horizontal">
-                <Button x:Name="btnOpenMenu" BorderBrush="Transparent" Width="25" Height="25" HorizontalAlignment="Right" Margin="0,0,5,0" Click="btnOpenMenu_Click">
-                    <Image Source="/Images/contextMenu.png" Width="25" Height="25"/>
-                </Button>
-                <TextBlock Text="Поиск" VerticalAlignment="Center" Margin="450,0,15,0"/>
-                <TextBox x:Name="searchBox" TextChanged="searchBox_TextChanged">
-                    <TextBox.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="10"/>
-                        </Style>
-                    </TextBox.Resources>
-                </TextBox>
-                <!--<ComboBox MinWidth="150" Margin="15,0,15,0">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <!--<Button x:Name="btnBackImg" MaxHeight="30" Background="Transparent" Margin="0,0,5,0" Click="btnBackImg_Click">
+                <Image Source="/Images/logout.png" />
+            </Button>-->
+            <TextBlock Text="Поиск" VerticalAlignment="Center" Margin="0,0,5,0"/>
+            <TextBox x:Name="searchBox" TextChanged="searchBox_TextChanged" MinHeight="30">
+                <TextBox.Resources>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+            <!--<ComboBox MinWidth="150" Margin="15,0,15,0">
                     
-                </ComboBox>
-                <ComboBox MinWidth="150">
+            </ComboBox>
+            <ComboBox MinWidth="150">
 
-                </ComboBox>-->
-            </StackPanel>
-
-            <ListView x:Name="lvCars" MaxWidth="1350" MaxHeight="700" FontSize="18" Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-                <!--<ListView.ItemContainerStyle>
+            </ComboBox>-->
+        </StackPanel>
+        
+        <ListView Grid.Row="1" x:Name="lvCars" MaxWidth="1350" MaxHeight="700" FontSize="18" Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <!--<ListView.ItemContainerStyle>
                     <Style TargetType="ListViewItem">
                          <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                     </Style>
                 </ListView.ItemContainerStyle>-->
-                    
-                <ListView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <WrapPanel/>
-                    </ItemsPanelTemplate>
-                </ListView.ItemsPanel>
-                
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <Border BorderThickness="1" BorderBrush="Black" CornerRadius="5">
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5">
-                                <StackPanel>
-                                    <!--ФОТО-->
-                                    <Image Source="{Binding Path= Photo}" Width="125" Height="125"/>
-                                </StackPanel>
 
-                                <StackPanel VerticalAlignment="Center">
-                                    <!--ДАННЫЕ-->
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Path= Brand}"/>
-                                        <TextBlock Text=" "/>
-                                        <TextBlock Text="{Binding Path= Model}"/>
-                                    </StackPanel>
-                                    <TextBlock Text="{Binding Path= GovNumber}"/>
-                                    <TextBlock Text="{Binding Path= VinNumber}"/>
-                                    <TextBlock Text="{Binding Path= TransportTypes.TypesName}"/>
-                                    <TextBlock x:Name="tbStatus" Text="{Binding Path= TransportStatus.StatusName}"/>
-                                </StackPanel>
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="1" BorderBrush="Black" CornerRadius="5">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5">
+                            <StackPanel>
+                                <!--ФОТО-->
+                                <Image Source="{Binding Path= Photo}" Width="100" Height="100"/>
                             </StackPanel>
-                        </Border>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+
+                            <StackPanel VerticalAlignment="Center">
+                                <!--ДАННЫЕ-->
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Path= Brand}"/>
+                                    <TextBlock Text=" "/>
+                                    <TextBlock Text="{Binding Path= Model}"/>
+                                </StackPanel>
+                                <TextBlock Text="{Binding Path= GovNumber}"/>
+                                <TextBlock Text="{Binding Path= VinNumber}"/>
+                                <TextBlock Text="{Binding Path= TransportTypes.TypesName}"/>
+                                <TextBlock x:Name="tbStatus" Text="{Binding Path= TransportStatus.StatusName}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="btnBack" Content="На главную" MinWidth="120" Margin="0,0,10,0" Click="btnBack_Click"/>
+            <Button x:Name="btnChange" Content="Изменить" MinWidth="120" Margin="10,0,10,0" Click="btnChange_Click"/>
+            <Button x:Name="btnDelete" Content="Удалить" MinWidth="120" Margin="10,0,0,0" Click="btnDelete_Click"/>
         </StackPanel>
-    </StackPanel>
+    </Grid>
 </Page>

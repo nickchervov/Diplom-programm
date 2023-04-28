@@ -14,6 +14,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.Media3D;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -27,6 +28,12 @@ namespace avtoLog.Pages
         public addCarPage()
         {
             InitializeComponent();
+
+            cbTransportTypeId.ItemsSource = PageHelper.DbConnect.TransportTypes.ToList();
+
+            cbDepartmentsId.ItemsSource = PageHelper.DbConnect.Departments.ToList();
+
+            cbStatusId.ItemsSource = PageHelper.DbConnect.TransportStatus.ToList();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -37,11 +44,37 @@ namespace avtoLog.Pages
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             Transport avto = new Transport();
+
             avto.Brand = tbBrand.Text;
             avto.Model = tbModel.Text;
-            avto.TransportTypeId = Convert.ToInt32(tbTransportTypeId.Text);
-            avto.DepartmentsId = Convert.ToInt32(tbDepartmentsId.Text);
-            avto.StatusId = Convert.ToInt32(tbStatusId.Text);
+
+            if (cbTransportTypeId.SelectedItem == null)
+            {
+                MessageBox.Show("Тип автотранспорта не выбран");
+                return;
+            } else
+            {
+                avto.TransportTypeId = (cbTransportTypeId.SelectedItem as TransportTypes).Id;
+            }
+
+            if (cbDepartmentsId.SelectedItem == null)
+            {
+                MessageBox.Show("Департамент не выбран");
+                return;
+            } else
+            {
+                avto.DepartmentsId = (cbDepartmentsId.SelectedItem as Departments).Id;
+            }
+
+            if (cbStatusId.SelectedItem == null)
+            {
+                MessageBox.Show("Статус автотранспорта не выбран");
+                return;
+            }
+            else
+            {
+                avto.StatusId = (cbStatusId.SelectedItem as TransportStatus).Id;
+            }
 
             if(tbGovNumber.Text.Length > 7)
             {

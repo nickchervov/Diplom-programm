@@ -23,15 +23,15 @@
 
         <StackPanel Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <DockPanel Margin="0,0,0,20">
-                <TextBlock Text="Логин:" Margin="0,0,15,0"/>
+                <TextBlock Text="Логин:" MinWidth="60" VerticalAlignment="Center"/>
                 <TextBox x:Name="tbLogin"/>
             </DockPanel>
             <DockPanel Margin="0,0,0,20">
-                <TextBlock Text="Пароль:" Margin="0,0,3.5,0"/>
+                <TextBlock Text="Пароль:" MinWidth="60" VerticalAlignment="Center"/>
                 <PasswordBox x:Name="pbPassword"/>
             </DockPanel>
             <StackPanel>
-                <Button x:Name="btnLogin" Content="Войти" Click="btnLogin_Click"/>
+                <Button x:Name="btnLogin" MaxWidth="130" Content="Войти" Click="btnLogin_Click"/>
             </StackPanel>
         </StackPanel>
     </Grid>
