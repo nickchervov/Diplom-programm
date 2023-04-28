@@ -122,11 +122,119 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\changeDepPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\changeDisPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\changeDriLicPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\changeDriPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\changeEmpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\changeMesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\changeOrgPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\changeTransPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\changeTsTypesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\changeWaybillPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\depListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\disListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\driLicListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\driListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\empListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\logInPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\mainMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\mesTypesListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\newDepPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\newDisPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\newDriLicPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\newDriPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\newEmpPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\newOrgPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\newWaybillPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\orgListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\transTypesListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\tsTypesListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\waybillListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -141,11 +249,92 @@
     <Compile Include="Pages\changeCarPage.xaml.cs">
       <DependentUpon>changeCarPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\changeDepPage.xaml.cs">
+      <DependentUpon>changeDepPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\changeDisPage.xaml.cs">
+      <DependentUpon>changeDisPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\changeDriLicPage.xaml.cs">
+      <DependentUpon>changeDriLicPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\changeDriPage.xaml.cs">
+      <DependentUpon>changeDriPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\changeEmpPage.xaml.cs">
+      <DependentUpon>changeEmpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\changeMesPage.xaml.cs">
+      <DependentUpon>changeMesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\changeOrgPage.xaml.cs">
+      <DependentUpon>changeOrgPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\changeTransPage.xaml.cs">
+      <DependentUpon>changeTransPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\changeTsTypesPage.xaml.cs">
+      <DependentUpon>changeTsTypesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\changeWaybillPage.xaml.cs">
+      <DependentUpon>changeWaybillPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\depListPage.xaml.cs">
+      <DependentUpon>depListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\disListPage.xaml.cs">
+      <DependentUpon>disListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\driLicListPage.xaml.cs">
+      <DependentUpon>driLicListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\driListPage.xaml.cs">
+      <DependentUpon>driListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\empListPage.xaml.cs">
+      <DependentUpon>empListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\logInPage.xaml.cs">
       <DependentUpon>logInPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\mainMenu.xaml.cs">
       <DependentUpon>mainMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\mesTypesListPage.xaml.cs">
+      <DependentUpon>mesTypesListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\newDepPage.xaml.cs">
+      <DependentUpon>newDepPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\newDisPage.xaml.cs">
+      <DependentUpon>newDisPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\newDriLicPage.xaml.cs">
+      <DependentUpon>newDriLicPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\newDriPage.xaml.cs">
+      <DependentUpon>newDriPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\newEmpPage.xaml.cs">
+      <DependentUpon>newEmpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\newOrgPage.xaml.cs">
+      <DependentUpon>newOrgPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\newWaybillPage.xaml.cs">
+      <DependentUpon>newWaybillPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\orgListPage.xaml.cs">
+      <DependentUpon>orgListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\transTypesListPage.xaml.cs">
+      <DependentUpon>transTypesListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\tsTypesListPage.xaml.cs">
+      <DependentUpon>tsTypesListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\waybillListPage.xaml.cs">
+      <DependentUpon>waybillListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
