@@ -1,6 +1,8 @@
-﻿using avtoLog.Helpers;
+﻿using avtoLog.DbModel;
+using avtoLog.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,22 +23,48 @@ namespace avtoLog.Pages
     /// </summary>
     public partial class mesTypesListPage : Page
     {
+        DbSet<MesTypes> mesTypes;
+
         public mesTypesListPage()
         {
             InitializeComponent();
+
+            connectingDb();
         }
-        private void btnBack_Click(object sender, RoutedEventArgs e)
+        private void searchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            PageHelper.MainFrame.Navigate(new mainMenu());
+            lvMesTypes.ItemsSource = mesTypes.Where(x => x.name.Contains(searchBox.Text)).ToList();
         }
+
+        //private void btnDelete_Click(object sender, RoutedEventArgs e)
+        //{
+        //    var selected = lvMesTypes.SelectedItem as MesTypes;
+        //    if (selected != null)
+        //    {
+
+        //        if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите удалить запись?", "Внимание!", MessageBoxButton.YesNo))
+        //        {
+        //            PageHelper.DbConnect.MesTypes.Remove(selected);
+        //            PageHelper.DbConnect.SaveChanges();
+
+        //            connectingDb();
+        //        }
+        //        else return;
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Нет выбранной записи", "Внимание!");
+        //    }
+        //}
+
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
-            var selected = lvCars.SelectedItem /*as Transport*/;
-            if (selected == null)
+            var selected = lvMesTypes.SelectedItem as MesTypes;
+            if (selected != null)
             {
                 if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
                 {
-                    PageHelper.MainFrame.Navigate(new changeMesPage());
+                    PageHelper.MainFrame.Navigate(new changeMesPage(selected));
                 }
                 else return;
             }
@@ -45,5 +73,17 @@ namespace avtoLog.Pages
                 MessageBox.Show("Нет выбранной записи", "Внимание!");
             }
         }
+
+        private void connectingDb()
+        {
+            mesTypes = PageHelper.DbConnect.MesTypes;
+            lvMesTypes.ItemsSource = mesTypes.ToList();
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            PageHelper.MainFrame.Navigate(new mainMenu());
+        }
     }
 }
+

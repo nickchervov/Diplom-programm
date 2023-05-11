@@ -17,16 +17,15 @@ namespace avtoLog.DbModel
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Departments()
         {
-            this.Employees = new HashSet<Employees>();
-            this.Transport = new HashSet<Transport>();
+            this.Personal = new HashSet<Personal>();
         }
     
-        public int Id { get; set; }
-        public string DepartmentName { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public int orgId { get; set; }
     
+        public virtual org org { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employees> Employees { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Transport> Transport { get; set; }
+        public virtual ICollection<Personal> Personal { get; set; }
     }
 }

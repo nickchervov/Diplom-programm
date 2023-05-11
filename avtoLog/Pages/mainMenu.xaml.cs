@@ -35,7 +35,7 @@ namespace avtoLog.Pages
         {
             if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите добавить запись?", "Внимание!", MessageBoxButton.YesNo))
             {
-                PageHelper.MainFrame.Navigate(new waybillList());
+                PageHelper.MainFrame.Navigate(new newWaybillPage());
             }
             else return;
         }
@@ -114,29 +114,13 @@ namespace avtoLog.Pages
         {
             PageHelper.MainFrame.Navigate(new driListPage());
         }
-
-        private void newDriBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите добавить запись?", "Внимание!", MessageBoxButton.YesNo))
-            {
-                PageHelper.MainFrame.Navigate(new newDriPage());
-            }
-            else return;
-        }
+        
 
         private void disListBTN_Click(object sender, RoutedEventArgs e)
         {
             PageHelper.MainFrame.Navigate(new disListPage());
         }
 
-        private void newDisBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите добавить запись?", "Внимание!", MessageBoxButton.YesNo))
-            {
-                PageHelper.MainFrame.Navigate(new newDisPage());
-            }
-            else return;
-        }
 
         private void tsTypesListBTN_Click(object sender, RoutedEventArgs e)
         {

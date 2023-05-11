@@ -1,4 +1,5 @@
-﻿using avtoLog.Helpers;
+﻿using avtoLog.DbModel;
+using avtoLog.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,25 @@ namespace avtoLog.Pages
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             PageHelper.MainFrame.Navigate(new mainMenu());
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            DriverLicense driLic = new DriverLicense();
+
+            driLic.seriesNumber = tbSerNom.Text;
+
+            driLic.receiptDate = Convert.ToDateTime(dpRecDate.Text);
+
+            driLic.endDate = Convert.ToDateTime(dpEndDate.Text);
+            
+            if (MessageBoxResult.Yes == MessageBox.Show("Вы действительно хотите добавить запись?", "Предупреждение", MessageBoxButton.YesNo))
+            {
+                PageHelper.DbConnect.DriverLicense.Add(driLic);
+                PageHelper.DbConnect.SaveChangesAsync();
+                MessageBox.Show("Запись добавлена.", "ОК");
+                PageHelper.MainFrame.Navigate(new driLicListPage());
+            }
         }
     }
 }

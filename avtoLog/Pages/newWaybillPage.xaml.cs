@@ -1,4 +1,5 @@
-﻿using avtoLog.Helpers;
+﻿using avtoLog.DbModel;
+using avtoLog.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,10 +25,62 @@ namespace avtoLog.Pages
         public newWaybillPage()
         {
             InitializeComponent();
+
+            cbOrg.ItemsSource = PageHelper.DbConnect.org.ToList();
+
+            cbDis.ItemsSource = PageHelper.DbConnect.Personal.Where(x => x.isDis == true).ToList();
+
+            cbDri.ItemsSource = PageHelper.DbConnect.Personal.Where(x => x.isDri == true).ToList();
+
+            //cbCus.ItemsSource = PageHelper.DbConnect.Personal.Where(x => x.isDis == false && x.isDri == false).ToList();
+
+            cbTs.ItemsSource = PageHelper.DbConnect.Transport.ToList();
+
+            cbMes.ItemsSource = PageHelper.DbConnect.MesTypes.ToList();
+
+            cbTrans.ItemsSource = PageHelper.DbConnect.TransTypes.ToList();
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             PageHelper.MainFrame.Navigate(new mainMenu());
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Waybillses way = new Waybillses();
+
+            try{
+                way.nom = Convert.ToInt32(tbNom.Text);
+            }
+            catch { MessageBox.Show("Поле номер листа должен состоять из цифр","Ошибка"); }
+
+            way.startDate = Convert.ToDateTime(dpStartDate.Text);
+
+            way.endDate = Convert.ToDateTime(dpEndDate.Text);
+
+            way.mesTypeId = (cbMes.SelectedItem as MesTypes).id;
+
+            way.transTypeId = (cbTrans.SelectedItem as TransTypes).id;
+
+            way.idDis = (cbDis.SelectedItem as Personal).id;
+
+            way.idCus = (cbCus.SelectedItem as Personal).id;
+
+            way.transportId = (cbTs.SelectedItem as Transport).id;
+
+            way.orgId = (cbOrg.SelectedItem as org).id;
+
+            way.routee = tbRoute.Text;
+
+            way.idDri = (cbDri.SelectedItem as Personal).id;
+
+            if (MessageBoxResult.Yes == MessageBox.Show("Вы действительно хотите добавить запись?", "Предупреждение", MessageBoxButton.YesNo))
+            {
+                PageHelper.DbConnect.Waybillses.Add(way);
+                PageHelper.DbConnect.SaveChangesAsync();
+                MessageBox.Show("Запись добавлена.", "ОК");
+                PageHelper.MainFrame.Navigate(new waybillList());
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using avtoLog.Helpers;
+﻿using avtoLog.DbModel;
+using avtoLog.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,13 +22,49 @@ namespace avtoLog.Pages
     /// </summary>
     public partial class changeDisPage : Page
     {
-        public changeDisPage()
+        Personal _dis;
+
+        public changeDisPage(Personal dis)
         {
             InitializeComponent();
+
+            _dis = dis;
+
+            DataContext = _dis;
+
+            if (_dis.pol == "М")
+            {
+                cbPol.SelectedIndex = 0;
+            }
+            else
+            {
+                cbPol.SelectedIndex = 1;
+            }
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             PageHelper.MainFrame.GoBack();
+        }
+
+        private void btnChange_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
+            {
+
+                if (cbPol.SelectedIndex == 0)
+                {
+                    _dis.pol = "М";
+                }
+                else
+                {
+                    _dis.pol = "Ж";
+                }
+
+                PageHelper.DbConnect.SaveChangesAsync();
+                MessageBox.Show("Данные изменены.", "ОК");
+                PageHelper.MainFrame.Navigate(new disListPage());
+            }
+            else return;
         }
     }
 }

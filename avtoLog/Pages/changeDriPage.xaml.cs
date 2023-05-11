@@ -1,4 +1,5 @@
-﻿using avtoLog.Helpers;
+﻿using avtoLog.DbModel;
+using avtoLog.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,13 +22,55 @@ namespace avtoLog.Pages
     /// </summary>
     public partial class changeDriPage : Page
     {
-        public changeDriPage()
+        Personal _dri;
+
+        public changeDriPage(Personal dri)
         {
             InitializeComponent();
+
+            _dri = dri;
+
+            DataContext = _dri;
+
+            cbVU.ItemsSource = PageHelper.DbConnect.DriverLicense.ToList();
+
+            cbVU.SelectedIndex = _dri.idVU - 1;
+
+            if (_dri.pol == "М")
+            {
+                cbPol.SelectedIndex = 0;
+            }
+            else
+            {
+                cbPol.SelectedIndex = 1;
+            }
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             PageHelper.MainFrame.GoBack();
+        }
+
+        private void btnChange_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
+            {
+
+                if (cbPol.SelectedIndex == 0)
+                {
+                    _dri.pol = "М";
+                }
+                else
+                {
+                    _dri.pol = "Ж";
+                }
+
+                _dri.idVU = (cbVU.SelectedItem as DriverLicense).id;
+
+                PageHelper.DbConnect.SaveChangesAsync();
+                MessageBox.Show("Данные изменены.", "ОК");
+                PageHelper.MainFrame.Navigate(new driListPage());
+            }
+            else return;
         }
     }
 }

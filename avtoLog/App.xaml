@@ -15,7 +15,6 @@
             <Setter Property="BorderBrush" Value="Transparent"/>
         </Style>
         <Style TargetType="TextBox">
-            <Setter Property="FontSize" Value="18"/>
             <Setter Property="MinHeight" Value="25"/>
             <Setter Property="MinWidth" Value="300"/>
             <Setter Property="Background" Value="Transparent"/>
@@ -25,7 +24,6 @@
             <Setter Property="VerticalContentAlignment" Value="Center"/>
         </Style>
         <Style TargetType="PasswordBox">
-            <Setter Property="FontSize" Value="18"/>
             <Setter Property="MinHeight" Value="25"/>
             <Setter Property="MinWidth" Value="300"/>
             <Setter Property="Background" Value="Transparent"/>

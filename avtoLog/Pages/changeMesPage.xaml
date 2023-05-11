@@ -30,43 +30,15 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-
                 </Grid.RowDefinitions>
-                <TextBlock HorizontalAlignment="Right" FontSize="18" Grid.Row="0" Grid.Column="0" Text="Бренд автотранпорта:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18" x:Name="tbBrand" Grid.Row="0" Grid.Column="1" Text="{Binding Brand}" Margin="0,0,0,10"/>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="1" Grid.Column="0" Text="Модель автотранспорта: " Margin="0,0,0,10"/>
-                <TextBox FontSize="18" x:Name="tbModel" Grid.Row="1" Grid.Column="1" Text="{Binding Model}" Margin="0,0,0,10"/>
-
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="2" Grid.Column="0" Text="Код вида транспорта:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbTransportTypeId" Grid.Row="2" Grid.Column="1" Text="{Binding TransportTypeId}" Margin="0,0,0,10"/>
-
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="3" Grid.Column="0" Text="Код отдела:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbDepartmentsId" Grid.Row="3" Grid.Column="1" Text="{Binding DepartmentsId}" Margin="0,0,0,10"/>
-
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="4" Grid.Column="0" Text="Код статуса:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbStatusId" Grid.Row="4" Grid.Column="1" Text="{Binding StatusId}" Margin="0,0,0,10"/>
-
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="5" Grid.Column="0" Text="Государственный номер:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbGovNumber"  Grid.Row="5" Grid.Column="1" Text="{Binding GovNumber}" Margin="0,0,0,10"/>
-
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="6" Grid.Column="0" Text="VIN-номер:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbVinNumber" Grid.Row="6" Grid.Column="1" Text="{Binding VinNumber}" Margin="0,0,0,10"/>
-
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="7" Grid.Column="0"  Text="Фото автотранспорта:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"   x:Name="tbPhoto" Grid.Row="7" Grid.Column="1" Text="{Binding Photo}" Margin="0,0,0,10"/>
+                <TextBlock HorizontalAlignment="Right" FontSize="18" Grid.Row="0" Grid.Column="0" Text="Наименование вида:" Margin="0,0,0,10"/>
+                <TextBox FontSize="18" x:Name="tbName" Grid.Row="0" Grid.Column="1" Text="{Binding name}" Margin="5,0,0,10"/>
             </Grid>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Button x:Name="btnBack" Content="Назад" Margin="0,0,10,0" MinWidth="120" Click="btnBack_Click"/>
-            <!--<Button x:Name="btnChange" Content="Изменить" Margin="10,0,0,0" MinWidth="120"  Click="btnChange_Click"/>-->
+            <Button x:Name="btnChange" Content="Изменить" Margin="10,0,0,0" MinWidth="120"  Click="btnChange_Click"/>
         </StackPanel>
     </Grid>
 </Page>

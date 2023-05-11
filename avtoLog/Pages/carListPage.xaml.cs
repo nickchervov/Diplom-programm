@@ -39,7 +39,7 @@ namespace avtoLog.Pages
 
         private void searchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            lvCars.ItemsSource = cars.Where(x => x.Model.Contains(searchBox.Text) || x.Brand.Contains(searchBox.Text) || x.TransportStatus.StatusName.Contains(searchBox.Text)).ToList();
+            lvCars.ItemsSource = cars.Where(x => x.tsModel.Contains(searchBox.Text) || x.TsStatus.statusName.Contains(searchBox.Text)).ToList();
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
@@ -53,15 +53,13 @@ namespace avtoLog.Pages
                     PageHelper.DbConnect.Transport.Remove(selected);
                     PageHelper.DbConnect.SaveChanges();
 
-                    cars = PageHelper.DbConnect.Transport;
-
-                    lvCars.ItemsSource = cars.ToList();
+                    connectingDb();
                 }
-                else return;               
+                else return;
             }
             else
             {
-                MessageBox.Show("Нет выбранной записи","Внимание!");
+                MessageBox.Show("Нет выбранной записи", "Внимание!");
             }
         }
 
@@ -70,14 +68,15 @@ namespace avtoLog.Pages
             var selected = lvCars.SelectedItem as Transport;
             if (selected != null)
             {
-                if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите изменить запись?","Внимание!",MessageBoxButton.YesNo))
+                if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
                 {
                     PageHelper.MainFrame.Navigate(new changeCarPage(selected));
-                } else return;
+                }
+                else return;
             }
             else
             {
-                MessageBox.Show("Нет выбранной записи","Внимание!");
+                MessageBox.Show("Нет выбранной записи", "Внимание!");
             }
         }
 

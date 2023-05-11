@@ -37,36 +37,89 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
-
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock HorizontalAlignment="Right" FontSize="18" Grid.Row="0" Grid.Column="0" Text="Бренд автотранпорта:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18" x:Name="tbBrand" Grid.Row="0" Grid.Column="1" Text="{Binding Brand}" Margin="0,0,0,10"/>
+                <TextBlock HorizontalAlignment="Right" FontSize="18" Grid.Row="0" Grid.Column="0" Text="Табельный номер:" Margin="0,0,0,10"/>
+                <TextBox FontSize="18" x:Name="tbTabNom" Grid.Row="0" Grid.Column="1" Text="{Binding tabNumber}" Margin="5,0,0,10"/>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="1" Grid.Column="0" Text="Модель автотранспорта: " Margin="0,0,0,10"/>
-                <TextBox FontSize="18" x:Name="tbModel" Grid.Row="1" Grid.Column="1" Text="{Binding Model}" Margin="0,0,0,10"/>
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="1" Grid.Column="0" Text="ФИО:" Margin="0,0,0,10"/>
+                <TextBox FontSize="18" x:Name="tbFIO" Grid.Row="1" Grid.Column="1" Text="{Binding FIO}" Margin="5,0,0,10"/>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="2" Grid.Column="0" Text="Код вида транспорта:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbTransportTypeId" Grid.Row="2" Grid.Column="1" Text="{Binding TransportTypeId}" Margin="0,0,0,10"/>
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="2" Grid.Column="0" Text="Должность:" Margin="0,0,0,10"/>
+                <TextBox FontSize="18"  x:Name="tbPosition" Grid.Row="2" Grid.Column="1" Text="{Binding position}" Margin="5,0,0,10"/>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="3" Grid.Column="0" Text="Код отдела:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbDepartmentsId" Grid.Row="3" Grid.Column="1" Text="{Binding DepartmentsId}" Margin="0,0,0,10"/>
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="3" Grid.Column="0"  Text="Подразделение:" Margin="0,0,0,10"/>
+                <ComboBox x:Name="cbDep"
+                          Grid.Row="3"
+                          Grid.Column="1"
+                          FontSize="14"
+                          Margin="5,0,0,10">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="4" Grid.Column="0" Text="Код статуса:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbStatusId" Grid.Row="4" Grid.Column="1" Text="{Binding StatusId}" Margin="0,0,0,10"/>
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="4" Grid.Column="0" Text="Возраст:" Margin="0,0,0,10"/>
+                <TextBox FontSize="18"  x:Name="tbAge" Grid.Row="4" Grid.Column="1" Text="{Binding age}" Margin="5,0,0,10"/>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="5" Grid.Column="0" Text="Государственный номер:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbGovNumber"  Grid.Row="5" Grid.Column="1" Text="{Binding GovNumber}" Margin="0,0,0,10"/>
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="5" Grid.Column="0" Text="Пол:" Margin="0,0,0,10"/>
+                <ComboBox x:Name="cbPol"
+                          Grid.Row="5"
+                          Grid.Column="1"
+                          FontSize="18"
+                          Margin="5,0,0,10">
+                    <TextBlock Text="М"/>
+                    <TextBlock Text="Ж"/>
+                </ComboBox>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="6" Grid.Column="0" Text="VIN-номер:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbVinNumber" Grid.Row="6" Grid.Column="1" Text="{Binding VinNumber}" Margin="0,0,0,10"/>
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="7" Grid.Column="0" Text="Водитель?:" Margin="0,0,0,10"/>
+                <ComboBox x:Name="cbIsDri"
+                          Grid.Row="7"
+                          Grid.Column="1"
+                          FontSize="18"
+                          Margin="5,0,0,10">
+                    <TextBlock Text="Да"/>
+                    <TextBlock Text="Нет"/>
+                </ComboBox>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="7" Grid.Column="0"  Text="Фото автотранспорта:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"   x:Name="tbPhoto" Grid.Row="7" Grid.Column="1" Text="{Binding Photo}" Margin="0,0,0,10"/>
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="8" Grid.Column="0" Text="Диспетчер?:" Margin="0,0,0,10"/>
+                <ComboBox x:Name="cbIsDis"
+                          Grid.Row="8"
+                          Grid.Column="1"
+                          FontSize="18"
+                          Margin="5,0,0,10">
+                    <TextBlock Text="Да"/>
+                    <TextBlock Text="Нет"/>
+                </ComboBox>
+
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="9" Grid.Column="0"  Text="Администратор?:" Margin="0,0,0,10"/>
+                <ComboBox x:Name="cbIsAdm"
+                          Grid.Row="9"
+                          Grid.Column="1"
+                          FontSize="18"
+                          Margin="5,0,0,10">
+                    <TextBlock Text="Да"/>
+                    <TextBlock Text="Нет"/>
+                </ComboBox>
+
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="10" Grid.Column="0"  Text="Работник по персоналу?:" Margin="0,0,0,10"/>
+                <ComboBox x:Name="cbIsPer"
+                          Grid.Row="10"
+                          Grid.Column="1"
+                          FontSize="18"
+                          Margin="5,0,0,10">
+                    <TextBlock Text="Да"/>
+                    <TextBlock Text="Нет"/>
+                </ComboBox>
             </Grid>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Button x:Name="btnBack" Content="Назад" Margin="0,0,10,0" MinWidth="120" Click="btnBack_Click"/>
-            <!--<Button x:Name="btnChange" Content="Изменить" Margin="10,0,0,0" MinWidth="120"  Click="btnChange_Click"/>-->
+            <Button x:Name="btnChange" Content="Изменить" Margin="10,0,0,0" MinWidth="120"  Click="btnChange_Click"/>
         </StackPanel>
     </Grid>
 </Page>

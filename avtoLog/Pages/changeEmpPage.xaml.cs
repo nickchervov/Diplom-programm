@@ -1,4 +1,5 @@
-﻿using avtoLog.Helpers;
+﻿using avtoLog.DbModel;
+using avtoLog.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,13 +22,124 @@ namespace avtoLog.Pages
     /// </summary>
     public partial class changeEmpPage : Page
     {
-        public changeEmpPage()
+
+        Personal _emp;
+
+        public changeEmpPage(Personal emp)
         {
             InitializeComponent();
+
+            _emp = emp;
+
+            DataContext = _emp;
+
+            cbDep.ItemsSource = PageHelper.DbConnect.Departments.ToList();
+
+            cbDep.SelectedIndex = _emp.departmentId - 1;
+
+            if (_emp.pol == "М")
+            {
+                cbPol.SelectedIndex = 0;
+            }
+            else
+            {
+                cbPol.SelectedIndex = 1;
+            }
+
+            if (_emp.isDri == true)
+            {
+                cbIsDri.SelectedIndex = 0;
+            } else
+            {
+                cbIsDri.SelectedIndex = 1;
+            }
+
+            if (_emp.isDis == true)
+            {
+                cbIsDis.SelectedIndex = 0;
+            }
+            else
+            {
+                cbIsDis.SelectedIndex = 1;
+            }
+
+            if (_emp.isAdm == true)
+            {
+                cbIsAdm.SelectedIndex = 0;
+            }
+            else
+            {
+                cbIsAdm.SelectedIndex = 1;
+            }
+
+            if (_emp.isPer == true)
+            {
+                cbIsPer.SelectedIndex = 0;
+            }
+            else
+            {
+                cbIsPer.SelectedIndex = 1;
+            }
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             PageHelper.MainFrame.GoBack();
+        }
+
+        private void btnChange_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
+            {
+                if (cbPol.SelectedIndex == 0)
+                {
+                    _emp.pol = "М";
+                } else
+                {
+                    _emp.pol = "Ж";
+                }
+
+                if (cbIsDri.SelectedIndex == 0)
+                {
+                    _emp.isDri = true;
+                } else
+                {
+                    _emp.isDri = false;
+                }
+
+                if (cbIsDis.SelectedIndex == 0)
+                {
+                    _emp.isDis = true;
+                }
+                else
+                {
+                    _emp.isDis = false;
+                }
+
+                if (cbIsAdm.SelectedIndex == 0)
+                {
+                    _emp.isAdm = true;
+                }
+                else
+                {
+                    _emp.isAdm = false;
+                }
+
+                if (cbIsPer.SelectedIndex == 0)
+                {
+                    _emp.isPer = true;
+                }
+                else
+                {
+                    _emp.isPer = false;
+                }
+
+                _emp.departmentId = (cbDep.SelectedItem as Departments).id;
+
+                PageHelper.DbConnect.SaveChangesAsync();
+                MessageBox.Show("Данные изменены.", "ОК");
+                PageHelper.MainFrame.Navigate(new empListPage());
+            }
+            else return;
         }
     }
 }

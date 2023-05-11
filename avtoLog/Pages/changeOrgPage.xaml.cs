@@ -1,4 +1,5 @@
-﻿using avtoLog.Helpers;
+﻿using avtoLog.DbModel;
+using avtoLog.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,13 +22,25 @@ namespace avtoLog.Pages
     /// </summary>
     public partial class changeOrgPage : Page
     {
-        public changeOrgPage()
+        org _org;
+
+        public changeOrgPage(org orgs)
         {
             InitializeComponent();
+
+            _org = orgs;
+            DataContext = _org;
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             PageHelper.MainFrame.GoBack();
+        }
+
+        private void btnChange_Click(object sender, RoutedEventArgs e)
+        {
+            PageHelper.DbConnect.SaveChangesAsync();
+            MessageBox.Show("Данные изменены.", "ОК");
+            PageHelper.MainFrame.Navigate(new orgListPage());
         }
     }
 }

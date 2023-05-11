@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище tsLogDbModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Auth">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="personId" Type="int" Nullable="false" />
+    <Property Name="login" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Departments">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="orgId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DriverLicense">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="seriesNumber" Type="varchar" MaxLength="12" />
+    <Property Name="receiptDate" Type="date" />
+    <Property Name="endDate" Type="date" />
+  </EntityType>
+  <EntityType Name="DriverLicenseClass">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="licenseId" Type="int" Nullable="false" />
+    <Property Name="classId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LicenseClasses">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MesTypes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="org">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="country" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="postcode" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="street" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Personal">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tabNumber" Type="int" Nullable="false" />
+    <Property Name="FIO" Type="varchar" MaxLength="60" Nullable="false" />
+    <Property Name="position" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="departmentId" Type="int" Nullable="false" />
+    <Property Name="age" Type="int" Nullable="false" />
+    <Property Name="pol" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="idVU" Type="int" Nullable="false" />
+    <Property Name="isDri" Type="bit" Nullable="false" />
+    <Property Name="isDis" Type="bit" Nullable="false" />
+    <Property Name="isAdm" Type="bit" Nullable="false" />
+    <Property Name="isPer" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Photos">
+    <Key>
+      <PropertyRef Name="URLPhoto" />
+    </Key>
+    <Property Name="URLPhoto" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="codeName" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Transport">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GovNumber" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="tsModel" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="tsTypeId" Type="int" Nullable="false" />
+    <Property Name="tsStatusId" Type="int" Nullable="false" />
+    <Property Name="Photo" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TransTypes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TsStatus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="statusName" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TsTypes">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Waybillses">
+    <Key>
+      <PropertyRef Name="nom" />
+    </Key>
+    <Property Name="nom" Type="int" Nullable="false" />
+    <Property Name="startDate" Type="date" Nullable="false" />
+    <Property Name="endDate" Type="date" Nullable="false" />
+    <Property Name="mesTypeId" Type="int" Nullable="false" />
+    <Property Name="transTypeId" Type="int" Nullable="false" />
+    <Property Name="idDis" Type="int" Nullable="false" />
+    <Property Name="idCus" Type="int" Nullable="false" />
+    <Property Name="transportId" Type="int" Nullable="false" />
+    <Property Name="orgId" Type="int" Nullable="false" />
+    <Property Name="routee" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="idDri" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Auth__personId__45DE573A">
+    <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
+    <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Auth">
+        <PropertyRef Name="personId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Departmen__orgId__3D491139">
+    <End Role="org" Type="Self.org" Multiplicity="1" />
+    <End Role="Departments" Type="Self.Departments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="org">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Departments">
+        <PropertyRef Name="orgId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DriverLic__class__379037E3">
+    <End Role="LicenseClasses" Type="Self.LicenseClasses" Multiplicity="1" />
+    <End Role="DriverLicenseClass" Type="Self.DriverLicenseClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LicenseClasses">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DriverLicenseClass">
+        <PropertyRef Name="classId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DriverLic__licen__38845C1C">
+    <End Role="DriverLicense" Type="Self.DriverLicense" Multiplicity="1" />
+    <End Role="DriverLicenseClass" Type="Self.DriverLicenseClass" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DriverLicense">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DriverLicenseClass">
+        <PropertyRef Name="licenseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Personal__depart__40257DE4">
+    <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
+    <End Role="Personal" Type="Self.Personal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Personal">
+        <PropertyRef Name="departmentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Personal__idVU__4119A21D">
+    <End Role="DriverLicense" Type="Self.DriverLicense" Multiplicity="1" />
+    <End Role="Personal" Type="Self.Personal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DriverLicense">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Personal">
+        <PropertyRef Name="idVU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transport__Photo__4F67C174">
+    <End Role="Photos" Type="Self.Photos" Multiplicity="1" />
+    <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Photos">
+        <PropertyRef Name="URLPhoto" />
+      </Principal>
+      <Dependent Role="Transport">
+        <PropertyRef Name="Photo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transport__tsSta__4E739D3B">
+    <End Role="TsStatus" Type="Self.TsStatus" Multiplicity="1" />
+    <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TsStatus">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Transport">
+        <PropertyRef Name="tsStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Transport__tsTyp__505BE5AD">
+    <End Role="TsTypes" Type="Self.TsTypes" Multiplicity="1" />
+    <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TsTypes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Transport">
+        <PropertyRef Name="tsTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Waybillse__idCus__5CC1BC92">
+    <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
+    <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Waybillses">
+        <PropertyRef Name="idCus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Waybillse__idDis__58F12BAE">
+    <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
+    <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Waybillses">
+        <PropertyRef Name="idDis" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Waybillse__idDri__5BCD9859">
+    <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
+    <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Waybillses">
+        <PropertyRef Name="idDri" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Waybillse__mesTy__5708E33C">
+    <End Role="MesTypes" Type="Self.MesTypes" Multiplicity="1" />
+    <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MesTypes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Waybillses">
+        <PropertyRef Name="mesTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Waybillse__orgId__5AD97420">
+    <End Role="org" Type="Self.org" Multiplicity="1" />
+    <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="org">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Waybillses">
+        <PropertyRef Name="orgId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Waybillse__trans__57FD0775">
+    <End Role="TransTypes" Type="Self.TransTypes" Multiplicity="1" />
+    <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TransTypes">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Waybillses">
+        <PropertyRef Name="transTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Waybillse__trans__59E54FE7">
+    <End Role="Transport" Type="Self.Transport" Multiplicity="1" />
+    <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transport">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Waybillses">
+        <PropertyRef Name="transportId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище tsLogDbModelContainer">
+    <EntitySet Name="Auth" EntityType="Self.Auth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DriverLicense" EntityType="Self.DriverLicense" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DriverLicenseClass" EntityType="Self.DriverLicenseClass" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LicenseClasses" EntityType="Self.LicenseClasses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MesTypes" EntityType="Self.MesTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="org" EntityType="Self.org" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personal" EntityType="Self.Personal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Photos" EntityType="Self.Photos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transport" EntityType="Self.Transport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TransTypes" EntityType="Self.TransTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TsStatus" EntityType="Self.TsStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TsTypes" EntityType="Self.TsTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Waybillses" EntityType="Self.Waybillses" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Auth__personId__45DE573A" Association="Self.FK__Auth__personId__45DE573A">
+      <End Role="Personal" EntitySet="Personal" />
+      <End Role="Auth" EntitySet="Auth" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Departmen__orgId__3D491139" Association="Self.FK__Departmen__orgId__3D491139">
+      <End Role="org" EntitySet="org" />
+      <End Role="Departments" EntitySet="Departments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DriverLic__class__379037E3" Association="Self.FK__DriverLic__class__379037E3">
+      <End Role="LicenseClasses" EntitySet="LicenseClasses" />
+      <End Role="DriverLicenseClass" EntitySet="DriverLicenseClass" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DriverLic__licen__38845C1C" Association="Self.FK__DriverLic__licen__38845C1C">
+      <End Role="DriverLicense" EntitySet="DriverLicense" />
+      <End Role="DriverLicenseClass" EntitySet="DriverLicenseClass" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Personal__depart__40257DE4" Association="Self.FK__Personal__depart__40257DE4">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Personal" EntitySet="Personal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Personal__idVU__4119A21D" Association="Self.FK__Personal__idVU__4119A21D">
+      <End Role="DriverLicense" EntitySet="DriverLicense" />
+      <End Role="Personal" EntitySet="Personal" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transport__Photo__4F67C174" Association="Self.FK__Transport__Photo__4F67C174">
+      <End Role="Photos" EntitySet="Photos" />
+      <End Role="Transport" EntitySet="Transport" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transport__tsSta__4E739D3B" Association="Self.FK__Transport__tsSta__4E739D3B">
+      <End Role="TsStatus" EntitySet="TsStatus" />
+      <End Role="Transport" EntitySet="Transport" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Transport__tsTyp__505BE5AD" Association="Self.FK__Transport__tsTyp__505BE5AD">
+      <End Role="TsTypes" EntitySet="TsTypes" />
+      <End Role="Transport" EntitySet="Transport" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Waybillse__idCus__5CC1BC92" Association="Self.FK__Waybillse__idCus__5CC1BC92">
+      <End Role="Personal" EntitySet="Personal" />
+      <End Role="Waybillses" EntitySet="Waybillses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Waybillse__idDis__58F12BAE" Association="Self.FK__Waybillse__idDis__58F12BAE">
+      <End Role="Personal" EntitySet="Personal" />
+      <End Role="Waybillses" EntitySet="Waybillses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Waybillse__idDri__5BCD9859" Association="Self.FK__Waybillse__idDri__5BCD9859">
+      <End Role="Personal" EntitySet="Personal" />
+      <End Role="Waybillses" EntitySet="Waybillses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Waybillse__mesTy__5708E33C" Association="Self.FK__Waybillse__mesTy__5708E33C">
+      <End Role="MesTypes" EntitySet="MesTypes" />
+      <End Role="Waybillses" EntitySet="Waybillses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Waybillse__orgId__5AD97420" Association="Self.FK__Waybillse__orgId__5AD97420">
+      <End Role="org" EntitySet="org" />
+      <End Role="Waybillses" EntitySet="Waybillses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Waybillse__trans__57FD0775" Association="Self.FK__Waybillse__trans__57FD0775">
+      <End Role="TransTypes" EntitySet="TransTypes" />
+      <End Role="Waybillses" EntitySet="Waybillses" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Waybillse__trans__59E54FE7" Association="Self.FK__Waybillse__trans__59E54FE7">
+      <End Role="Transport" EntitySet="Transport" />
+      <End Role="Waybillses" EntitySet="Waybillses" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

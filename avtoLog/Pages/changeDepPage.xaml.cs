@@ -1,4 +1,5 @@
-﻿using avtoLog.Helpers;
+﻿using avtoLog.DbModel;
+using avtoLog.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,13 +22,42 @@ namespace avtoLog.Pages
     /// </summary>
     public partial class changeDepPage : Page
     {
-        public changeDepPage()
+        Departments _dep;
+
+        public changeDepPage(Departments dep)
         {
             InitializeComponent();
+
+            _dep = dep;
+            DataContext = _dep;
+
+            cbOrgId.ItemsSource = PageHelper.DbConnect.org.ToList();
+
+            if (_dep.orgId == 1)
+            {
+                cbOrgId.SelectedIndex = 0;
+            }
+            else if (_dep.orgId == 3)
+            {
+                cbOrgId.SelectedIndex = 1;
+            }
+            else
+            {
+                cbOrgId.SelectedIndex = 2;
+            }
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             PageHelper.MainFrame.GoBack();
+        }
+
+        private void btnChange_Click(object sender, RoutedEventArgs e)
+        {
+            _dep.orgId = (cbOrgId.SelectedItem as org).id;
+
+            PageHelper.DbConnect.SaveChangesAsync();
+            MessageBox.Show("Данные изменены.", "ОК");
+            PageHelper.MainFrame.Navigate(new depListPage());
         }
     }
 }

@@ -28,24 +28,33 @@ namespace avtoLog.Pages
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (PageHelper.DbConnect.Employees.Where(x => x.Login == tbLogin.Text && x.Password == pbPassword.Password && x.PositionId == 1).FirstOrDefault() != null)
+            if (PageHelper.DbConnect.Auth.Where(x => x.login == tbLogin.Text && x.password == pbPassword.Password && x.Personal.isAdm == true).FirstOrDefault() != null)
             {
-                PageHelper.role = 1;
+                PageHelper.role = 1; //администраторы
 
                 PageHelper.MainFrame.Navigate(new mainMenu());
-            } else if (PageHelper.DbConnect.Employees.Where(x => x.Login == tbLogin.Text && x.Password == pbPassword.Password && x.PositionId == 2).FirstOrDefault() != null)
+            }
+            else if (PageHelper.DbConnect.Auth.Where(x => x.login == tbLogin.Text && x.password == pbPassword.Password && x.Personal.isDis == true).FirstOrDefault() != null)
             {
-                PageHelper.role = 1;
+                PageHelper.role = 2; //диспетчеры
 
                 PageHelper.MainFrame.Navigate(new mainMenu());
-            } else if (PageHelper.DbConnect.Employees.Where(x => x.Login == tbLogin.Text && x.Password == pbPassword.Password && x.PositionId == 3).FirstOrDefault() != null)
+            }
+            else if (PageHelper.DbConnect.Auth.Where(x => x.login == tbLogin.Text && x.password == pbPassword.Password && x.Personal.isDri == true).FirstOrDefault() != null)
             {
-                PageHelper.role = 1;
+                PageHelper.role = 3; //водители
 
                 PageHelper.MainFrame.Navigate(new mainMenu());
-            } else if (PageHelper.DbConnect.Employees.Where(x => x.Login == tbLogin.Text && x.Password == pbPassword.Password && x.PositionId > 3).FirstOrDefault() != null)
+            }
+            else if (PageHelper.DbConnect.Auth.Where(x => x.login == tbLogin.Text && x.password == pbPassword.Password && x.Personal.position == "Инженер" || x.Personal.position == "Главный инженер").FirstOrDefault() != null)
             {
-                PageHelper.role = 0;
+                PageHelper.role = 4; //работники сервиса
+
+                PageHelper.MainFrame.Navigate(new mainMenu());
+            }
+            else if (PageHelper.DbConnect.Auth.Where(x => x.login == tbLogin.Text && x.password == pbPassword.Password && x.Personal.isPer == true).FirstOrDefault() != null)
+            {
+                PageHelper.role = 5; //работники сервиса
 
                 PageHelper.MainFrame.Navigate(new mainMenu());
             }

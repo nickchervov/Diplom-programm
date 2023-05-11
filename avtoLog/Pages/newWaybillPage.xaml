@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Добавление записи" FontSize="24"/>
+            <TextBlock Text="Добавление нового путевого листа" FontSize="24"/>
         </StackPanel>
 
         <StackPanel
@@ -37,66 +37,119 @@
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
-
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBlock HorizontalAlignment="Right" FontSize="18" Grid.Row="0" Grid.Column="0" Text="Бренд автотранcпорта:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18" x:Name="tbBrand" Grid.Row="0" Grid.Column="1" Text="{Binding Brand}" Margin="5,0,0,10"/>
+                <TextBlock HorizontalAlignment="Right" FontSize="18" Grid.Row="0" Grid.Column="0" Text="Номер листа:" Margin="0,0,0,10"/>
+                <TextBox FontSize="14" x:Name="tbNom" Grid.Row="0" Grid.Column="1" Text="{Binding nom}" Margin="5,0,0,10"/>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="1" Grid.Column="0" Text="Модель автотранспорта: " Margin="0,0,0,10"/>
-                <TextBox FontSize="18" x:Name="tbModel" Grid.Row="1" Grid.Column="1" Text="{Binding Model}" Margin="5,0,0,10"/>
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="1" Grid.Column="0" Text="Организация:" Margin="0,0,0,10"/>
+                <ComboBox x:Name="cbOrg"
+                          Grid.Row="1"
+                          Grid.Column="1"
+                          FontSize="14"
+                          Margin="5,0,0,10">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="2" Grid.Column="0" Text="Код вида транспорта:" Margin="0,0,0,10"/>
-                <ComboBox x:Name="cbTransportTypeId"
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="2" Grid.Column="0" Text="Диспетчер:" Margin="0,0,0,10"/>
+                <ComboBox x:Name="cbDis"
                           Grid.Row="2"
                           Grid.Column="1"
-                          FontSize="18"
+                          FontSize="14"
                           Margin="5,0,0,10">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding TypesName}"/>
+                            <TextBlock Text="{Binding FIO}"/>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="3" Grid.Column="0" Text="Код отдела:" Margin="0,0,0,10"/>
-                <ComboBox x:Name="cbDepartmentsId"
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="3" Grid.Column="0" Text="Водитель:" Margin="0,0,0,10"/>
+                <ComboBox x:Name="cbDri"
                           Grid.Row="3"
                           Grid.Column="1"
-                          FontSize="18"
+                          FontSize="14"
                           Margin="5,0,0,10">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding DepartmentName}"/>
+                            <TextBlock Text="{Binding FIO}"/>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="4" Grid.Column="0" Text="Код статуса:" Margin="0,0,0,10"/>
-                <ComboBox x:Name="cbStatusId"
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="4" Grid.Column="0" Text="Заказчик:" Margin="0,0,0,10"/>
+                <ComboBox x:Name="cbCus"
                           Grid.Row="4"
                           Grid.Column="1"
-                          FontSize="18"
+                          FontSize="14"
                           Margin="5,0,0,10">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding StatusName}"/>
+                            <TextBlock Text="{Binding FIO}"/>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="5" Grid.Column="0" Text="Государственный номер:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbGovNumber"  Grid.Row="5" Grid.Column="1" Text="{Binding GovNumber}" Margin="5,0,0,10"/>
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="5" Grid.Column="0" Text="Автотранспорт:" Margin="0,0,0,10"/>
+                <ComboBox x:Name="cbTs"
+                          Grid.Row="5"
+                          Grid.Column="1"
+                          FontSize="14"
+                          Margin="5,0,0,10">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding tsModel}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="6" Grid.Column="0" Text="VIN-номер:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbVinNumber" Grid.Row="6" Grid.Column="1" Text="{Binding VinNumber}" Margin="5,0,0,10"/>
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="6" Grid.Column="0" Text="Дата начала:" Margin="0,0,0,10"/>
+                <DatePicker x:Name="dpStartDate" Grid.Row="6" Grid.Column="2" Text="{Binding startDate, StringFormat=dd.MM.yyy}" FontFamily="Roboto Medium" FontSize="14" MaxHeight="30" MinWidth="300" SelectedDateFormat="Short" Margin="5,0,0,10" />
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="7" Grid.Column="0"  Text="Фото автотранспорта:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"   x:Name="tbPhoto" Grid.Row="7" Grid.Column="1" Text="{Binding Photo}" Margin="5,0,0,10"/>
+
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="7" Grid.Column="0" Text="Дата окончания:" Margin="0,0,0,10"/>
+                <DatePicker x:Name="dpEndDate" Grid.Row="7" Grid.Column="2" Text="{Binding receiptDate, StringFormat=dd.MM.yyy}" FontFamily="Roboto Medium" FontSize="14" MaxHeight="30" MinWidth="300" SelectedDateFormat="Short" Margin="5,0,0,10" />
+
+
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="8" Grid.Column="0" Text="Вид перемещения:" Margin="0,0,0,10"/>
+                <ComboBox x:Name="cbMes"
+                          Grid.Row="8"
+                          Grid.Column="1"
+                          FontSize="14"
+                          Margin="5,0,0,10">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="9" Grid.Column="0" Text="Вид трансортировки:" Margin="0,0,0,10"/>
+                <ComboBox x:Name="cbTrans"
+                          Grid.Row="9"
+                          Grid.Column="1"
+                          FontSize="14"
+                          Margin="5,0,0,10">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <TextBlock HorizontalAlignment="Right" FontSize="18" Grid.Row="10" Grid.Column="0" Text="Адрес прибытия:" Margin="0,0,0,10"/>
+                <TextBox FontSize="14" x:Name="tbRoute" Grid.Row="10" Grid.Column="1" Text="{Binding routee}" Margin="5,0,0,10"/>
             </Grid>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Button x:Name="btnBack" Content="На главную" Margin="0,0,10,0" MinWidth="120" Click="btnBack_Click"/>
-            <!--<Button x:Name="btnAdd" Content="Добавить" Margin="10,0,0,0" MinWidth="120" Click="btnAdd_Click"/>-->
+            <Button x:Name="btnAdd" Content="Добавить" Margin="10,0,0,0" MinWidth="120" Click="btnAdd_Click"/>
         </StackPanel>
     </Grid>
 </Page>

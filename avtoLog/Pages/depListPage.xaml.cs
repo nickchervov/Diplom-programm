@@ -2,6 +2,7 @@
 using avtoLog.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,22 +23,31 @@ namespace avtoLog.Pages
     /// </summary>
     public partial class depListPage : Page
     {
+        DbSet<Departments> dep;
+
         public depListPage()
         {
             InitializeComponent();
+
+            connectingDb();
         }
-        private void btnBack_Click(object sender, RoutedEventArgs e)
+        private void searchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            PageHelper.MainFrame.Navigate(new mainMenu());
+            lvDep.ItemsSource = dep.Where(x => x.name.Contains(searchBox.Text) || x.org.name.Contains(searchBox.Text)).ToList();
         }
-        private void btnChange_Click(object sender, RoutedEventArgs e)
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            var selected = lvCars.SelectedItem /*as Transport*/;
-            if (selected == null)
+            var selected = lvDep.SelectedItem as Departments;
+            if (selected != null)
             {
-                if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
+
+                if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите удалить запись?", "Внимание!", MessageBoxButton.YesNo))
                 {
-                    PageHelper.MainFrame.Navigate(new changeDepPage());
+                    PageHelper.DbConnect.Departments.Remove(selected);
+                    PageHelper.DbConnect.SaveChanges();
+
+                    connectingDb();
                 }
                 else return;
             }
@@ -45,6 +55,40 @@ namespace avtoLog.Pages
             {
                 MessageBox.Show("Нет выбранной записи", "Внимание!");
             }
+        }
+
+        private void btnChange_Click(object sender, RoutedEventArgs e)
+        {
+            var selected = lvDep.SelectedItem as Departments;
+            if (selected != null)
+            {
+                if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
+                {
+                    PageHelper.MainFrame.Navigate(new changeDepPage(selected));
+                }
+                else return;
+            }
+            else
+            {
+                MessageBox.Show("Нет выбранной записи", "Внимание!");
+            }
+        }
+
+        private void connectingDb()
+        {
+            dep = PageHelper.DbConnect.Departments;
+
+            lvDep.ItemsSource = dep.ToList();
+        }
+
+        private void btnBackImg_Click(object sender, RoutedEventArgs e)
+        {
+            PageHelper.MainFrame.Navigate(new mainMenu());
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            PageHelper.MainFrame.Navigate(new mainMenu());
         }
 
     }

@@ -1,6 +1,8 @@
-﻿using avtoLog.Helpers;
+﻿using avtoLog.DbModel;
+using avtoLog.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +29,27 @@ namespace avtoLog.Pages
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
-            PageHelper.MainFrame.Navigate(new mainMenu());
+            PageHelper.MainFrame.GoBack();
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            org orgs = new org();
+        
+            orgs.name = tbName.Text;            
+            orgs.country = tbCountry.Text;
+            orgs.postcode = tbPostCode.Text;
+            orgs.city = tbCity.Text;
+            orgs.street = tbStreet.Text;
+          
+            if (MessageBoxResult.Yes == MessageBox.Show("Вы действительно хотите добавить запись?", "Предупреждение", MessageBoxButton.YesNo))
+            {
+                PageHelper.DbConnect.org.Add(orgs);
+                PageHelper.DbConnect.SaveChangesAsync();
+                MessageBox.Show("Запись добавлена.", "ОК");
+                PageHelper.MainFrame.Navigate(new orgListPage());
+            }
+        }
+
     }
 }

@@ -8,6 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="newDepPage">
 
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.1*"/>
@@ -16,7 +17,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock Text="Добавление записи" FontSize="24"/>
+            <TextBlock Text="Добавление нового подразделения" FontSize="24"/>
         </StackPanel>
 
         <StackPanel
@@ -31,72 +32,28 @@
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-
                 </Grid.RowDefinitions>
-                <TextBlock HorizontalAlignment="Right" FontSize="18" Grid.Row="0" Grid.Column="0" Text="Бренд автотранcпорта:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18" x:Name="tbBrand" Grid.Row="0" Grid.Column="1" Text="{Binding Brand}" Margin="5,0,0,10"/>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="1" Grid.Column="0" Text="Модель автотранспорта: " Margin="0,0,0,10"/>
-                <TextBox FontSize="18" x:Name="tbModel" Grid.Row="1" Grid.Column="1" Text="{Binding Model}" Margin="5,0,0,10"/>
+                <TextBlock HorizontalAlignment="Right" FontSize="18" Grid.Row="0" Grid.Column="0" Text="Наименование подразделения:" Margin="0,0,0,10"/>
+                <TextBox FontSize="18" x:Name="tbName" Grid.Row="0" Grid.Column="1" Text="{Binding name}" Margin="5,0,0,10"/>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="2" Grid.Column="0" Text="Код вида транспорта:" Margin="0,0,0,10"/>
-                <ComboBox x:Name="cbTransportTypeId"
-                          Grid.Row="2"
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="1" Grid.Column="0" Text="Организация:" Margin="0,0,0,10"/>
+                <ComboBox x:Name="cbOrgId"
+                          Grid.Row="1"
                           Grid.Column="1"
                           FontSize="18"
                           Margin="5,0,0,10">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding TypesName}"/>
+                            <TextBlock Text="{Binding name}"/>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="3" Grid.Column="0" Text="Код отдела:" Margin="0,0,0,10"/>
-                <ComboBox x:Name="cbDepartmentsId"
-                          Grid.Row="3"
-                          Grid.Column="1"
-                          FontSize="18"
-                          Margin="5,0,0,10">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding DepartmentName}"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
-
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="4" Grid.Column="0" Text="Код статуса:" Margin="0,0,0,10"/>
-                <ComboBox x:Name="cbStatusId"
-                          Grid.Row="4"
-                          Grid.Column="1"
-                          FontSize="18"
-                          Margin="5,0,0,10">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding StatusName}"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
-
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="5" Grid.Column="0" Text="Государственный номер:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbGovNumber"  Grid.Row="5" Grid.Column="1" Text="{Binding GovNumber}" Margin="5,0,0,10"/>
-
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="6" Grid.Column="0" Text="VIN-номер:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbVinNumber" Grid.Row="6" Grid.Column="1" Text="{Binding VinNumber}" Margin="5,0,0,10"/>
-
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="7" Grid.Column="0"  Text="Фото автотранспорта:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"   x:Name="tbPhoto" Grid.Row="7" Grid.Column="1" Text="{Binding Photo}" Margin="5,0,0,10"/>
             </Grid>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Button x:Name="btnBack" Content="На главную" Margin="0,0,10,0" MinWidth="120" Click="btnBack_Click"/>
-            <!--<Button x:Name="btnAdd" Content="Добавить" Margin="10,0,0,0" MinWidth="120" Click="btnAdd_Click"/>-->
+            <Button x:Name="btnAdd" Content="Добавить" Margin="10,0,0,0" MinWidth="120" Click="btnAdd_Click"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -19,6 +19,7 @@
             <!--<Button x:Name="btnBackImg" MaxHeight="30" Background="Transparent" Margin="0,0,5,0" Click="btnBackImg_Click">
                 <Image Source="/Images/logout.png" />
             </Button>-->
+            <TextBlock Text="Автотранспорт" VerticalAlignment="Center" FontSize="22" Margin="0,0,70,0"/>
             <TextBlock Text="Поиск" VerticalAlignment="Center" Margin="0,0,5,0"/>
             <TextBox x:Name="searchBox" TextChanged="searchBox_TextChanged" MinHeight="30">
                 <TextBox.Resources>
@@ -60,14 +61,11 @@
                             <StackPanel VerticalAlignment="Center">
                                 <!--ДАННЫЕ-->
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Path= Brand}"/>
-                                    <TextBlock Text=" "/>
-                                    <TextBlock Text="{Binding Path= Model}"/>
+                                    <TextBlock Text="{Binding Path= tsModel}"/>
                                 </StackPanel>
                                 <TextBlock Text="{Binding Path= GovNumber}"/>
-                                <TextBlock Text="{Binding Path= VinNumber}"/>
-                                <TextBlock Text="{Binding Path= TransportTypes.TypesName}"/>
-                                <TextBlock x:Name="tbStatus" Text="{Binding Path= TransportStatus.StatusName}"/>
+                                <TextBlock Text="{Binding Path= TsTypes.name}"/>
+                                <TextBlock x:Name="tbStatus" Text="{Binding Path= TsStatus.statusName}"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>

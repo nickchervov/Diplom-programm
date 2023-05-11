@@ -1,6 +1,8 @@
-﻿using avtoLog.Helpers;
+﻿using avtoLog.DbModel;
+using avtoLog.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,22 +23,35 @@ namespace avtoLog.Pages
     /// </summary>
     public partial class empListPage : Page
     {
+        DbSet<Personal> emp;
+
+        DbSet<Auth> auth;
         public empListPage()
         {
             InitializeComponent();
+
+            connectingDb();
         }
-        private void btnBack_Click(object sender, RoutedEventArgs e)
+        private void searchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            PageHelper.MainFrame.Navigate(new mainMenu());
+            lvEmp.ItemsSource = emp.Where(x => x.FIO.Contains(searchBox.Text) || x.position.Contains(searchBox.Text) || x.tabNumber.ToString().Contains(searchBox.Text)).ToList();
         }
-        private void btnChange_Click(object sender, RoutedEventArgs e)
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            var selected = lvCars.SelectedItem /*as Transport*/;
-            if (selected == null)
+            var selected = lvEmp.SelectedItem as Personal;
+            if (selected != null)
             {
-                if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
+
+                if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите удалить запись?", "Внимание!", MessageBoxButton.YesNo))
                 {
-                    PageHelper.MainFrame.Navigate(new changeEmpPage());
+                    auth = PageHelper.DbConnect.Auth;
+
+                    PageHelper.DbConnect.Auth.Remove(auth.Where(x => x.personId == selected.id).FirstOrDefault());
+                    PageHelper.DbConnect.Personal.Remove(selected);
+                    PageHelper.DbConnect.SaveChanges();
+
+                    connectingDb();
                 }
                 else return;
             }
@@ -44,6 +59,40 @@ namespace avtoLog.Pages
             {
                 MessageBox.Show("Нет выбранной записи", "Внимание!");
             }
+        }
+
+        private void btnChange_Click(object sender, RoutedEventArgs e)
+        {
+            var selected = lvEmp.SelectedItem as Personal;
+            if (selected != null)
+            {
+                if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
+                {
+                    PageHelper.MainFrame.Navigate(new changeEmpPage(selected));
+                }
+                else return;
+            }
+            else
+            {
+                MessageBox.Show("Нет выбранной записи", "Внимание!");
+            }
+        }
+
+        private void connectingDb()
+        {
+            emp = PageHelper.DbConnect.Personal;
+
+            lvEmp.ItemsSource = emp.ToList();
+        }
+
+        private void btnBackImg_Click(object sender, RoutedEventArgs e)
+        {
+            PageHelper.MainFrame.Navigate(new mainMenu());
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            PageHelper.MainFrame.Navigate(new mainMenu());
         }
     }
 }

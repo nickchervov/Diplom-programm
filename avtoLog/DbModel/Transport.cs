@@ -14,18 +14,23 @@ namespace avtoLog.DbModel
     
     public partial class Transport
     {
-        public int Id { get; set; }
-        public string Brand { get; set; }
-        public string Model { get; set; }
-        public int TransportTypeId { get; set; }
-        public int DepartmentsId { get; set; }
-        public int StatusId { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Transport()
+        {
+            this.Waybillses = new HashSet<Waybillses>();
+        }
+    
+        public int id { get; set; }
         public string GovNumber { get; set; }
-        public string VinNumber { get; set; }
+        public string tsModel { get; set; }
+        public int tsTypeId { get; set; }
+        public int tsStatusId { get; set; }
         public string Photo { get; set; }
     
-        public virtual Departments Departments { get; set; }
-        public virtual TransportStatus TransportStatus { get; set; }
-        public virtual TransportTypes TransportTypes { get; set; }
+        public virtual Photos Photos { get; set; }
+        public virtual TsStatus TsStatus { get; set; }
+        public virtual TsTypes TsTypes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Waybillses> Waybillses { get; set; }
     }
 }

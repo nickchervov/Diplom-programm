@@ -1,6 +1,8 @@
-﻿using avtoLog.Helpers;
+﻿using avtoLog.DbModel;
+using avtoLog.Helpers;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using AutoMapper;
 
 namespace avtoLog.Pages
 {
@@ -21,13 +24,36 @@ namespace avtoLog.Pages
     /// </summary>
     public partial class changeDriLicPage : Page
     {
-        public changeDriLicPage()
+        DriverLicense _driLic;
+
+
+        public changeDriLicPage(DriverLicense driLic)
         {
             InitializeComponent();
+
+            _driLic = driLic;
+
+            DataContext = _driLic;
+
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             PageHelper.MainFrame.GoBack();
+        }
+
+        private void btnChange_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
+            {
+                _driLic.receiptDate = Convert.ToDateTime(dpRecDate.Text);
+
+                _driLic.endDate = Convert.ToDateTime(dpEndDate.Text);
+
+                PageHelper.DbConnect.SaveChangesAsync();
+                MessageBox.Show("Данные изменены.", "ОК");
+                PageHelper.MainFrame.Navigate(new driLicListPage());
+            }
+            else return;
         }
     }
 }

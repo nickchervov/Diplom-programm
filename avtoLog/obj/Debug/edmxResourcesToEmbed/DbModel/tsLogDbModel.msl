@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище tsLogDbModelContainer" CdmEntityContainer="tsLogDbEntities">
+    <EntitySetMapping Name="Auth">
+      <EntityTypeMapping TypeName="tsLogDbModel.Auth">
+        <MappingFragment StoreEntitySet="Auth">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="personId" ColumnName="personId" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departments">
+      <EntityTypeMapping TypeName="tsLogDbModel.Departments">
+        <MappingFragment StoreEntitySet="Departments">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="orgId" ColumnName="orgId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DriverLicense">
+      <EntityTypeMapping TypeName="tsLogDbModel.DriverLicense">
+        <MappingFragment StoreEntitySet="DriverLicense">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="seriesNumber" ColumnName="seriesNumber" />
+          <ScalarProperty Name="receiptDate" ColumnName="receiptDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DriverLicenseClass">
+      <EntityTypeMapping TypeName="tsLogDbModel.DriverLicenseClass">
+        <MappingFragment StoreEntitySet="DriverLicenseClass">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="licenseId" ColumnName="licenseId" />
+          <ScalarProperty Name="classId" ColumnName="classId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LicenseClasses">
+      <EntityTypeMapping TypeName="tsLogDbModel.LicenseClasses">
+        <MappingFragment StoreEntitySet="LicenseClasses">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MesTypes">
+      <EntityTypeMapping TypeName="tsLogDbModel.MesTypes">
+        <MappingFragment StoreEntitySet="MesTypes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="org">
+      <EntityTypeMapping TypeName="tsLogDbModel.org">
+        <MappingFragment StoreEntitySet="org">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="postcode" ColumnName="postcode" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="street" ColumnName="street" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Personal">
+      <EntityTypeMapping TypeName="tsLogDbModel.Personal">
+        <MappingFragment StoreEntitySet="Personal">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tabNumber" ColumnName="tabNumber" />
+          <ScalarProperty Name="FIO" ColumnName="FIO" />
+          <ScalarProperty Name="position" ColumnName="position" />
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="age" ColumnName="age" />
+          <ScalarProperty Name="pol" ColumnName="pol" />
+          <ScalarProperty Name="idVU" ColumnName="idVU" />
+          <ScalarProperty Name="isDri" ColumnName="isDri" />
+          <ScalarProperty Name="isDis" ColumnName="isDis" />
+          <ScalarProperty Name="isAdm" ColumnName="isAdm" />
+          <ScalarProperty Name="isPer" ColumnName="isPer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Photos">
+      <EntityTypeMapping TypeName="tsLogDbModel.Photos">
+        <MappingFragment StoreEntitySet="Photos">
+          <ScalarProperty Name="URLPhoto" ColumnName="URLPhoto" />
+          <ScalarProperty Name="codeName" ColumnName="codeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transport">
+      <EntityTypeMapping TypeName="tsLogDbModel.Transport">
+        <MappingFragment StoreEntitySet="Transport">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="GovNumber" ColumnName="GovNumber" />
+          <ScalarProperty Name="tsModel" ColumnName="tsModel" />
+          <ScalarProperty Name="tsTypeId" ColumnName="tsTypeId" />
+          <ScalarProperty Name="tsStatusId" ColumnName="tsStatusId" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TransTypes">
+      <EntityTypeMapping TypeName="tsLogDbModel.TransTypes">
+        <MappingFragment StoreEntitySet="TransTypes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TsStatus">
+      <EntityTypeMapping TypeName="tsLogDbModel.TsStatus">
+        <MappingFragment StoreEntitySet="TsStatus">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="statusName" ColumnName="statusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TsTypes">
+      <EntityTypeMapping TypeName="tsLogDbModel.TsTypes">
+        <MappingFragment StoreEntitySet="TsTypes">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Waybillses">
+      <EntityTypeMapping TypeName="tsLogDbModel.Waybillses">
+        <MappingFragment StoreEntitySet="Waybillses">
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="mesTypeId" ColumnName="mesTypeId" />
+          <ScalarProperty Name="transTypeId" ColumnName="transTypeId" />
+          <ScalarProperty Name="idDis" ColumnName="idDis" />
+          <ScalarProperty Name="idCus" ColumnName="idCus" />
+          <ScalarProperty Name="transportId" ColumnName="transportId" />
+          <ScalarProperty Name="orgId" ColumnName="orgId" />
+          <ScalarProperty Name="routee" ColumnName="routee" />
+          <ScalarProperty Name="idDri" ColumnName="idDri" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

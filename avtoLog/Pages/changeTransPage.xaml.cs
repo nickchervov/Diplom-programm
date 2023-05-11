@@ -1,4 +1,5 @@
-﻿using avtoLog.Helpers;
+﻿using avtoLog.DbModel;
+using avtoLog.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,14 +21,26 @@ namespace avtoLog.Pages
     /// Логика взаимодействия для changeTransPage.xaml
     /// </summary>
     public partial class changeTransPage : Page
-    {
-        public changeTransPage()
+    {   
+        TransTypes _transTypes;
+
+        public changeTransPage(TransTypes transTypes)
         {
             InitializeComponent();
+
+            _transTypes = transTypes;
+
+            DataContext = _transTypes;
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             PageHelper.MainFrame.GoBack();
+        }
+        private void btnChange_Click(object sender, RoutedEventArgs e)
+        {
+            PageHelper.DbConnect.SaveChangesAsync();
+            MessageBox.Show("Данные изменены.", "ОК");
+            PageHelper.MainFrame.Navigate(new transTypesListPage());
         }
     }
 }

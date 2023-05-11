@@ -5,7 +5,6 @@ E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\bin\Release\Entit
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\bin\Release\EntityFramework.SqlServer.dll
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\bin\Release\EntityFramework.xml
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\bin\Release\EntityFramework.SqlServer.xml
-E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\bin\Release\ru\EntityFramework.resources.dll
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\avtoLog.csproj.AssemblyReference.cache
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\avtoLog.csproj.SuggestedBindingRedirects.cache
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\MainWindow.g.cs
@@ -39,9 +38,7 @@ E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\empListPage.g.cs
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\mesTypesListPage.g.cs
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newDepPage.g.cs
-E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newDisPage.g.cs
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newDriLicPage.g.cs
-E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newDriPage.g.cs
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newEmpPage.g.cs
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newOrgPage.g.cs
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newWaybillPage.g.cs
@@ -56,9 +53,7 @@ E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\empListPage.baml
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\mesTypesListPage.baml
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newDepPage.baml
-E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newDisPage.baml
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newDriLicPage.baml
-E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newDriPage.baml
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newEmpPage.baml
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newOrgPage.baml
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newWaybillPage.baml
@@ -86,3 +81,5 @@ E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\changeTransPage.baml
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\changeTsTypesPage.baml
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\changeWaybillPage.baml
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\bin\Release\AutoMapper.dll
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\bin\Release\AutoMapper.xml

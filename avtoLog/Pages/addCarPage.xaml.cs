@@ -29,11 +29,11 @@ namespace avtoLog.Pages
         {
             InitializeComponent();
 
-            cbTransportTypeId.ItemsSource = PageHelper.DbConnect.TransportTypes.ToList();
+            cbTransportTypeId.ItemsSource = PageHelper.DbConnect.TsTypes.ToList();
 
-            cbDepartmentsId.ItemsSource = PageHelper.DbConnect.Departments.ToList();
+            cbPhotoURL.ItemsSource = PageHelper.DbConnect.Photos.ToList();
 
-            cbStatusId.ItemsSource = PageHelper.DbConnect.TransportStatus.ToList();
+            cbStatusId.ItemsSource = PageHelper.DbConnect.TsStatus.ToList();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)
@@ -45,25 +45,26 @@ namespace avtoLog.Pages
         {
             Transport avto = new Transport();
 
-            avto.Brand = tbBrand.Text;
-            avto.Model = tbModel.Text;
+            if (tbGovNumber.Text.Length > 13)
+            {
+                MessageBox.Show("Необходимо ввести менее 14 символов государственного номера.", "Внимание!");
+                return;
+            }
+            else
+            {
+                avto.GovNumber = tbGovNumber.Text;
+            }
+
+            avto.tsModel = tbModel.Text;
 
             if (cbTransportTypeId.SelectedItem == null)
             {
                 MessageBox.Show("Тип автотранспорта не выбран");
                 return;
-            } else
-            {
-                avto.TransportTypeId = (cbTransportTypeId.SelectedItem as TransportTypes).Id;
             }
-
-            if (cbDepartmentsId.SelectedItem == null)
+            else
             {
-                MessageBox.Show("Департамент не выбран");
-                return;
-            } else
-            {
-                avto.DepartmentsId = (cbDepartmentsId.SelectedItem as Departments).Id;
+                avto.tsTypeId = (cbTransportTypeId.SelectedItem as TsTypes).id;
             }
 
             if (cbStatusId.SelectedItem == null)
@@ -73,35 +74,26 @@ namespace avtoLog.Pages
             }
             else
             {
-                avto.StatusId = (cbStatusId.SelectedItem as TransportStatus).Id;
+                avto.tsStatusId = (cbStatusId.SelectedItem as TsStatus).id;
             }
 
-            if(tbGovNumber.Text.Length > 7)
+            if (cbPhotoURL.SelectedItem == null)
             {
-                MessageBox.Show("Необходимо ввести менее 7 символов государственного номера.", "Внимание!");
+                MessageBox.Show("Департамент не выбран");
                 return;
             }
             else
             {
-                avto.GovNumber = tbGovNumber.Text;
+                avto.Photo = (cbPhotoURL.SelectedItem as Photos).URLPhoto;
             }
 
-            if (tbVinNumber.Text.Length > 17)
+            if (MessageBoxResult.Yes == MessageBox.Show("Вы действительно хотите добавить запись?", "Предупреждение", MessageBoxButton.YesNo))
             {
-                MessageBox.Show("Необходимо ввести менее 17 символов VIN-номера.","Внимание!");
-                return;
-            }
-            else
-            {
-                avto.VinNumber = tbVinNumber.Text;
-            }
-
-            avto.Photo = tbPhoto.Text;
-
-            PageHelper.DbConnect.Transport.Add(avto);
-            PageHelper.DbConnect.SaveChangesAsync();
-            MessageBox.Show("Запись добавлена.", "ОК");
-            PageHelper.MainFrame.Navigate(new carListPage());
+                PageHelper.DbConnect.Transport.Add(avto);
+                PageHelper.DbConnect.SaveChangesAsync();
+                MessageBox.Show("Запись добавлена.", "ОК");
+                PageHelper.MainFrame.Navigate(new carListPage());
+            }           
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -14,6 +15,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,11 +38,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -72,38 +78,62 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DbModel\avtoLogDbEntities.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>avtoLogDbEntities.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DbModel\avtoLogDbEntities.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>avtoLogDbEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DbModel\avtoLogDbEntities.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>avtoLogDbEntities.edmx</DependentUpon>
+    <Compile Include="DbModel\Auth.cs">
+      <DependentUpon>tsLogDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DbModel\Departments.cs">
-      <DependentUpon>avtoLogDbEntities.tt</DependentUpon>
+      <DependentUpon>tsLogDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DbModel\Employees.cs">
-      <DependentUpon>avtoLogDbEntities.tt</DependentUpon>
+    <Compile Include="DbModel\DriverLicense.cs">
+      <DependentUpon>tsLogDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DbModel\Position.cs">
-      <DependentUpon>avtoLogDbEntities.tt</DependentUpon>
+    <Compile Include="DbModel\DriverLicenseClass.cs">
+      <DependentUpon>tsLogDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModel\LicenseClasses.cs">
+      <DependentUpon>tsLogDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModel\MesTypes.cs">
+      <DependentUpon>tsLogDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModel\org.cs">
+      <DependentUpon>tsLogDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModel\Personal.cs">
+      <DependentUpon>tsLogDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModel\Photos.cs">
+      <DependentUpon>tsLogDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DbModel\Transport.cs">
-      <DependentUpon>avtoLogDbEntities.tt</DependentUpon>
+      <DependentUpon>tsLogDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DbModel\TransportStatus.cs">
-      <DependentUpon>avtoLogDbEntities.tt</DependentUpon>
+    <Compile Include="DbModel\TransTypes.cs">
+      <DependentUpon>tsLogDbModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DbModel\TransportTypes.cs">
-      <DependentUpon>avtoLogDbEntities.tt</DependentUpon>
+    <Compile Include="DbModel\tsLogDbModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tsLogDbModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModel\tsLogDbModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tsLogDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModel\tsLogDbModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tsLogDbModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DbModel\TsStatus.cs">
+      <DependentUpon>tsLogDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModel\TsTypes.cs">
+      <DependentUpon>tsLogDbModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DbModel\Waybillses.cs">
+      <DependentUpon>tsLogDbModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Helpers\PageHelper.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -198,15 +228,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\newDisPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Pages\newDriLicPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\newDriPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -306,14 +328,8 @@
     <Compile Include="Pages\newDepPage.xaml.cs">
       <DependentUpon>newDepPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\newDisPage.xaml.cs">
-      <DependentUpon>newDisPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pages\newDriLicPage.xaml.cs">
       <DependentUpon>newDriLicPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\newDriPage.xaml.cs">
-      <DependentUpon>newDriPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\newEmpPage.xaml.cs">
       <DependentUpon>newEmpPage.xaml</DependentUpon>
@@ -353,13 +369,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DbModel\avtoLogDbEntities.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>avtoLogDbEntities.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DbModel\avtoLogDbEntities.edmx.diagram">
-      <DependentUpon>avtoLogDbEntities.edmx</DependentUpon>
-    </None>
     <Resource Include="Fonts\Roboto-Black.ttf" />
     <Resource Include="Fonts\Roboto-BlackItalic.ttf" />
     <Resource Include="Fonts\Roboto-Bold.ttf" />
@@ -372,6 +381,13 @@
     <Resource Include="Fonts\Roboto-Regular.ttf" />
     <Resource Include="Fonts\Roboto-Thin.ttf" />
     <Resource Include="Fonts\Roboto-ThinItalic.ttf" />
+    <EntityDeploy Include="DbModel\tsLogDbModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>tsLogDbModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DbModel\tsLogDbModel.edmx.diagram">
+      <DependentUpon>tsLogDbModel.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -400,16 +416,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DbModel\avtoLogDbEntities.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>avtoLogDbEntities.edmx</DependentUpon>
-      <LastGenOutput>avtoLogDbEntities.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DbModel\avtoLogDbEntities.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>avtoLogDbEntities.edmx</DependentUpon>
-      <LastGenOutput>avtoLogDbEntities.cs</LastGenOutput>
-    </Content>
     <Resource Include="ODK.png" />
     <Resource Include="Images\kamaz.png" />
     <Resource Include="Images\gaz.png" />
@@ -417,6 +423,25 @@
     <Resource Include="Images\lexus.png" />
     <Resource Include="Images\camry.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DbModel\tsLogDbModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>tsLogDbModel.edmx</DependentUpon>
+      <LastGenOutput>tsLogDbModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DbModel\tsLogDbModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>tsLogDbModel.edmx</DependentUpon>
+      <LastGenOutput>tsLogDbModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>
