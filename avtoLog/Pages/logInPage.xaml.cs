@@ -46,7 +46,7 @@ namespace avtoLog.Pages
 
                 PageHelper.MainFrame.Navigate(new mainMenu());
             }
-            else if (PageHelper.DbConnect.Auth.Where(x => x.login == tbLogin.Text && x.password == pbPassword.Password && x.Personal.position == "Инженер" || x.Personal.position == "Главный инженер").FirstOrDefault() != null)
+            else if (PageHelper.DbConnect.Auth.Where(x => x.login == tbLogin.Text && x.password == pbPassword.Password && (x.Personal.position == "Инженер" || x.Personal.position == "Главный инженер")).FirstOrDefault() != null)
             {
                 PageHelper.role = 4; //работники сервиса
 
@@ -54,7 +54,7 @@ namespace avtoLog.Pages
             }
             else if (PageHelper.DbConnect.Auth.Where(x => x.login == tbLogin.Text && x.password == pbPassword.Password && x.Personal.isPer == true).FirstOrDefault() != null)
             {
-                PageHelper.role = 5; //работники сервиса
+                PageHelper.role = 5; //работники по персоналу
 
                 PageHelper.MainFrame.Navigate(new mainMenu());
             }

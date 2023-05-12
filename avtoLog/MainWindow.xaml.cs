@@ -29,7 +29,7 @@ namespace avtoLog
 
             PageHelper.MainFrame = mainFrame;
 
-            PageHelper.MainFrame.Navigate(new mainMenu());
+            PageHelper.MainFrame.Navigate(new logInPage());
         }
     }
 }

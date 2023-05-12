@@ -15,7 +15,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel HorizontalAlignment="Right" Margin="0,0,30,0">
-            <TextBlock Text="Документы" HorizontalAlignment="Center" Margin="0,0,0,15"/>
+            <TextBlock x:Name="tbDoc" Text="Документы" HorizontalAlignment="Center" Margin="0,0,0,15"/>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="waybillListBtn" Content="Путевые листы" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="waybillListBtn_Click" />
                 <Button x:Name="newWaybillBtn" Content="+Новый" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newWaybillBtn_Click" />
@@ -39,7 +39,7 @@
         </StackPanel>
 
         <StackPanel HorizontalAlignment="Left" Grid.Column="1" Margin="30,0,0,0">
-            <TextBlock Text="Справочники" HorizontalAlignment="Center" Margin="0,0,0,15"/>
+            <TextBlock x:Name="tbSpr" Text="Справочники" HorizontalAlignment="Center" Margin="0,0,0,15"/>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="loginListBtn" Content="Логины и пароли" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="loginListBtn_Click" />
                 <Button x:Name="newLoginBtn" Content="+Новый" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newLoginBtn_Click"/>

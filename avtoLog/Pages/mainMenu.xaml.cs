@@ -25,7 +25,117 @@ namespace avtoLog.Pages
         {
             InitializeComponent();
 
+            if (PageHelper.role == 2)
+            {   
 
+                transportListBtn.Visibility = Visibility.Collapsed;
+                newTsBtn.Visibility = Visibility.Collapsed;
+
+                empListBtn.Visibility = Visibility.Collapsed;
+                newEmpBtn.Visibility = Visibility.Collapsed;
+
+                orgListBTN.Visibility = Visibility.Collapsed;
+                newOrgBtn.Visibility = Visibility.Collapsed;
+
+                depListBTN.Visibility = Visibility.Collapsed;
+                newDepBtn.Visibility = Visibility.Collapsed;
+
+                loginListBtn.Visibility = Visibility.Collapsed;
+                newLoginBtn.Visibility = Visibility.Collapsed;
+
+                driLicListBtn.Visibility = Visibility.Collapsed;
+                newDriLicBtn.Visibility = Visibility.Collapsed;
+
+                tsPhotoBtn.Visibility = Visibility.Collapsed;
+                newTsPhotoBtn.Visibility = Visibility.Collapsed;
+
+                driListBTN.Visibility = Visibility.Collapsed;
+
+                disListBTN.Visibility = Visibility.Collapsed;
+
+                tsTypesListBTN.Visibility = Visibility.Collapsed;
+
+
+            } else if (PageHelper.role == 3)
+            {   
+                tbSpr.Visibility = Visibility.Collapsed;
+
+                waybillListBtn.Visibility = Visibility.Collapsed;
+                newWaybillBtn.Visibility = Visibility.Collapsed;
+
+                newTsBtn.Visibility= Visibility.Collapsed;
+
+                empListBtn.Visibility = Visibility.Collapsed;
+                newEmpBtn.Visibility = Visibility.Collapsed;
+
+                orgListBTN.Visibility = Visibility.Collapsed;
+                newOrgBtn.Visibility = Visibility.Collapsed;
+
+                depListBTN.Visibility = Visibility.Collapsed;
+                newDepBtn.Visibility = Visibility.Collapsed;
+
+                loginListBtn.Visibility = Visibility.Collapsed;
+                newLoginBtn.Visibility = Visibility.Collapsed;
+
+                driLicListBtn.Visibility = Visibility.Collapsed;
+                newDriLicBtn.Visibility = Visibility.Collapsed;
+
+                tsPhotoBtn.Visibility = Visibility.Collapsed;
+                newTsPhotoBtn.Visibility = Visibility.Collapsed;
+
+                driListBTN.Visibility= Visibility.Collapsed;
+
+                disListBTN.Visibility = Visibility.Collapsed;
+
+                tsTypesListBTN.Visibility = Visibility.Collapsed;
+
+                transTypesListBTN.Visibility = Visibility.Collapsed;
+
+                mesTypesListBTN.Visibility = Visibility.Collapsed;
+            } else if(PageHelper.role == 4)
+            {
+                waybillListBtn.Visibility = Visibility.Collapsed;
+                newWaybillBtn.Visibility = Visibility.Collapsed;
+
+                empListBtn.Visibility = Visibility.Collapsed;
+                newEmpBtn.Visibility = Visibility.Collapsed;
+
+                orgListBTN.Visibility = Visibility.Collapsed;
+                newOrgBtn.Visibility = Visibility.Collapsed;
+
+                depListBTN.Visibility = Visibility.Collapsed;
+                newDepBtn.Visibility = Visibility.Collapsed;
+
+                loginListBtn.Visibility = Visibility.Collapsed;
+                newLoginBtn.Visibility = Visibility.Collapsed;
+
+                driLicListBtn.Visibility = Visibility.Collapsed;
+                newDriLicBtn.Visibility = Visibility.Collapsed;
+
+
+                driListBTN.Visibility = Visibility.Collapsed;
+                disListBTN.Visibility = Visibility.Collapsed;
+
+                transTypesListBTN.Visibility = Visibility.Collapsed;
+
+                mesTypesListBTN.Visibility = Visibility.Collapsed;
+            } else if (PageHelper.role == 5)
+            {
+                waybillListBtn.Visibility = Visibility.Collapsed;
+                newWaybillBtn.Visibility = Visibility.Collapsed;
+
+                transportListBtn.Visibility = Visibility.Collapsed;
+                newTsBtn.Visibility = Visibility.Collapsed;
+
+                tsPhotoBtn.Visibility = Visibility.Collapsed;
+                newTsPhotoBtn.Visibility = Visibility.Collapsed;
+
+                tsTypesListBTN.Visibility = Visibility.Collapsed;
+
+                transTypesListBTN.Visibility = Visibility.Collapsed;
+
+                mesTypesListBTN.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void waybillListBtn_Click(object sender, RoutedEventArgs e)
