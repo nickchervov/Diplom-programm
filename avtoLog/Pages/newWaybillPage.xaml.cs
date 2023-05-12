@@ -32,7 +32,7 @@ namespace avtoLog.Pages
 
             cbDri.ItemsSource = PageHelper.DbConnect.Personal.Where(x => x.isDri == true).ToList();
 
-            //cbCus.ItemsSource = PageHelper.DbConnect.Personal.Where(x => x.isDis == false && x.isDri == false).ToList();
+            cbCus.ItemsSource = PageHelper.DbConnect.Personal.Where(x => x.isDis == false && x.isDri == false).ToList();
 
             cbTs.ItemsSource = PageHelper.DbConnect.Transport.ToList();
 
@@ -49,37 +49,46 @@ namespace avtoLog.Pages
         {
             Waybillses way = new Waybillses();
 
-            try{
-                way.nom = Convert.ToInt32(tbNom.Text);
-            }
-            catch { MessageBox.Show("Поле номер листа должен состоять из цифр","Ошибка"); }
-
-            way.startDate = Convert.ToDateTime(dpStartDate.Text);
-
-            way.endDate = Convert.ToDateTime(dpEndDate.Text);
-
-            way.mesTypeId = (cbMes.SelectedItem as MesTypes).id;
-
-            way.transTypeId = (cbTrans.SelectedItem as TransTypes).id;
-
-            way.idDis = (cbDis.SelectedItem as Personal).id;
-
-            way.idCus = (cbCus.SelectedItem as Personal).id;
-
-            way.transportId = (cbTs.SelectedItem as Transport).id;
-
-            way.orgId = (cbOrg.SelectedItem as org).id;
-
-            way.routee = tbRoute.Text;
-
-            way.idDri = (cbDri.SelectedItem as Personal).id;
-
-            if (MessageBoxResult.Yes == MessageBox.Show("Вы действительно хотите добавить запись?", "Предупреждение", MessageBoxButton.YesNo))
+            if (tbNom.Text != "" && dpStartDate.Text != "" && dpEndDate.Text != "" && cbMes.SelectedItem != null && cbTrans.SelectedItem != null && cbDis.SelectedItem != null && cbCus.SelectedItem != null && cbTs.SelectedItem != null && cbOrg.SelectedItem != null && tbRoute.Text != "" && cbDri.SelectedItem != null)
             {
-                PageHelper.DbConnect.Waybillses.Add(way);
-                PageHelper.DbConnect.SaveChangesAsync();
-                MessageBox.Show("Запись добавлена.", "ОК");
-                PageHelper.MainFrame.Navigate(new waybillList());
+                try
+                {
+                    way.nom = Convert.ToInt32(tbNom.Text);
+                }
+                catch { MessageBox.Show("Поле номер листа должен состоять из цифр", "Ошибка"); }
+
+                way.startDate = Convert.ToDateTime(dpStartDate.Text);
+
+                way.endDate = Convert.ToDateTime(dpEndDate.Text);
+
+                way.mesTypeId = (cbMes.SelectedItem as MesTypes).id;
+
+                way.transTypeId = (cbTrans.SelectedItem as TransTypes).id;
+
+                way.idDis = (cbDis.SelectedItem as Personal).id;
+
+                way.idCus = (cbCus.SelectedItem as Personal).id;
+
+                way.transportId = (cbTs.SelectedItem as Transport).id;
+
+                way.orgId = (cbOrg.SelectedItem as org).id;
+
+                way.routee = tbRoute.Text;
+
+                way.idDri = (cbDri.SelectedItem as Personal).id;
+
+                if (MessageBoxResult.Yes == MessageBox.Show("Вы действительно хотите добавить запись?", "Предупреждение", MessageBoxButton.YesNo))
+                {
+                    PageHelper.DbConnect.Waybillses.Add(way);
+                    PageHelper.DbConnect.SaveChangesAsync();
+                    MessageBox.Show("Запись добавлена.", "ОК");
+                    PageHelper.MainFrame.Navigate(new waybillList());
+                }
+            } 
+            else
+            {
+                MessageBox.Show("Для добавления записи необходимо ввести все данные!", "Ошибка!");
+                return;
             }
         }
     }

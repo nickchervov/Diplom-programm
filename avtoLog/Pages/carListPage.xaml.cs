@@ -50,8 +50,15 @@ namespace avtoLog.Pages
 
                 if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите удалить запись?", "Внимание!", MessageBoxButton.YesNo))
                 {
-                    PageHelper.DbConnect.Transport.Remove(selected);
-                    PageHelper.DbConnect.SaveChanges();
+                    try
+                    {
+                        PageHelper.DbConnect.Transport.Remove(selected);
+                        PageHelper.DbConnect.SaveChanges();
+                    } 
+                    catch
+                    {
+                        MessageBox.Show("Не получилось удалить запись! Имеется связанная запись", "Предупреждение!");
+                    }
 
                     connectingDb();
                 }

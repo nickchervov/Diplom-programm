@@ -36,25 +36,24 @@ namespace avtoLog.Pages
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             Departments dep = new Departments();
-          
-            dep.name = tbName.Text;
 
-            if (cbOrgId.SelectedItem == null)
+            if (tbName.Text != "" && cbOrgId.SelectedItem != null)
             {
-                MessageBox.Show("Тип автотранспорта не выбран");
-                return;
+                dep.name = tbName.Text;
+                dep.orgId = (cbOrgId.SelectedItem as org).id;
+
+                if (MessageBoxResult.Yes == MessageBox.Show("Вы действительно хотите добавить запись?", "Предупреждение", MessageBoxButton.YesNo))
+                {
+                    PageHelper.DbConnect.Departments.Add(dep);
+                    PageHelper.DbConnect.SaveChangesAsync();
+                    MessageBox.Show("Запись добавлена.", "ОК");
+                    PageHelper.MainFrame.Navigate(new depListPage());
+                }
             }
             else
             {
-                dep.orgId = (cbOrgId.SelectedItem as org).id;
-            }
-          
-            if (MessageBoxResult.Yes == MessageBox.Show("Вы действительно хотите добавить запись?", "Предупреждение", MessageBoxButton.YesNo))
-            {
-                PageHelper.DbConnect.Departments.Add(dep);
-                PageHelper.DbConnect.SaveChangesAsync();
-                MessageBox.Show("Запись добавлена.", "ОК");
-                PageHelper.MainFrame.Navigate(new depListPage());
+                MessageBox.Show("Для добавления записи необходимо ввести все данные!", "Ошибка!");
+                return;
             }
         }
     }

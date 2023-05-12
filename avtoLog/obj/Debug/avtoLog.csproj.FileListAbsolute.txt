@@ -132,3 +132,13 @@ E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Debug\Pages\o
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Debug\Pages\transTypesListPage.baml
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Debug\Pages\tsTypesListPage.baml
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Debug\Pages\waybillListPage.baml
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Debug\Pages\changeLoginPage.g.cs
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Debug\Pages\loginListPage.g.cs
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Debug\Pages\newLoginPage.g.cs
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Debug\Pages\changeLoginPage.baml
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Debug\Pages\loginListPage.baml
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Debug\Pages\newLoginPage.baml
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Debug\Pages\newTsPhotoPage.g.cs
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Debug\Pages\tsPhotoListPage.g.cs
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Debug\Pages\newTsPhotoPage.baml
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Debug\Pages\tsPhotoListPage.baml

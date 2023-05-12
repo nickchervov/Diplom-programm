@@ -172,6 +172,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\changeLoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\changeMesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -212,6 +216,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\loginListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\logInPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -236,7 +244,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\newLoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\newOrgPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\newTsPhotoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -249,6 +265,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\transTypesListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\tsPhotoListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -286,6 +306,9 @@
     <Compile Include="Pages\changeEmpPage.xaml.cs">
       <DependentUpon>changeEmpPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\changeLoginPage.xaml.cs">
+      <DependentUpon>changeLoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\changeMesPage.xaml.cs">
       <DependentUpon>changeMesPage.xaml</DependentUpon>
     </Compile>
@@ -316,6 +339,9 @@
     <Compile Include="Pages\empListPage.xaml.cs">
       <DependentUpon>empListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\loginListPage.xaml.cs">
+      <DependentUpon>loginListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\logInPage.xaml.cs">
       <DependentUpon>logInPage.xaml</DependentUpon>
     </Compile>
@@ -334,8 +360,14 @@
     <Compile Include="Pages\newEmpPage.xaml.cs">
       <DependentUpon>newEmpPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\newLoginPage.xaml.cs">
+      <DependentUpon>newLoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\newOrgPage.xaml.cs">
       <DependentUpon>newOrgPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\newTsPhotoPage.xaml.cs">
+      <DependentUpon>newTsPhotoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\newWaybillPage.xaml.cs">
       <DependentUpon>newWaybillPage.xaml</DependentUpon>
@@ -345,6 +377,9 @@
     </Compile>
     <Compile Include="Pages\transTypesListPage.xaml.cs">
       <DependentUpon>transTypesListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\tsPhotoListPage.xaml.cs">
+      <DependentUpon>tsPhotoListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\tsTypesListPage.xaml.cs">
       <DependentUpon>tsTypesListPage.xaml</DependentUpon>

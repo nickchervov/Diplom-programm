@@ -24,6 +24,8 @@ namespace avtoLog.Pages
         public mainMenu()
         {
             InitializeComponent();
+
+
         }
 
         private void waybillListBtn_Click(object sender, RoutedEventArgs e)
@@ -135,6 +137,34 @@ namespace avtoLog.Pages
         private void transTypesListBTN_Click(object sender, RoutedEventArgs e)
         {
             PageHelper.MainFrame.Navigate(new transTypesListPage());
+        }
+
+        private void loginListBtn_Click(object sender, RoutedEventArgs e)
+        {
+            PageHelper.MainFrame.Navigate(new loginListPage());
+        }
+
+        private void newLoginBtn_Click(object sender, RoutedEventArgs e)
+        {          
+            if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите добавить запись?", "Внимание!", MessageBoxButton.YesNo))
+            {
+                PageHelper.MainFrame.Navigate(new newLoginPage());
+            }
+            else return;
+        }
+
+        private void tsPhotoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            PageHelper.MainFrame.Navigate(new tsPhotoListPage());
+        }
+
+        private void newTsPhotoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите добавить запись?", "Внимание!", MessageBoxButton.YesNo))
+            {
+                PageHelper.MainFrame.Navigate(new newTsPhotoPage());
+            }
+            else return;
         }
     }
 }

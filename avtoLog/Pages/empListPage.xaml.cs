@@ -47,9 +47,15 @@ namespace avtoLog.Pages
                 {
                     auth = PageHelper.DbConnect.Auth;
 
-                    PageHelper.DbConnect.Auth.Remove(auth.Where(x => x.personId == selected.id).FirstOrDefault());
-                    PageHelper.DbConnect.Personal.Remove(selected);
-                    PageHelper.DbConnect.SaveChanges();
+                    try {
+                        PageHelper.DbConnect.Auth.Remove(auth.Where(x => x.personId == selected.id).FirstOrDefault());
+                        PageHelper.DbConnect.Personal.Remove(selected);
+                        PageHelper.DbConnect.SaveChanges();
+                    } catch
+                    {
+                        PageHelper.DbConnect.Personal.Remove(selected);
+                        PageHelper.DbConnect.SaveChanges();
+                    }
 
                     connectingDb();
                 }

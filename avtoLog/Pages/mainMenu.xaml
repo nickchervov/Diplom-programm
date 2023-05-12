@@ -25,6 +25,10 @@
                 <Button x:Name="newTsBtn"  Content="+Новый" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newTsBtn_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
+                <Button x:Name="empListBtn" Content="Сотрудники" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="empListBtn_Click" />
+                <Button x:Name="newEmpBtn" Content="+Новый" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newEmpBtn_Click" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
                 <Button x:Name="orgListBTN" Content="Организация" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="orgListBTN_Click"/>
                 <Button x:Name="newOrgBtn"  Content="+Новая" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newOrgBtn_Click"/>
             </StackPanel>
@@ -37,12 +41,16 @@
         <StackPanel HorizontalAlignment="Left" Grid.Column="1" Margin="30,0,0,0">
             <TextBlock Text="Справочники" HorizontalAlignment="Center" Margin="0,0,0,15"/>
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="empListBtn" Content="Сотрудники" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="empListBtn_Click" />
-                <Button x:Name="newEmpBtn" Content="+Новый" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newEmpBtn_Click" />
+                <Button x:Name="loginListBtn" Content="Логины и пароли" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="loginListBtn_Click" />
+                <Button x:Name="newLoginBtn" Content="+Новый" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newLoginBtn_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="driLicListBtn" Content="Водительское удостоверение" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="driLicListBtn_Click"/>
                 <Button x:Name="newDriLicBtn"  Content="+Новое" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newDriLicBtn_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="tsPhotoBtn" Content="Фото автотранспорта" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="tsPhotoBtn_Click"/>
+                <Button x:Name="newTsPhotoBtn"  Content="+Новое" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newTsPhotoBtn_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="driListBTN" Content="Водители" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="driListBTN_Click"/>

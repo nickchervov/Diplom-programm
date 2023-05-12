@@ -50,8 +50,8 @@
                           Grid.Column="1"
                           FontSize="14"
                           Margin="5,0,0,10"
-                          SelectedValuePath="name" 
-                          SelectedValue="{Binding org.name}"                           
+                          SelectedValuePath="id" 
+                          SelectedValue="{Binding org.id, Mode=OneTime}"                           
                           DisplayMemberPath="name">
                 </ComboBox>
 
@@ -62,8 +62,10 @@
                           FontSize="14"
                           Margin="5,0,0,10"                        
                           SelectedValuePath="id"
-                          SelectedValue="{Binding Personal1.FIO}"
-                          DisplayMemberPath="FIO">
+                          SelectedValue="{Binding Personal1.id , Mode=OneTime}"
+                          DisplayMemberPath="FIO"
+                          IsReadOnly="True"
+                          IsEditable="False">
                 </ComboBox>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="3" Grid.Column="0" Text="Водитель:" Margin="0,0,0,10"/>
@@ -72,9 +74,11 @@
                           Grid.Column="1"
                           FontSize="14"
                           Margin="5,0,0,10"
-                          SelectedValuePath="FIO" 
-                          SelectedValue="{Binding Personal2.FIO}"                     
-                          DisplayMemberPath="FIO">
+                          SelectedValuePath="id" 
+                          SelectedValue="{Binding Personal2.id, Mode=OneTime}"                     
+                          DisplayMemberPath="FIO"
+                          IsReadOnly="True"
+                          IsEditable="False">
                 </ComboBox>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="4" Grid.Column="0" Text="Заказчик:" Margin="0,0,0,10"/>
@@ -83,9 +87,11 @@
                           Grid.Column="1"
                           FontSize="14"
                           Margin="5,0,0,10"
-                          SelectedValuePath="FIO" 
-                          SelectedValue="{Binding Personal.FIO}"                        
-                          DisplayMemberPath="FIO">
+                          SelectedValuePath="id" 
+                          SelectedValue="{Binding Personal.id, Mode=OneTime}"                        
+                          DisplayMemberPath="FIO"
+                          IsReadOnly="True"
+                          IsEditable="False">
                 </ComboBox>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="5" Grid.Column="0" Text="Автотранспорт:" Margin="0,0,0,10"/>
@@ -94,9 +100,11 @@
                           Grid.Column="1"
                           FontSize="14"
                           Margin="5,0,0,10"
-                          SelectedValuePath="tsModel" 
-                          SelectedValue="{Binding Transport.tsModel}"                         
-                          DisplayMemberPath="tsModel">
+                          SelectedValuePath="id" 
+                          SelectedValue="{Binding Transport.id, Mode=OneTime}"                         
+                          DisplayMemberPath="tsModel"
+                          IsReadOnly="True"
+                          IsEditable="False">
                 </ComboBox>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="6" Grid.Column="0" Text="Дата начала:" Margin="0,0,0,10"/>
@@ -113,9 +121,11 @@
                           Grid.Column="1"
                           FontSize="14"
                           Margin="5,0,0,10"
-                          SelectedValuePath="name" 
-                          SelectedValue="{Binding MesTypes.name}"                          
-                          DisplayMemberPath="name">
+                          SelectedValuePath="id" 
+                          SelectedValue="{Binding MesTypes.id, Mode=OneTime}"                          
+                          DisplayMemberPath="name"
+                          IsReadOnly="True"
+                          IsEditable="False">
                 </ComboBox>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="9" Grid.Column="0" Text="Вид трансортировки:" Margin="0,0,0,10"/>
@@ -124,9 +134,11 @@
                           Grid.Column="1"
                           FontSize="14"
                           Margin="5,0,0,10"
-                          SelectedValuePath="name" 
-                          SelectedValue="{Binding TransTypes.name}"                         
-                          DisplayMemberPath="name">
+                          SelectedValuePath="id" 
+                          SelectedValue="{Binding TransTypes.id, Mode=OneTime}"                         
+                          DisplayMemberPath="name"
+                          IsReadOnly="True"
+                          IsEditable="False">
                 </ComboBox>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18" Grid.Row="10" Grid.Column="0" Text="Адрес прибытия:" Margin="0,0,0,10"/>

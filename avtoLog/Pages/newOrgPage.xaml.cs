@@ -35,20 +35,29 @@ namespace avtoLog.Pages
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             org orgs = new org();
-        
-            orgs.name = tbName.Text;            
-            orgs.country = tbCountry.Text;
-            orgs.postcode = tbPostCode.Text;
-            orgs.city = tbCity.Text;
-            orgs.street = tbStreet.Text;
-          
-            if (MessageBoxResult.Yes == MessageBox.Show("Вы действительно хотите добавить запись?", "Предупреждение", MessageBoxButton.YesNo))
+
+            if (tbName.Text != "" && tbCountry.Text != "" && tbPostCode.Text != "" && tbCity.Text != "" && tbStreet.Text != "")
             {
-                PageHelper.DbConnect.org.Add(orgs);
-                PageHelper.DbConnect.SaveChangesAsync();
-                MessageBox.Show("Запись добавлена.", "ОК");
-                PageHelper.MainFrame.Navigate(new orgListPage());
+                orgs.name = tbName.Text;
+                orgs.country = tbCountry.Text;
+                orgs.postcode = tbPostCode.Text;
+                orgs.city = tbCity.Text;
+                orgs.street = tbStreet.Text;
+
+                if (MessageBoxResult.Yes == MessageBox.Show("Вы действительно хотите добавить запись?", "Предупреждение", MessageBoxButton.YesNo))
+                {
+                    PageHelper.DbConnect.org.Add(orgs);
+                    PageHelper.DbConnect.SaveChangesAsync();
+                    MessageBox.Show("Запись добавлена.", "ОК");
+                    PageHelper.MainFrame.Navigate(new orgListPage());
+                }
             }
+            else
+            {
+                MessageBox.Show("Для добавления записи необходимо ввести все данные!", "Ошибка!");
+                return;
+            }
+          
         }
 
     }

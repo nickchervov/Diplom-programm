@@ -68,6 +68,9 @@ namespace avtoLog.Pages
 
                 _way.idDis = (cbDis.SelectedItem as Personal).id;
 
+                
+
+
                 _way.idCus = (cbCus.SelectedItem as Personal).id;
 
                 _way.transportId = (cbTs.SelectedItem as Transport).id;

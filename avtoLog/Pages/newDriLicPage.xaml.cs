@@ -35,18 +35,26 @@ namespace avtoLog.Pages
         {
             DriverLicense driLic = new DriverLicense();
 
-            driLic.seriesNumber = tbSerNom.Text;
-
-            driLic.receiptDate = Convert.ToDateTime(dpRecDate.Text);
-
-            driLic.endDate = Convert.ToDateTime(dpEndDate.Text);
-            
-            if (MessageBoxResult.Yes == MessageBox.Show("Вы действительно хотите добавить запись?", "Предупреждение", MessageBoxButton.YesNo))
+            if (tbSerNom.Text != "" && dpRecDate.Text != "" && dpEndDate.Text != "")
             {
-                PageHelper.DbConnect.DriverLicense.Add(driLic);
-                PageHelper.DbConnect.SaveChangesAsync();
-                MessageBox.Show("Запись добавлена.", "ОК");
-                PageHelper.MainFrame.Navigate(new driLicListPage());
+                driLic.seriesNumber = tbSerNom.Text;
+
+                driLic.receiptDate = Convert.ToDateTime(dpRecDate.Text);
+
+                driLic.endDate = Convert.ToDateTime(dpEndDate.Text);
+
+                if (MessageBoxResult.Yes == MessageBox.Show("Вы действительно хотите добавить запись?", "Предупреждение", MessageBoxButton.YesNo))
+                {
+                    PageHelper.DbConnect.DriverLicense.Add(driLic);
+                    PageHelper.DbConnect.SaveChangesAsync();
+                    MessageBox.Show("Запись добавлена.", "ОК");
+                    PageHelper.MainFrame.Navigate(new driLicListPage());
+                }
+            } 
+            else
+            {
+                MessageBox.Show("Для добавления записи необходимо ввести все данные!", "Ошибка!");
+                return;
             }
         }
     }

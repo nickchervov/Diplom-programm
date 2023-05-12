@@ -36,19 +36,19 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock HorizontalAlignment="Right" FontSize="18" Grid.Row="0" Grid.Column="0" Text="Наименование организации:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18" x:Name="tbName" Grid.Row="0" Grid.Column="1" Text="{Binding name}" Margin="0,0,0,10"/>
+                <TextBox FontSize="14" x:Name="tbName" Grid.Row="0" Grid.Column="1" Text="{Binding name}" Margin="5,0,0,10"/>
 
-                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="1" Grid.Column="0" Text="Страна: " Margin="0,0,0,10"/>
-                <TextBox FontSize="18" x:Name="tbCountry" Grid.Row="1" Grid.Column="1" Text="{Binding country}" Margin="0,0,0,10"/>
+                <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="1" Grid.Column="0" Text="Страна:" Margin="0,0,0,10"/>
+                <TextBox FontSize="14" x:Name="tbCountry" Grid.Row="1" Grid.Column="1" Text="{Binding country}" Margin="5,0,0,10"/>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="2" Grid.Column="0" Text="Индекс:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbPostCode" Grid.Row="2" Grid.Column="1" Text="{Binding postcode}" Margin="0,0,0,10"/>
+                <TextBox FontSize="14"  x:Name="tbPostCode" Grid.Row="2" Grid.Column="1" Text="{Binding postcode}" Margin="5,0,0,10"/>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="3" Grid.Column="0" Text="Город:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbCity" Grid.Row="3" Grid.Column="1" Text="{Binding city}" Margin="0,0,0,10"/>
+                <TextBox FontSize="14"  x:Name="tbCity" Grid.Row="3" Grid.Column="1" Text="{Binding city}" Margin="5,0,0,10"/>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="4" Grid.Column="0" Text="Улица:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbStreet" Grid.Row="4" Grid.Column="1" Text="{Binding street}" Margin="0,0,0,10"/>
+                <TextBox FontSize="14"  x:Name="tbStreet" Grid.Row="4" Grid.Column="1" Text="{Binding street}" Margin="5,0,0,10"/>
             </Grid>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">

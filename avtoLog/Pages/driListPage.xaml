@@ -43,12 +43,12 @@
                                 <TextBlock Text="{Binding Path= tabNumber}" HorizontalAlignment="Center"/>
                             </StackPanel>
                             <StackPanel Orientation="Vertical">
-                                <TextBlock Text="ФИО" MinWidth="250" Margin="0,0,0,5"/>
+                                <TextBlock Text="ФИО" MinWidth="150" Margin="0,0,0,5"/>
                                 <TextBlock Text="{Binding Path= FIO}" Margin="0,0,0,5"/>
                                 <TextBlock Text="{Binding Path= position}"/>
                             </StackPanel>
                             <StackPanel Orientation="Vertical">
-                                <TextBlock Text="В/У" MinWidth="100" Margin="0,0,0,5"/>
+                                <TextBlock Text="В/У" MinWidth="150" Margin="0,0,0,5"/>
                                 <TextBlock Text="{Binding Path= DriverLicense.seriesNumber}"/>
                             </StackPanel>
                             <StackPanel Orientation="Vertical">

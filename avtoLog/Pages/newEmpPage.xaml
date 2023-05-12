@@ -42,13 +42,13 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <TextBlock HorizontalAlignment="Right" FontSize="18" Grid.Row="0" Grid.Column="0" Text="Табельный номер:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18" x:Name="tbTabNom" Grid.Row="0" Grid.Column="1" Text="{Binding tabNumber}" Margin="5,0,0,10"/>
+                <TextBox FontSize="14" x:Name="tbTabNom" Grid.Row="0" Grid.Column="1" Text="{Binding tabNumber}" Margin="5,0,0,10"/>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="1" Grid.Column="0" Text="ФИО:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18" x:Name="tbFIO" Grid.Row="1" Grid.Column="1" Text="{Binding FIO}" Margin="5,0,0,10"/>
+                <TextBox FontSize="14" x:Name="tbFIO" Grid.Row="1" Grid.Column="1" Text="{Binding FIO}" Margin="5,0,0,10"/>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="2" Grid.Column="0" Text="Должность:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbPosition" Grid.Row="2" Grid.Column="1" Text="{Binding position}" Margin="5,0,0,10"/>
+                <TextBox FontSize="14"  x:Name="tbPosition" Grid.Row="2" Grid.Column="1" Text="{Binding position}" Margin="5,0,0,10"/>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="3" Grid.Column="0"  Text="Подразделение:" Margin="0,0,0,10"/>
                 <ComboBox x:Name="cbDep"
@@ -64,13 +64,13 @@
                 </ComboBox>
                 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="4" Grid.Column="0" Text="Возраст:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18"  x:Name="tbAge" Grid.Row="4" Grid.Column="1" Text="{Binding age}" Margin="5,0,0,10"/>
+                <TextBox FontSize="14"  x:Name="tbAge" Grid.Row="4" Grid.Column="1" Text="{Binding age}" Margin="5,0,0,10"/>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="5" Grid.Column="0" Text="Пол:" Margin="0,0,0,10"/>
                 <ComboBox x:Name="cbPol"
                           Grid.Row="5"
                           Grid.Column="1"
-                          FontSize="18"
+                          FontSize="14"
                           Margin="5,0,0,10">
                     <TextBlock Text="М"/>
                     <TextBlock Text="Ж"/>
@@ -81,19 +81,17 @@
                           Grid.Row="6"
                           Grid.Column="1"
                           FontSize="14"
-                          Margin="5,0,0,10">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding seriesNumber}"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
+                          Margin="5,0,0,10"
+                          SelectedValuePath="id"
+                          DisplayMemberPath="seriesNumber">
+                    
                 </ComboBox>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="7" Grid.Column="0" Text="Водитель?:" Margin="0,0,0,10"/>
                 <ComboBox x:Name="cbIsDri"
                           Grid.Row="7"
                           Grid.Column="1"
-                          FontSize="18"
+                          FontSize="14"
                           Margin="5,0,0,10">
                     <TextBlock Text="Да"/>
                     <TextBlock Text="Нет"/>
@@ -103,7 +101,7 @@
                 <ComboBox x:Name="cbIsDis"
                           Grid.Row="8"
                           Grid.Column="1"
-                          FontSize="18"
+                          FontSize="14"
                           Margin="5,0,0,10">
                     <TextBlock Text="Да"/>
                     <TextBlock Text="Нет"/>
@@ -113,7 +111,7 @@
                 <ComboBox x:Name="cbIsAdm"
                           Grid.Row="9"
                           Grid.Column="1"
-                          FontSize="18"
+                          FontSize="14"
                           Margin="5,0,0,10">
                     <TextBlock Text="Да"/>
                     <TextBlock Text="Нет"/>
@@ -123,7 +121,7 @@
                 <ComboBox x:Name="cbIsPer"
                           Grid.Row="10"
                           Grid.Column="1"
-                          FontSize="18"
+                          FontSize="14"
                           Margin="5,0,0,10">
                     <TextBlock Text="Да"/>
                     <TextBlock Text="Нет"/>

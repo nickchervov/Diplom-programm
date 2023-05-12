@@ -33,7 +33,7 @@
                 </Grid.RowDefinitions>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18" Grid.Row="0" Grid.Column="0" Text="Наименование вида:" Margin="0,0,0,10"/>
-                <TextBox FontSize="18" x:Name="tbName" Grid.Row="0" Grid.Column="1" Text="{Binding name}" Margin="5,0,0,10"/>
+                <TextBox FontSize="14" x:Name="tbName" Grid.Row="0" Grid.Column="1" Text="{Binding name}" Margin="5,0,0,10"/>
             </Grid>
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">

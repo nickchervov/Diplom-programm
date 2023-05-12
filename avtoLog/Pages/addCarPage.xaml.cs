@@ -45,55 +45,26 @@ namespace avtoLog.Pages
         {
             Transport avto = new Transport();
 
-            if (tbGovNumber.Text.Length > 13)
+            if (tbGovNumber.Text != "" && tbModel.Text != "" && cbPhotoURL.SelectedItem != null && cbStatusId.SelectedItem != null && cbTransportTypeId.SelectedItem != null)
             {
-                MessageBox.Show("Необходимо ввести менее 14 символов государственного номера.", "Внимание!");
-                return;
-            }
-            else
-            {
-                avto.GovNumber = tbGovNumber.Text;
-            }
-
-            avto.tsModel = tbModel.Text;
-
-            if (cbTransportTypeId.SelectedItem == null)
-            {
-                MessageBox.Show("Тип автотранспорта не выбран");
-                return;
-            }
-            else
-            {
+                avto.GovNumber = tbGovNumber.Text;             
+                avto.tsModel = tbModel.Text;
                 avto.tsTypeId = (cbTransportTypeId.SelectedItem as TsTypes).id;
-            }
-
-            if (cbStatusId.SelectedItem == null)
-            {
-                MessageBox.Show("Статус автотранспорта не выбран");
-                return;
-            }
-            else
-            {
                 avto.tsStatusId = (cbStatusId.SelectedItem as TsStatus).id;
-            }
+                avto.Photo = (cbPhotoURL.SelectedItem as Photos).URLPhoto;
 
-            if (cbPhotoURL.SelectedItem == null)
+                if (MessageBoxResult.Yes == MessageBox.Show("Вы действительно хотите добавить запись?", "Предупреждение", MessageBoxButton.YesNo))
+                {
+                    PageHelper.DbConnect.Transport.Add(avto);
+                    PageHelper.DbConnect.SaveChangesAsync();
+                    MessageBox.Show("Запись добавлена.", "ОК");
+                    PageHelper.MainFrame.Navigate(new carListPage());
+                }
+            } else
             {
-                MessageBox.Show("Департамент не выбран");
+                MessageBox.Show("Для добавления записи необходимо ввести все данные!", "Ошибка!");
                 return;
             }
-            else
-            {
-                avto.Photo = (cbPhotoURL.SelectedItem as Photos).URLPhoto;
-            }
-
-            if (MessageBoxResult.Yes == MessageBox.Show("Вы действительно хотите добавить запись?", "Предупреждение", MessageBoxButton.YesNo))
-            {
-                PageHelper.DbConnect.Transport.Add(avto);
-                PageHelper.DbConnect.SaveChangesAsync();
-                MessageBox.Show("Запись добавлена.", "ОК");
-                PageHelper.MainFrame.Navigate(new carListPage());
-            }           
         }
     }
 }
