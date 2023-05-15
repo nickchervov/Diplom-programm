@@ -52,25 +52,32 @@ namespace avtoLog.Pages
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
+            if (tbAge.Text != "" && tbFIO.Text != "" && tbPosition.Text != "" && tbTabNom.Text != "" && cbPol.SelectedItem != null && cbVU.SelectedItem != null)
             {
-
-                if (cbPol.SelectedIndex == 0)
+                if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
                 {
-                    _dri.pol = "М";
-                }
-                else
-                {
-                    _dri.pol = "Ж";
-                }
 
-                _dri.idVU = (cbVU.SelectedItem as DriverLicense).id;
+                    if (cbPol.SelectedIndex == 0)
+                    {
+                        _dri.pol = "М";
+                    }
+                    else
+                    {
+                        _dri.pol = "Ж";
+                    }
 
-                PageHelper.DbConnect.SaveChangesAsync();
-                MessageBox.Show("Данные изменены.", "ОК");
-                PageHelper.MainFrame.Navigate(new driListPage());
+                    _dri.idVU = (cbVU.SelectedItem as DriverLicense).id;
+
+                    PageHelper.DbConnect.SaveChangesAsync();
+                    MessageBox.Show("Данные изменены.", "ОК");
+                    PageHelper.MainFrame.Navigate(new driListPage());
+                }
+                else return;
+            } 
+            else
+            {
+                MessageBox.Show("Для изменения записи необходимо ввести все значения!", "Предупреждение!");
             }
-            else return;
         }
     }
 }

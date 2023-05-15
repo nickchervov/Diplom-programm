@@ -42,15 +42,22 @@ namespace avtoLog.Pages
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
+            if (tbLogin.Text != "" && tbPassword.Text != "" && cbEmp.SelectedItem != null)
             {
-                _auth.personId = (cbEmp.SelectedItem as Personal).id;
+                if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
+                {
+                    _auth.personId = (cbEmp.SelectedItem as Personal).id;
 
-                PageHelper.DbConnect.SaveChangesAsync();
-                MessageBox.Show("Данные изменены.", "ОК");
-                PageHelper.MainFrame.Navigate(new loginListPage());
+                    PageHelper.DbConnect.SaveChangesAsync();
+                    MessageBox.Show("Данные изменены.", "ОК");
+                    PageHelper.MainFrame.Navigate(new loginListPage());
+                }
+                else return;
+            } 
+            else
+            {
+                MessageBox.Show("Для изменения записи необходимо ввести все значения!", "Предупреждение!");
             }
-            else return;
         }
     }
 }

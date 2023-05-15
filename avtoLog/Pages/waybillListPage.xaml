@@ -33,12 +33,12 @@
             </ComboBox>-->
         </StackPanel>
 
-        <ListView Grid.Row="1" x:Name="lvWay" MaxWidth="1350" MaxHeight="700" FontSize="18" Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center">
+        <ListView Grid.Row="1" x:Name="lvWay" MaxWidth="1450" MaxHeight="700" FontSize="18" Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center" >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderThickness="1" BorderBrush="Black" CornerRadius="5">
-                        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Margin="20" MinWidth="600">
-                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="0,0,20,0">
+                    <Border Background="#D9D9D9" Margin="0,0,0,10">
+                        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Margin="20" MinWidth="1000">
+                            <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="0,0,20,0" MinWidth="50">
                                 <TextBlock Text="Номер" Margin="0,0,0,5"/>
                                 <TextBlock Text="{Binding Path= nom}"/>
                             </StackPanel>
@@ -53,7 +53,7 @@
                                 <TextBlock Text="Адрес прибытия" Margin="0,0,0,5"/>
                                 <TextBlock Text="{Binding Path= routee}"/>
                             </StackPanel>
-                            <StackPanel Orientation="Vertical" MinWidth="200" VerticalAlignment="Center" Margin="0,0,20,0">
+                            <StackPanel Orientation="Vertical" MinWidth="310" VerticalAlignment="Center" Margin="0,0,20,0">
                                 <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
                                     <TextBlock Text="Вид перемещения: "/>
                                     <TextBlock Text="{Binding Path= MesTypes.name}"/>
@@ -63,7 +63,7 @@
                                     <TextBlock Text="{Binding Path= TransTypes.name}"/>
                                 </StackPanel>
                             </StackPanel>
-                            <StackPanel Orientation="Vertical" MinWidth="150" VerticalAlignment="Center" Margin="0,0,20,0">
+                            <StackPanel Orientation="Vertical" MinWidth="200" VerticalAlignment="Center" Margin="0,0,20,0">
                                 <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
                                     <TextBlock Text="Диспетчер: " MinWidth="80"/>
                                     <TextBlock x:Name="idDis" Text="{Binding Path=Personal1.FIO}"/>
@@ -77,7 +77,7 @@
                                     <TextBlock x:Name="idCus" Text="{Binding Path= Personal.FIO}"/>
                                 </StackPanel>
                             </StackPanel>
-                            <StackPanel Orientation="Vertical" MinWidth="100" VerticalAlignment="Center" Margin="0,0,20,0">
+                            <StackPanel Orientation="Vertical" MinWidth="220" VerticalAlignment="Center">
                                 <TextBlock Text="{Binding Path= Transport.tsModel}" Margin="0,0,0,5"/>
                                 <TextBlock Text="{Binding Path= Transport.GovNumber}"/>
                             </StackPanel>

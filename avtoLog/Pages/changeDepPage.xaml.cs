@@ -53,11 +53,21 @@ namespace avtoLog.Pages
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
-            _dep.orgId = (cbOrgId.SelectedItem as org).id;
+            if (tbName.Text != "" && cbOrgId.SelectedItem != null)
+            {
+                if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
+                {
+                    _dep.orgId = (cbOrgId.SelectedItem as org).id;
 
-            PageHelper.DbConnect.SaveChangesAsync();
-            MessageBox.Show("Данные изменены.", "ОК");
-            PageHelper.MainFrame.Navigate(new depListPage());
+                    PageHelper.DbConnect.SaveChangesAsync();
+                    MessageBox.Show("Данные изменены.", "ОК");
+                    PageHelper.MainFrame.Navigate(new depListPage());
+                }
+                else return;               
+            } else
+            {
+                MessageBox.Show("Для изменения записи необходимо ввести все значения!", "Предупреждение!");
+            }
         }
     }
 }

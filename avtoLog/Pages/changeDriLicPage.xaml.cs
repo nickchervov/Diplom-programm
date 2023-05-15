@@ -43,17 +43,24 @@ namespace avtoLog.Pages
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
+            if (tbSerNom.Text != "" && dpEndDate.Text != "" && dpRecDate.Text != "")
             {
-                _driLic.receiptDate = Convert.ToDateTime(dpRecDate.Text);
+                if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
+                {
+                    _driLic.receiptDate = Convert.ToDateTime(dpRecDate.Text);
 
-                _driLic.endDate = Convert.ToDateTime(dpEndDate.Text);
+                    _driLic.endDate = Convert.ToDateTime(dpEndDate.Text);
 
-                PageHelper.DbConnect.SaveChangesAsync();
-                MessageBox.Show("Данные изменены.", "ОК");
-                PageHelper.MainFrame.Navigate(new driLicListPage());
+                    PageHelper.DbConnect.SaveChangesAsync();
+                    MessageBox.Show("Данные изменены.", "ОК");
+                    PageHelper.MainFrame.Navigate(new driLicListPage());
+                }
+                else return;
+            } 
+            else
+            {
+                MessageBox.Show("Для изменения записи необходимо ввести все значения!", "Предупреждение!");
             }
-            else return;
         }
     }
 }

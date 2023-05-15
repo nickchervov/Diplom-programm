@@ -31,7 +31,7 @@ namespace avtoLog.Pages
             _avto = avto;
             DataContext = _avto;
 
-            cbTransportTypeId.ItemsSource = PageHelper.DbConnect.TsTypes.ToList();
+            cbTransportTypeId.ItemsSource = PageHelper.DbConnect.TsTypes.ToList();           
 
             if (_avto.tsTypeId == 1)
             {
@@ -96,15 +96,26 @@ namespace avtoLog.Pages
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
-            _avto.tsTypeId = (cbTransportTypeId.SelectedItem as TsTypes).id;
+            if (tbGovNumber.Text != "" && tbModel.Text != "" && cbTransportTypeId.SelectedItem != null && cbStatusId.SelectedItem != null && cbPhotoURL.SelectedItem != null)
+            {
+                if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
+                {
 
-            _avto.tsStatusId = (cbStatusId.SelectedItem as TsStatus).id;
+                    _avto.tsTypeId = (cbTransportTypeId.SelectedItem as TsTypes).id;
 
-            _avto.Photo = (cbPhotoURL.SelectedItem as Photos).URLPhoto;
+                    _avto.tsStatusId = (cbStatusId.SelectedItem as TsStatus).id;
 
-            PageHelper.DbConnect.SaveChangesAsync();
-            MessageBox.Show("Данные изменены.", "ОК");
-            PageHelper.MainFrame.Navigate(new carListPage());
+                    _avto.Photo = (cbPhotoURL.SelectedItem as Photos).URLPhoto;
+
+                    PageHelper.DbConnect.SaveChangesAsync();
+                    MessageBox.Show("Данные изменены.", "ОК");
+                    PageHelper.MainFrame.Navigate(new carListPage());
+                }
+                else return;               
+            } else
+            {
+                MessageBox.Show("Для изменения записи необходимо ввести все значения!","Предупреждение!");
+            }          
         }
     }
 }

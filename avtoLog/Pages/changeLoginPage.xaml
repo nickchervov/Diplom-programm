@@ -48,11 +48,11 @@
                 </ComboBox>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="1" Grid.Column="0" Text="Логин:" Margin="0,0,0,10"/>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding login}" Margin="5,0,0,10" />
+                <TextBox x:Name="tbLogin" Grid.Row="1" Grid.Column="1" Text="{Binding login}" Margin="5,0,0,10" />
 
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="2" Grid.Column="0" Text="Пароль:" Margin="0,0,0,10"/>
-                <TextBox  Grid.Row="2" Grid.Column="1" Text="{Binding password}" Margin="5,0,0,10" />
+                <TextBox x:Name="tbPassword"  Grid.Row="2" Grid.Column="1" Text="{Binding password}" Margin="5,0,0,10" />
                
             </Grid>
         </StackPanel>

@@ -28,7 +28,6 @@ namespace avtoLog.Pages
             if (PageHelper.role == 2)
             {   
 
-                transportListBtn.Visibility = Visibility.Collapsed;
                 newTsBtn.Visibility = Visibility.Collapsed;
 
                 empListBtn.Visibility = Visibility.Collapsed;

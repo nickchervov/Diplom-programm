@@ -36,7 +36,7 @@ namespace avtoLog.Pages
         }
         private void searchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            lvWay.ItemsSource = way.Where(x => x.nom.ToString().Contains(searchBox.Text) || x.routee.Contains(searchBox.Text) || x.Personal.FIO.Contains(searchBox.Text) || x.org.name.Contains(searchBox.Text)).ToList();
+            lvWay.ItemsSource = way.Where(x => x.nom.ToString().Contains(searchBox.Text)  || x.Personal.FIO.Contains(searchBox.Text) || x.org.name.Contains(searchBox.Text)).ToList();
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)

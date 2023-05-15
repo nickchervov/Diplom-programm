@@ -34,6 +34,12 @@ namespace avtoLog.Pages
 
             connectingDb();
 
+            if (PageHelper.role == 3)
+            {
+                btnChange.Visibility = Visibility.Collapsed;
+                btnDelete.Visibility = Visibility.Collapsed;
+            }
+
         }
 
 

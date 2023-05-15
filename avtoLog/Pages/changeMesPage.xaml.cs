@@ -38,9 +38,21 @@ namespace avtoLog.Pages
         }
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
-            PageHelper.DbConnect.SaveChangesAsync();
-            MessageBox.Show("Данные изменены.", "ОК");
-            PageHelper.MainFrame.Navigate(new mesTypesListPage());
+            if (tbName.Text != "")
+            {
+                if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
+                {
+                    PageHelper.DbConnect.SaveChangesAsync();
+                    MessageBox.Show("Данные изменены.", "ОК");
+                    PageHelper.MainFrame.Navigate(new mesTypesListPage());
+                }
+                else return;
+            }
+            else
+            {
+                MessageBox.Show("Для изменения записи необходимо ввести все значения!", "Предупреждение!");
+            }
+            
         }
     }
 }

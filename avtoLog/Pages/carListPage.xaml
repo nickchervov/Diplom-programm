@@ -51,8 +51,8 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderThickness="1" BorderBrush="Black" CornerRadius="5">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5">
+                    <Border Background="#D9D9D9">
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" MinWidth="300">
                             <StackPanel>
                                 <!--ФОТО-->
                                 <Image Source="{Binding Path= Photo}" Width="100" Height="100"/>

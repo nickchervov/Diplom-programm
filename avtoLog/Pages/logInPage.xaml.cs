@@ -54,7 +54,7 @@ namespace avtoLog.Pages
             }
             else if (PageHelper.DbConnect.Auth.Where(x => x.login == tbLogin.Text && x.password == pbPassword.Password && x.Personal.isPer == true).FirstOrDefault() != null)
             {
-                PageHelper.role = 5; //работники по персоналу
+                PageHelper.role = 5; //работники с персоналом
 
                 PageHelper.MainFrame.Navigate(new mainMenu());
             }

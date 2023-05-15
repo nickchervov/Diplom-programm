@@ -34,7 +34,7 @@ namespace avtoLog.Pages
 
             cbCus.ItemsSource = PageHelper.DbConnect.Personal.Where(x => x.isDis == false && x.isDri == false).ToList();
 
-            cbTs.ItemsSource = PageHelper.DbConnect.Transport.ToList();
+            cbTs.ItemsSource = PageHelper.DbConnect.Transport.Where(x => x.tsStatusId == 2).ToList();
 
             cbMes.ItemsSource = PageHelper.DbConnect.MesTypes.ToList();
 
