@@ -83,3 +83,13 @@ E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\changeWaybillPage.baml
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\bin\Release\AutoMapper.dll
 E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\bin\Release\AutoMapper.xml
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\changeLoginPage.g.cs
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\loginListPage.g.cs
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newLoginPage.g.cs
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newTsPhotoPage.g.cs
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\tsPhotoListPage.g.cs
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\changeLoginPage.baml
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\loginListPage.baml
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newLoginPage.baml
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\newTsPhotoPage.baml
+E:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\obj\Release\Pages\tsPhotoListPage.baml
