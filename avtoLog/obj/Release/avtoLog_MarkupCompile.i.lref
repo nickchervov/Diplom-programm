@@ -1,14 +1,12 @@
 ﻿
-FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\App.xaml;;
+
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\MainWindow.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\addCarPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\carListPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\changeCarPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\changeDepPage.xaml;;
-FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\changeDisPage.xaml;;
-FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\changeDriLicPage.xaml;;
-FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\changeDriPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\changeEmpPage.xaml;;
+FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\changeLoginPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\changeMesPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\changeOrgPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\changeTransPage.xaml;;
@@ -19,16 +17,18 @@ FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\disListPag
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\driLicListPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\driListPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\empListPage.xaml;;
-FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\logInPage.xaml;;
+FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\loginListPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\mainMenu.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\mesTypesListPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\newDepPage.xaml;;
-FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\newDriLicPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\newEmpPage.xaml;;
+FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\newLoginPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\newOrgPage.xaml;;
+FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\newTsPhotoPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\newWaybillPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\orgListPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\transTypesListPage.xaml;;
+FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\tsPhotoListPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\tsTypesListPage.xaml;;
 FE:\Проекты\VisualStudioProjects\Diplom-programm\avtoLog\Pages\waybillListPage.xaml;;
 

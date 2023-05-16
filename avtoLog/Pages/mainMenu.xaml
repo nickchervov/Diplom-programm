@@ -29,7 +29,7 @@
                 <Button x:Name="newEmpBtn" Content="+Новый" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newEmpBtn_Click" />
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="orgListBTN" Content="Организация" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="orgListBTN_Click"/>
+                <Button x:Name="orgListBTN" Content="Организации" MinWidth="220" MinHeight="40" Margin="0,0,5,15" Click="orgListBTN_Click"/>
                 <Button x:Name="newOrgBtn"  Content="+Новая" MinWidth="100" MinHeight="40" Margin="5,0,0,15" Click="newOrgBtn_Click"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
