@@ -33,59 +33,9 @@ namespace avtoLog.Pages
 
             cbTransportTypeId.ItemsSource = PageHelper.DbConnect.TsTypes.ToList();           
 
-            if (_avto.tsTypeId == 1)
-            {
-                cbTransportTypeId.SelectedIndex = 0;
-            }
-            else if (_avto.tsTypeId == 2)
-            {
-                cbTransportTypeId.SelectedIndex = 1;
-            }
-            else if (_avto.tsTypeId == 3)
-            {
-                cbTransportTypeId.SelectedIndex = 2;
-            }
-            else
-            {
-                cbTransportTypeId.SelectedIndex = 3;
-            }
-
             cbPhotoURL.ItemsSource = PageHelper.DbConnect.Photos.ToList();
 
-            if (_avto.Photo == "/Images/camry.png")
-            {
-                cbPhotoURL.SelectedIndex = 0;
-            }
-            else if (_avto.Photo == "/Images/gaz.png")
-            {
-                cbPhotoURL.SelectedIndex = 1;
-            }
-            else if (_avto.Photo == "/Images/gaznext.png")
-            {
-                cbPhotoURL.SelectedIndex = 2;
-            }
-            else if (_avto.Photo == "/Images/kamaz.png")
-            {
-                cbPhotoURL.SelectedIndex = 3;
-            } 
-            else
-            {
-                cbPhotoURL.SelectedIndex = 4;
-            }
-
             cbStatusId.ItemsSource = PageHelper.DbConnect.TsStatus.ToList();
-
-            if (_avto.tsStatusId == 1)
-            {
-                cbStatusId.SelectedIndex = 0;
-            } else if(_avto.tsStatusId == 2)
-            {
-                cbStatusId.SelectedIndex = 1;
-            } else
-            {
-                cbStatusId.SelectedIndex = 2;
-            }
-
 
         }
 

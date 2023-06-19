@@ -35,6 +35,7 @@ namespace avtoLog.DbModel
         public bool isDis { get; set; }
         public bool isAdm { get; set; }
         public bool isPer { get; set; }
+        public bool isSer { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Auth> Auth { get; set; }

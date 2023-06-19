@@ -46,7 +46,7 @@ namespace avtoLog.Pages
 
                 PageHelper.MainFrame.Navigate(new mainMenu());
             }
-            else if (PageHelper.DbConnect.Auth.Where(x => x.login == tbLogin.Text && x.password == pbPassword.Password && (x.Personal.position == "Инженер" || x.Personal.position == "Главный инженер")).FirstOrDefault() != null)
+            else if (PageHelper.DbConnect.Auth.Where(x => x.login == tbLogin.Text && x.password == pbPassword.Password && x.Personal.isSer == true).FirstOrDefault() != null)
             {
                 PageHelper.role = 4; //работники сервиса
 

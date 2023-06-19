@@ -37,11 +37,25 @@ namespace avtoLog.Pages
         }
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
-        {
+        {   
+          
             if (tbCity.Text != "" && tbCountry.Text != "" && tbName.Text != "" && tbPostCode.Text != "" && tbStreet.Text != "" )
             {
                 if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
                 {
+                    if (tbPostCode.Text.Length != 6)
+                    {
+                        MessageBox.Show("Индекс должен состоять из 6 символов!", "Ошибка!"); return;
+                    }
+                    else if (checkPostcodeInNumber(tbPostCode.Text))
+                    {
+                        _org.postcode = tbPostCode.Text;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Индекс должен состоять из цифр!", "Ошибка!"); return;
+                    }
+
                     PageHelper.DbConnect.SaveChangesAsync();
                     MessageBox.Show("Данные изменены.", "ОК");
                     PageHelper.MainFrame.Navigate(new orgListPage());
@@ -52,6 +66,17 @@ namespace avtoLog.Pages
             {
                 MessageBox.Show("Для изменения записи необходимо ввести все значения!", "Предупреждение!");
             }
+        }
+
+        bool checkPostcodeInNumber(string postcode)
+        {
+            foreach (char c in postcode)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+
+            return true;
         }
     }
 }

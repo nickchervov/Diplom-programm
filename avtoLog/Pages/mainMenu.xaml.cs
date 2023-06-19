@@ -111,6 +111,9 @@ namespace avtoLog.Pages
                 driLicListBtn.Visibility = Visibility.Collapsed;
                 newDriLicBtn.Visibility = Visibility.Collapsed;
 
+                tsPhotoBtn.Visibility = Visibility.Collapsed;
+                newTsPhotoBtn.Visibility= Visibility.Collapsed;
+
 
                 driListBTN.Visibility = Visibility.Collapsed;
                 disListBTN.Visibility = Visibility.Collapsed;

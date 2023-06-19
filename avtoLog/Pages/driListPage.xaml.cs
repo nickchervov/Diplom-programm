@@ -49,11 +49,32 @@ namespace avtoLog.Pages
                 {
                     auth = PageHelper.DbConnect.Auth;
 
-                    PageHelper.DbConnect.Auth.Remove(auth.Where(x => x.personId == selected.id).FirstOrDefault());
-                    PageHelper.DbConnect.Personal.Remove(selected);
-                    PageHelper.DbConnect.SaveChanges();
+                    var driInWay = PageHelper.DbConnect.Waybillses.Select(c => c.idDri).ToArray();
 
-                    connectingDb();
+                    var perInLogins = PageHelper.DbConnect.Auth.Select(c => c.personId).ToArray();
+
+                    if (driInWay.Contains(selected.id))
+                    {
+                        MessageBox.Show("Не получилось удалить запись!\nДля начала необходимо удалить связанный путевой лист!", "Предупреждение!");
+                        return;
+
+                    }
+                    else
+                    {
+                        if (perInLogins.Contains(selected.id))
+                        {
+                            PageHelper.DbConnect.Auth.Remove(auth.Where(x => x.personId == selected.id).FirstOrDefault());
+                            PageHelper.DbConnect.Personal.Remove(selected);
+                            PageHelper.DbConnect.SaveChanges();
+                            connectingDb();
+                        }
+                        else
+                        {
+                            PageHelper.DbConnect.Personal.Remove(selected);
+                            PageHelper.DbConnect.SaveChanges();
+                            connectingDb();
+                        }
+                    }
                 }
                 else return;
             }

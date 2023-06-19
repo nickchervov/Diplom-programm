@@ -40,6 +40,7 @@ namespace avtoLog.Pages
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
             var selected = lvDis.SelectedItem as Personal;
+
             if (selected != null)
             {
 
@@ -47,11 +48,32 @@ namespace avtoLog.Pages
                 {
                     auth = PageHelper.DbConnect.Auth;
 
-                    PageHelper.DbConnect.Auth.Remove(auth.Where(x => x.personId == selected.id).FirstOrDefault());
-                    PageHelper.DbConnect.Personal.Remove(selected);
-                    PageHelper.DbConnect.SaveChanges();
+                    var disInWay = PageHelper.DbConnect.Waybillses.Select(c => c.idDis).ToArray();
 
-                    connectingDb();
+                    var perInLogins = PageHelper.DbConnect.Auth.Select(c => c.personId).ToArray();
+
+                    if (disInWay.Contains(selected.id))
+                    {
+                        MessageBox.Show("Не получилось удалить запись!\nДля начала необходимо удалить связанный путевой лист!", "Предупреждение!");
+                        return;
+
+                    }
+                    else
+                    {
+                        if (perInLogins.Contains(selected.id))
+                        {
+                            PageHelper.DbConnect.Auth.Remove(auth.Where(x => x.personId == selected.id).FirstOrDefault());
+                            PageHelper.DbConnect.Personal.Remove(selected);
+                            PageHelper.DbConnect.SaveChanges();
+                            connectingDb();
+                        }
+                        else
+                        {
+                            PageHelper.DbConnect.Personal.Remove(selected);
+                            PageHelper.DbConnect.SaveChanges();
+                            connectingDb();
+                        }
+                    }
                 }
                 else return;
             }

@@ -40,7 +40,7 @@ namespace avtoLog.Pages
         {
             Personal emp = new Personal();
 
-            if (tbTabNom.Text != "" && tbFIO.Text != "" && tbPosition.Text != "" && cbDep.SelectedItem != null && tbAge.Text != "" && cbPol.SelectedItem != null && cbVU.SelectedItem != null && cbIsDri.SelectedItem != null && cbIsDis.SelectedItem != null && cbIsAdm.SelectedItem != null && cbIsPer.SelectedItem != null )
+            if (tbTabNom.Text != "" && tbFIO.Text != "" && tbPosition.Text != "" && cbDep.SelectedItem != null && tbAge.Text != "" && cbPol.SelectedItem != null && cbVU.SelectedItem != null && cbIsDri.SelectedItem != null && cbIsDis.SelectedItem != null && cbIsAdm.SelectedItem != null && cbIsPer.SelectedItem != null && cbIsSer.SelectedItem != null)
             {
                 try { emp.tabNumber = Convert.ToInt32(tbTabNom.Text); } catch { MessageBox.Show("Табельный номер должен состоять из цифр!","Ошибка!"); return; }
                 emp.FIO = tbFIO.Text;
@@ -93,6 +93,15 @@ namespace avtoLog.Pages
                 else
                 {
                     emp.isPer = false;
+                }
+
+                if (cbIsSer.SelectedIndex == 0)
+                {
+                    emp.isSer = true;
+                }
+                else
+                {
+                    emp.isSer = false;
                 }
 
                 if (MessageBoxResult.Yes == MessageBox.Show("Вы действительно хотите добавить запись?", "Предупреждение", MessageBoxButton.YesNo))

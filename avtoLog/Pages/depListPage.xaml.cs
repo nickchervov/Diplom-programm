@@ -44,10 +44,20 @@ namespace avtoLog.Pages
 
                 if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите удалить запись?", "Внимание!", MessageBoxButton.YesNo))
                 {
-                    PageHelper.DbConnect.Departments.Remove(selected);
-                    PageHelper.DbConnect.SaveChanges();
 
-                    connectingDb();
+                    var depInPersonal = PageHelper.DbConnect.Personal.Select(c => c.departmentId).ToArray().Distinct();
+
+                    if (depInPersonal.Contains(selected.id))
+                    {
+                        MessageBox.Show("Не получилось удалить запись!\nДля начала необходимо удалить связанного с департаментом сотрудника!", "Предупреждение!");
+                        return;
+                    } else
+                    {
+                        PageHelper.DbConnect.Departments.Remove(selected);
+                        PageHelper.DbConnect.SaveChanges();
+
+                        connectingDb();
+                    }
                 }
                 else return;
             }

@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="be6e0a274424466eb02c0cce2c50b972" Name="Diagram1">
+      <Diagram DiagramId="a34d5e838e354a3bbc999f71cb2dd1ae" Name="Diagram1">
         <EntityTypeShape EntityType="tsLogDbModel.Auth" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="tsLogDbModel.Departments" Width="1.5" PointX="3.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsLogDbModel.Departments" Width="1.5" PointX="3.75" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="tsLogDbModel.DriverLicense" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="tsLogDbModel.DriverLicenseClass" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="tsLogDbModel.LicenseClasses" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsLogDbModel.LicenseClasses" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="tsLogDbModel.MesTypes" Width="1.5" PointX="9" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="tsLogDbModel.org" Width="1.5" PointX="1.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsLogDbModel.org" Width="1.5" PointX="1.5" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="tsLogDbModel.Personal" Width="1.5" PointX="6" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="tsLogDbModel.Photos" Width="1.5" PointX="6.75" PointY="11.125" IsExpanded="true" />
         <EntityTypeShape EntityType="tsLogDbModel.Transport" Width="1.5" PointX="9" PointY="12.875" IsExpanded="true" />
@@ -19,22 +19,22 @@
         <EntityTypeShape EntityType="tsLogDbModel.TsStatus" Width="1.5" PointX="6.75" PointY="13.5" IsExpanded="true" />
         <EntityTypeShape EntityType="tsLogDbModel.TsTypes" Width="1.5" PointX="6.75" PointY="15.875" IsExpanded="true" />
         <EntityTypeShape EntityType="tsLogDbModel.Waybillses" Width="1.5" PointX="11.25" PointY="4" IsExpanded="true" />
-        <AssociationConnector Association="tsLogDbModel.FK__Auth__personId__45DE573A" ManuallyRouted="false" />
-        <AssociationConnector Association="tsLogDbModel.FK__Departmen__orgId__3D491139" ManuallyRouted="false" />
-        <AssociationConnector Association="tsLogDbModel.FK__Personal__depart__40257DE4" ManuallyRouted="false" />
-        <AssociationConnector Association="tsLogDbModel.FK__DriverLic__licen__38845C1C" ManuallyRouted="false" />
-        <AssociationConnector Association="tsLogDbModel.FK__Personal__idVU__4119A21D" ManuallyRouted="false" />
-        <AssociationConnector Association="tsLogDbModel.FK__DriverLic__class__379037E3" ManuallyRouted="false" />
-        <AssociationConnector Association="tsLogDbModel.FK__Waybillse__mesTy__5708E33C" ManuallyRouted="false" />
-        <AssociationConnector Association="tsLogDbModel.FK__Waybillse__orgId__5AD97420" ManuallyRouted="false" />
-        <AssociationConnector Association="tsLogDbModel.FK__Waybillse__idCus__5CC1BC92" ManuallyRouted="false" />
-        <AssociationConnector Association="tsLogDbModel.FK__Waybillse__idDis__58F12BAE" ManuallyRouted="false" />
-        <AssociationConnector Association="tsLogDbModel.FK__Waybillse__idDri__5BCD9859" ManuallyRouted="false" />
-        <AssociationConnector Association="tsLogDbModel.FK__Transport__Photo__4F67C174" ManuallyRouted="false" />
-        <AssociationConnector Association="tsLogDbModel.FK__Transport__tsSta__4E739D3B" ManuallyRouted="false" />
-        <AssociationConnector Association="tsLogDbModel.FK__Transport__tsTyp__505BE5AD" ManuallyRouted="false" />
-        <AssociationConnector Association="tsLogDbModel.FK__Waybillse__trans__59E54FE7" ManuallyRouted="false" />
-        <AssociationConnector Association="tsLogDbModel.FK__Waybillse__trans__57FD0775" ManuallyRouted="false" />
+        <AssociationConnector Association="tsLogDbModel.FK__Auth__personId__02B25B50" ManuallyRouted="false" />
+        <AssociationConnector Association="tsLogDbModel.FK__Departmen__orgId__7A1D154F" ManuallyRouted="false" />
+        <AssociationConnector Association="tsLogDbModel.FK__Personal__depart__7CF981FA" ManuallyRouted="false" />
+        <AssociationConnector Association="tsLogDbModel.FK__DriverLic__licen__75586032" ManuallyRouted="false" />
+        <AssociationConnector Association="tsLogDbModel.FK__Personal__idVU__7DEDA633" ManuallyRouted="false" />
+        <AssociationConnector Association="tsLogDbModel.FK__DriverLic__class__74643BF9" ManuallyRouted="false" />
+        <AssociationConnector Association="tsLogDbModel.FK__Waybillse__mesTy__13DCE752" ManuallyRouted="false" />
+        <AssociationConnector Association="tsLogDbModel.FK__Waybillse__orgId__17AD7836" ManuallyRouted="false" />
+        <AssociationConnector Association="tsLogDbModel.FK__Waybillse__idCus__1995C0A8" ManuallyRouted="false" />
+        <AssociationConnector Association="tsLogDbModel.FK__Waybillse__idDis__15C52FC4" ManuallyRouted="false" />
+        <AssociationConnector Association="tsLogDbModel.FK__Waybillse__idDri__18A19C6F" ManuallyRouted="false" />
+        <AssociationConnector Association="tsLogDbModel.FK__Transport__Photo__0C3BC58A" ManuallyRouted="false" />
+        <AssociationConnector Association="tsLogDbModel.FK__Transport__tsSta__0B47A151" ManuallyRouted="false" />
+        <AssociationConnector Association="tsLogDbModel.FK__Transport__tsTyp__0D2FE9C3" ManuallyRouted="false" />
+        <AssociationConnector Association="tsLogDbModel.FK__Waybillse__trans__16B953FD" ManuallyRouted="false" />
+        <AssociationConnector Association="tsLogDbModel.FK__Waybillse__trans__14D10B8B" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

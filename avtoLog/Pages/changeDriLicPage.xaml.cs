@@ -49,7 +49,15 @@ namespace avtoLog.Pages
                 {
                     _driLic.receiptDate = Convert.ToDateTime(dpRecDate.Text);
 
-                    _driLic.endDate = Convert.ToDateTime(dpEndDate.Text);
+                    if (Convert.ToDateTime(dpEndDate.Text) < Convert.ToDateTime(dpRecDate.Text))
+                    {
+                        MessageBox.Show("Дата окончания не может быть раньше даты получения!", "Ошибка!");
+                        return;
+                    }
+                    else
+                    {
+                        _driLic.endDate = Convert.ToDateTime(dpEndDate.Text);
+                    }
 
                     PageHelper.DbConnect.SaveChangesAsync();
                     MessageBox.Show("Данные изменены.", "ОК");

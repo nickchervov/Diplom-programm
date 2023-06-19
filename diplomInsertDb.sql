@@ -15,10 +15,11 @@ INSERT INTO LICENSECLASSES VALUES('BE');
 INSERT INTO LICENSECLASSES VALUES('CE');
 INSERT INTO LICENSECLASSES VALUES('DE');
 
-INSERT INTO DRIVERLICENSE VALUES('','','');
+INSERT INTO DRIVERLICENSE VALUES('Нет прав','','');
 INSERT INTO DRIVERLICENSE VALUES('99 30 121341','10.01.2014','10.01.2024');
 INSERT INTO DRIVERLICENSE VALUES('99 71 221363','15.03.2017','15.03.2027');
 INSERT INTO DRIVERLICENSE VALUES('99 87 412590','20.11.2015','20.11.2025');
+INSERT INTO DRIVERLICENSE VALUES('99 56 256734','11.06.2014','11.06.2024');
 
 INSERT INTO DRIVERLICENSECLASS VALUES(1,2);
 INSERT INTO DRIVERLICENSECLASS VALUES(1,3);
@@ -38,28 +39,29 @@ INSERT INTO DEPARTMENTS VALUES('Ремонтный отдел',1);
 INSERT INTO DEPARTMENTS VALUES('Совет директоров',1);
 INSERT INTO Departments VALUES('Отдел кадров',1)
 
-INSERT INTO PERSONAL VALUES(1000,'Лобников А.А.','Генеральный директор',5,45,'М',1,0,0,1,0);
-INSERT INTO PERSONAL VALUES(1001,'Ронинов П.И.','Генеральный директор',5,48,'М',1,0,0,1,0);
-INSERT INTO PERSONAL VALUES(1002,'Шишкин П.М.','Начальник отдела',1,37,'М',1,0,0,1,0);
-INSERT INTO PERSONAL VALUES(1003,'Хомяков Н.Е.','Начальник отдела',2,34,'М',1,0,0,1,0);
-INSERT INTO PERSONAL VALUES(1004,'Никитин А.Г.','Начальник отдела',3,36,'М',1,0,0,1,0);
-INSERT INTO PERSONAL VALUES(1005,'Титников Т.Н.','Начальник отдела',4,39,'М',1,0,0,1,0);
-INSERT INTO PERSONAL VALUES(1006,'Рокин П.У.','Начальник отдела',5,32,'М',1,0,0,1,0);
-INSERT INTO PERSONAL VALUES(1007,'Шиконов К.Н.','Начальник отдела',6,41,'М',1,0,0,1,0);
-INSERT INTO PERSONAL VALUES(1008,'Григорьев А.А.','Водитель',3,41,'М',2,1,0,0,0);
-INSERT INTO PERSONAL VALUES(1008,'Логинов А.В.','Водитель',3,43,'М',2,3,0,0,0);
-INSERT INTO PERSONAL VALUES(1009,'Паролев П.Б.','Водитель',3,39,'М',3,4,0,0,0);
-INSERT INTO PERSONAL VALUES(1010,'Канунникова З.С.','Диспетчер',3,31,'Ж',1,0,1,0,0);
-INSERT INTO PERSONAL VALUES(1011,'Володина А.С.','Диспетчер',3,34,'Ж',1,0,1,0,0);
-INSERT INTO PERSONAL VALUES(1012,'Дорохов Б.Н.','Системный администратор',2,27,'М',1,0,0,1,0);
-INSERT INTO PERSONAL VALUES(1013,'Головин Н.Е.','Программист',1,29,'М',1,0,0,1,0);
-INSERT INTO PERSONAL VALUES(1014,'Пряников Г.М.','Программист',1,31,'М',1,0,0,1,0);
-INSERT INTO PERSONAL VALUES(1015,'Абрамов Н.Г.','Системный администратор',2,23,'М',1,0,0,1,0);
-INSERT INTO PERSONAL VALUES(1016,'Григорян Р.Г.','Главный инженер',4,38,'М',1,0,0,0,0);
-INSERT INTO PERSONAL VALUES(1017,'Исламов М.А.','Инженер',4,31,'М',1,0,0,0,0);
-INSERT INTO PERSONAL VALUES(1018,'Попов Б.В.','Менеджер по персоналу',6,26,'М',1,0,0,0,1);
-INSERT INTO PERSONAL VALUES(1019,'Ибрагимова Н.В.','Заведующая бюро пропусков',6,42,'Ж',1,0,0,0,1);
-INSERT INTO PERSONAL VALUES(9999,'Червов Н.Е.','Администратор',1,20,'М',1,0,0,1,0);
+INSERT INTO PERSONAL VALUES(1000,'Лобников А.А.','Генеральный директор',5,45,'М',1,0,0,1,0,0);
+INSERT INTO PERSONAL VALUES(1001,'Ронинов П.И.','Генеральный директор',5,48,'М',1,0,0,1,0,0);
+INSERT INTO PERSONAL VALUES(1002,'Шишкин П.М.','Начальник отдела',1,37,'М',1,0,0,1,0,0);
+INSERT INTO PERSONAL VALUES(1003,'Хомяков Н.Е.','Начальник отдела',2,34,'М',1,0,0,1,0,0);
+INSERT INTO PERSONAL VALUES(1004,'Никитин А.Г.','Начальник отдела',3,36,'М',1,0,0,1,0,0);
+INSERT INTO PERSONAL VALUES(1005,'Титников Т.Н.','Начальник отдела',4,39,'М',1,0,0,1,0,0);
+INSERT INTO PERSONAL VALUES(1006,'Рокин П.У.','Начальник отдела',5,32,'М',1,0,0,1,0,0);
+INSERT INTO PERSONAL VALUES(1007,'Шиконов К.Н.','Начальник отдела',6,41,'М',1,0,0,1,0,0);
+INSERT INTO PERSONAL VALUES(1008,'Григорьев А.А.','Водитель',3,41,'М',2,1,0,0,0,0);
+INSERT INTO PERSONAL VALUES(1009,'Логинов А.В.','Водитель',3,43,'М',3,1,0,0,0,0);
+INSERT INTO PERSONAL VALUES(1010,'Паролев П.Б.','Водитель',3,39,'М',4,1,0,0,0,0);
+INSERT INTO PERSONAL VALUES(1011,'Канунникова З.С.','Диспетчер',3,31,'Ж',1,0,1,0,0,0);
+INSERT INTO PERSONAL VALUES(1012,'Володина А.С.','Диспетчер',3,34,'Ж',1,0,1,0,0,0);
+INSERT INTO PERSONAL VALUES(1013,'Дорохов Б.Н.','Системный администратор',2,27,'М',1,0,0,1,0,0);
+INSERT INTO PERSONAL VALUES(1014,'Головин Н.Е.','Программист',1,29,'М',1,0,0,1,0,0);
+INSERT INTO PERSONAL VALUES(1015,'Пряников Г.М.','Программист',1,31,'М',1,0,0,1,0,0);
+INSERT INTO PERSONAL VALUES(1016,'Абрамов Н.Г.','Системный администратор',2,23,'М',1,0,0,1,0,0);
+INSERT INTO PERSONAL VALUES(1017,'Григорян Р.Г.','Главный инженер',4,38,'М',1,0,0,0,0,1);
+INSERT INTO PERSONAL VALUES(1018,'Исламов М.А.','Инженер',4,31,'М',1,0,0,0,0,1);
+INSERT INTO PERSONAL VALUES(1019,'Попов Б.В.','Менеджер по персоналу',6,26,'М',1,0,0,0,1,0);
+INSERT INTO PERSONAL VALUES(1020,'Ибрагимова Н.В.','Заведующая бюро пропусков',6,42,'Ж',1,0,0,0,1,0);
+INSERT INTO PERSONAL VALUES(9999,'Червов Н.Е.','Администратор',1,20,'М',1,0,0,1,0,0);
+INSERT INTO PERSONAL VALUES(1110,'Шнобелев К.В.','Водитель',3,39,'М',5,1,0,0,0,0);
 
 
 --INSERT INTO DRIVERS VALUES(9,1);
@@ -88,9 +90,9 @@ INSERT INTO AUTH VALUES(16,'pra','123');
 INSERT INTO AUTH VALUES(17,'abr','123');
 INSERT INTO AUTH VALUES(18,'grig','123');
 INSERT INTO AUTH VALUES(19,'isl','123');
-INSERT INTO AUTH VALUES(20,'adm','123');
-INSERT INTO AUTH VALUES(21,'pop','123');
-INSERT INTO AUTH VALUES(22,'ibr','123');
+INSERT INTO AUTH VALUES(20,'pop','123');
+INSERT INTO AUTH VALUES(21,'ibr','123');
+INSERT INTO AUTH VALUES(22,'adm','123');
 
 --INSERT INTO PERSONALSDEPARTMENTS VALUES(1,5);
 --INSERT INTO PERSONALSDEPARTMENTS VALUES(2,5);
@@ -133,13 +135,22 @@ INSERT INTO Photos values('/Images/gaz.png','Газель');
 INSERT INTO Photos values('/Images/gaznext.png','Газель Некст');
 INSERT INTO Photos values('/Images/kamaz.png','Камаз');
 INSERT INTO Photos values('/Images/lexus.png','Lexus LX 500');
+INSERT INTO Photos values('/Images/kamazGal.png','Камаз Галичанин');
+INSERT INTO Photos values('/Images/scania.png','Scania');
+INSERT INTO Photos values('/Images/liaz.png','Лиаз 5256');
+INSERT INTO Photos values('/Images/fordTransit.png','Ford Transit');
+INSERT INTO Photos values('/Images/noPhoto.png','Нет фото');
 
 
-INSERT INTO Transport VALUES('ХВ349Н777','Toyota Camry',1,2,'/Images/camry.png');
-INSERT INTO Transport VALUES('ЛГ122Г50','Камаз',2,2,'/Images/kamaz.png');
-INSERT INTO Transport VALUES('ОО777О777','Lexus LX 500',1,3,'/Images/lexus.png');
-INSERT INTO Transport VALUES('НЕ371Г70','Газель',1,1,'/Images/gaz.png');
-INSERT INTO Transport VALUES('ТГ155Л170','Газель Некст',1,2,'/Images/gaznext.png');
+INSERT INTO Transport VALUES('ХВ349Н777','Toyota Camry (ХВ349Н777)',1,2,'/Images/camry.png');
+INSERT INTO Transport VALUES('ЛГ122Г50','Камаз (ЛГ122Г50)',2,2,'/Images/kamaz.png');
+INSERT INTO Transport VALUES('ОО777О777','Lexus LX 500 (ОО777О777)',1,3,'/Images/lexus.png');
+INSERT INTO Transport VALUES('НЕ371Г70','Газель (НЕ371Г70)',1,1,'/Images/gaz.png');
+INSERT INTO Transport VALUES('ШН421К170','Камаз Галичанин (ШН421К170)',2,2,'/Images/kamazGal.png');
+INSERT INTO Transport VALUES('ТГ155Л170','Газель Некст (ТГ155Л170)',1,2,'/Images/gaznext.png');
+INSERT INTO Transport VALUES('ПК601Н90','Scania (ПК601Н90)',2,2,'/Images/scania.png');
+INSERT INTO Transport VALUES('ОК952К777','Лиаз 5256 (ОК952К777)',2,2,'/Images/liaz.png');
+INSERT INTO Transport VALUES('КК101Н777','Ford Transit (КК101Н777)',1,2,'/Images/fordTransit.png');
 
 
 

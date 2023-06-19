@@ -34,13 +34,25 @@ namespace avtoLog.Pages
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            org orgs = new org();
+            org orgs = new org();           
 
             if (tbName.Text != "" && tbCountry.Text != "" && tbPostCode.Text != "" && tbCity.Text != "" && tbStreet.Text != "")
             {
                 orgs.name = tbName.Text;
                 orgs.country = tbCountry.Text;
-                orgs.postcode = tbPostCode.Text;
+
+                if (tbPostCode.Text.Length != 6)
+                {
+                    MessageBox.Show("Индекс должен состоять из 6 символов!", "Ошибка!"); return;
+                }
+                else if (checkPostcodeInNumber(tbPostCode.Text))
+                {
+                     orgs.postcode = tbPostCode.Text;  
+                } else
+                {
+                    MessageBox.Show("Индекс должен состоять из цифр!", "Ошибка!"); return;
+                }
+
                 orgs.city = tbCity.Text;
                 orgs.street = tbStreet.Text;
 
@@ -58,6 +70,17 @@ namespace avtoLog.Pages
                 return;
             }
           
+        }
+
+        bool checkPostcodeInNumber( string postcode )
+        {
+            foreach (char c in postcode)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+
+            return true;
         }
 
     }

@@ -80,6 +80,7 @@
           <Property Name="isDis" Type="bit" Nullable="false" />
           <Property Name="isAdm" Type="bit" Nullable="false" />
           <Property Name="isPer" Type="bit" Nullable="false" />
+          <Property Name="isSer" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Photos">
           <Key>
@@ -136,7 +137,7 @@
           <Property Name="routee" Type="varchar" MaxLength="300" Nullable="false" />
           <Property Name="idDri" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK__Auth__personId__45DE573A">
+        <Association Name="FK__Auth__personId__02B25B50">
           <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
           <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
           <ReferentialConstraint>
@@ -148,7 +149,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Departmen__orgId__3D491139">
+        <Association Name="FK__Departmen__orgId__7A1D154F">
           <End Role="org" Type="Self.org" Multiplicity="1" />
           <End Role="Departments" Type="Self.Departments" Multiplicity="*" />
           <ReferentialConstraint>
@@ -160,7 +161,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DriverLic__class__379037E3">
+        <Association Name="FK__DriverLic__class__74643BF9">
           <End Role="LicenseClasses" Type="Self.LicenseClasses" Multiplicity="1" />
           <End Role="DriverLicenseClass" Type="Self.DriverLicenseClass" Multiplicity="*" />
           <ReferentialConstraint>
@@ -172,7 +173,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DriverLic__licen__38845C1C">
+        <Association Name="FK__DriverLic__licen__75586032">
           <End Role="DriverLicense" Type="Self.DriverLicense" Multiplicity="1" />
           <End Role="DriverLicenseClass" Type="Self.DriverLicenseClass" Multiplicity="*" />
           <ReferentialConstraint>
@@ -184,7 +185,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Personal__depart__40257DE4">
+        <Association Name="FK__Personal__depart__7CF981FA">
           <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
           <End Role="Personal" Type="Self.Personal" Multiplicity="*" />
           <ReferentialConstraint>
@@ -196,7 +197,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Personal__idVU__4119A21D">
+        <Association Name="FK__Personal__idVU__7DEDA633">
           <End Role="DriverLicense" Type="Self.DriverLicense" Multiplicity="1" />
           <End Role="Personal" Type="Self.Personal" Multiplicity="*" />
           <ReferentialConstraint>
@@ -208,7 +209,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Transport__Photo__4F67C174">
+        <Association Name="FK__Transport__Photo__0C3BC58A">
           <End Role="Photos" Type="Self.Photos" Multiplicity="1" />
           <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
           <ReferentialConstraint>
@@ -220,7 +221,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Transport__tsSta__4E739D3B">
+        <Association Name="FK__Transport__tsSta__0B47A151">
           <End Role="TsStatus" Type="Self.TsStatus" Multiplicity="1" />
           <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
           <ReferentialConstraint>
@@ -232,7 +233,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Transport__tsTyp__505BE5AD">
+        <Association Name="FK__Transport__tsTyp__0D2FE9C3">
           <End Role="TsTypes" Type="Self.TsTypes" Multiplicity="1" />
           <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
           <ReferentialConstraint>
@@ -244,7 +245,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Waybillse__idCus__5CC1BC92">
+        <Association Name="FK__Waybillse__idCus__1995C0A8">
           <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
           <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -256,7 +257,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Waybillse__idDis__58F12BAE">
+        <Association Name="FK__Waybillse__idDis__15C52FC4">
           <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
           <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -268,7 +269,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Waybillse__idDri__5BCD9859">
+        <Association Name="FK__Waybillse__idDri__18A19C6F">
           <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
           <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -280,7 +281,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Waybillse__mesTy__5708E33C">
+        <Association Name="FK__Waybillse__mesTy__13DCE752">
           <End Role="MesTypes" Type="Self.MesTypes" Multiplicity="1" />
           <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -292,7 +293,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Waybillse__orgId__5AD97420">
+        <Association Name="FK__Waybillse__orgId__17AD7836">
           <End Role="org" Type="Self.org" Multiplicity="1" />
           <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -304,7 +305,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Waybillse__trans__57FD0775">
+        <Association Name="FK__Waybillse__trans__14D10B8B">
           <End Role="TransTypes" Type="Self.TransTypes" Multiplicity="1" />
           <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -316,7 +317,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Waybillse__trans__59E54FE7">
+        <Association Name="FK__Waybillse__trans__16B953FD">
           <End Role="Transport" Type="Self.Transport" Multiplicity="1" />
           <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -343,67 +344,67 @@
           <EntitySet Name="TsStatus" EntityType="Self.TsStatus" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TsTypes" EntityType="Self.TsTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Waybillses" EntityType="Self.Waybillses" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Auth__personId__45DE573A" Association="Self.FK__Auth__personId__45DE573A">
+          <AssociationSet Name="FK__Auth__personId__02B25B50" Association="Self.FK__Auth__personId__02B25B50">
             <End Role="Personal" EntitySet="Personal" />
             <End Role="Auth" EntitySet="Auth" />
           </AssociationSet>
-          <AssociationSet Name="FK__Departmen__orgId__3D491139" Association="Self.FK__Departmen__orgId__3D491139">
+          <AssociationSet Name="FK__Departmen__orgId__7A1D154F" Association="Self.FK__Departmen__orgId__7A1D154F">
             <End Role="org" EntitySet="org" />
             <End Role="Departments" EntitySet="Departments" />
           </AssociationSet>
-          <AssociationSet Name="FK__DriverLic__class__379037E3" Association="Self.FK__DriverLic__class__379037E3">
+          <AssociationSet Name="FK__DriverLic__class__74643BF9" Association="Self.FK__DriverLic__class__74643BF9">
             <End Role="LicenseClasses" EntitySet="LicenseClasses" />
             <End Role="DriverLicenseClass" EntitySet="DriverLicenseClass" />
           </AssociationSet>
-          <AssociationSet Name="FK__DriverLic__licen__38845C1C" Association="Self.FK__DriverLic__licen__38845C1C">
+          <AssociationSet Name="FK__DriverLic__licen__75586032" Association="Self.FK__DriverLic__licen__75586032">
             <End Role="DriverLicense" EntitySet="DriverLicense" />
             <End Role="DriverLicenseClass" EntitySet="DriverLicenseClass" />
           </AssociationSet>
-          <AssociationSet Name="FK__Personal__depart__40257DE4" Association="Self.FK__Personal__depart__40257DE4">
+          <AssociationSet Name="FK__Personal__depart__7CF981FA" Association="Self.FK__Personal__depart__7CF981FA">
             <End Role="Departments" EntitySet="Departments" />
             <End Role="Personal" EntitySet="Personal" />
           </AssociationSet>
-          <AssociationSet Name="FK__Personal__idVU__4119A21D" Association="Self.FK__Personal__idVU__4119A21D">
+          <AssociationSet Name="FK__Personal__idVU__7DEDA633" Association="Self.FK__Personal__idVU__7DEDA633">
             <End Role="DriverLicense" EntitySet="DriverLicense" />
             <End Role="Personal" EntitySet="Personal" />
           </AssociationSet>
-          <AssociationSet Name="FK__Transport__Photo__4F67C174" Association="Self.FK__Transport__Photo__4F67C174">
+          <AssociationSet Name="FK__Transport__Photo__0C3BC58A" Association="Self.FK__Transport__Photo__0C3BC58A">
             <End Role="Photos" EntitySet="Photos" />
             <End Role="Transport" EntitySet="Transport" />
           </AssociationSet>
-          <AssociationSet Name="FK__Transport__tsSta__4E739D3B" Association="Self.FK__Transport__tsSta__4E739D3B">
+          <AssociationSet Name="FK__Transport__tsSta__0B47A151" Association="Self.FK__Transport__tsSta__0B47A151">
             <End Role="TsStatus" EntitySet="TsStatus" />
             <End Role="Transport" EntitySet="Transport" />
           </AssociationSet>
-          <AssociationSet Name="FK__Transport__tsTyp__505BE5AD" Association="Self.FK__Transport__tsTyp__505BE5AD">
+          <AssociationSet Name="FK__Transport__tsTyp__0D2FE9C3" Association="Self.FK__Transport__tsTyp__0D2FE9C3">
             <End Role="TsTypes" EntitySet="TsTypes" />
             <End Role="Transport" EntitySet="Transport" />
           </AssociationSet>
-          <AssociationSet Name="FK__Waybillse__idCus__5CC1BC92" Association="Self.FK__Waybillse__idCus__5CC1BC92">
+          <AssociationSet Name="FK__Waybillse__idCus__1995C0A8" Association="Self.FK__Waybillse__idCus__1995C0A8">
             <End Role="Personal" EntitySet="Personal" />
             <End Role="Waybillses" EntitySet="Waybillses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Waybillse__idDis__58F12BAE" Association="Self.FK__Waybillse__idDis__58F12BAE">
+          <AssociationSet Name="FK__Waybillse__idDis__15C52FC4" Association="Self.FK__Waybillse__idDis__15C52FC4">
             <End Role="Personal" EntitySet="Personal" />
             <End Role="Waybillses" EntitySet="Waybillses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Waybillse__idDri__5BCD9859" Association="Self.FK__Waybillse__idDri__5BCD9859">
+          <AssociationSet Name="FK__Waybillse__idDri__18A19C6F" Association="Self.FK__Waybillse__idDri__18A19C6F">
             <End Role="Personal" EntitySet="Personal" />
             <End Role="Waybillses" EntitySet="Waybillses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Waybillse__mesTy__5708E33C" Association="Self.FK__Waybillse__mesTy__5708E33C">
+          <AssociationSet Name="FK__Waybillse__mesTy__13DCE752" Association="Self.FK__Waybillse__mesTy__13DCE752">
             <End Role="MesTypes" EntitySet="MesTypes" />
             <End Role="Waybillses" EntitySet="Waybillses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Waybillse__orgId__5AD97420" Association="Self.FK__Waybillse__orgId__5AD97420">
+          <AssociationSet Name="FK__Waybillse__orgId__17AD7836" Association="Self.FK__Waybillse__orgId__17AD7836">
             <End Role="org" EntitySet="org" />
             <End Role="Waybillses" EntitySet="Waybillses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Waybillse__trans__57FD0775" Association="Self.FK__Waybillse__trans__57FD0775">
+          <AssociationSet Name="FK__Waybillse__trans__14D10B8B" Association="Self.FK__Waybillse__trans__14D10B8B">
             <End Role="TransTypes" EntitySet="TransTypes" />
             <End Role="Waybillses" EntitySet="Waybillses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Waybillse__trans__59E54FE7" Association="Self.FK__Waybillse__trans__59E54FE7">
+          <AssociationSet Name="FK__Waybillse__trans__16B953FD" Association="Self.FK__Waybillse__trans__16B953FD">
             <End Role="Transport" EntitySet="Transport" />
             <End Role="Waybillses" EntitySet="Waybillses" />
           </AssociationSet>
@@ -421,7 +422,7 @@
           <Property Name="personId" Type="Int32" Nullable="false" />
           <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Personal" Relationship="Self.FK__Auth__personId__45DE573A" FromRole="Auth" ToRole="Personal" />
+          <NavigationProperty Name="Personal" Relationship="Self.FK__Auth__personId__02B25B50" FromRole="Auth" ToRole="Personal" />
         </EntityType>
         <EntityType Name="Departments">
           <Key>
@@ -430,8 +431,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="orgId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="org" Relationship="Self.FK__Departmen__orgId__3D491139" FromRole="Departments" ToRole="org" />
-          <NavigationProperty Name="Personal" Relationship="Self.FK__Personal__depart__40257DE4" FromRole="Departments" ToRole="Personal" />
+          <NavigationProperty Name="org" Relationship="Self.FK__Departmen__orgId__7A1D154F" FromRole="Departments" ToRole="org" />
+          <NavigationProperty Name="Personal" Relationship="Self.FK__Personal__depart__7CF981FA" FromRole="Departments" ToRole="Personal" />
         </EntityType>
         <EntityType Name="DriverLicense">
           <Key>
@@ -441,8 +442,8 @@
           <Property Name="seriesNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Name="receiptDate" Type="DateTime" Precision="0" />
           <Property Name="endDate" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="DriverLicenseClass" Relationship="Self.FK__DriverLic__licen__38845C1C" FromRole="DriverLicense" ToRole="DriverLicenseClass" />
-          <NavigationProperty Name="Personal" Relationship="Self.FK__Personal__idVU__4119A21D" FromRole="DriverLicense" ToRole="Personal" />
+          <NavigationProperty Name="DriverLicenseClass" Relationship="Self.FK__DriverLic__licen__75586032" FromRole="DriverLicense" ToRole="DriverLicenseClass" />
+          <NavigationProperty Name="Personal" Relationship="Self.FK__Personal__idVU__7DEDA633" FromRole="DriverLicense" ToRole="Personal" />
         </EntityType>
         <EntityType Name="DriverLicenseClass">
           <Key>
@@ -451,8 +452,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="licenseId" Type="Int32" Nullable="false" />
           <Property Name="classId" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="DriverLicense" Relationship="Self.FK__DriverLic__licen__38845C1C" FromRole="DriverLicenseClass" ToRole="DriverLicense" />
-          <NavigationProperty Name="LicenseClasses" Relationship="Self.FK__DriverLic__class__379037E3" FromRole="DriverLicenseClass" ToRole="LicenseClasses" />
+          <NavigationProperty Name="DriverLicense" Relationship="Self.FK__DriverLic__licen__75586032" FromRole="DriverLicenseClass" ToRole="DriverLicense" />
+          <NavigationProperty Name="LicenseClasses" Relationship="Self.FK__DriverLic__class__74643BF9" FromRole="DriverLicenseClass" ToRole="LicenseClasses" />
         </EntityType>
         <EntityType Name="LicenseClasses">
           <Key>
@@ -460,7 +461,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="DriverLicenseClass" Relationship="Self.FK__DriverLic__class__379037E3" FromRole="LicenseClasses" ToRole="DriverLicenseClass" />
+          <NavigationProperty Name="DriverLicenseClass" Relationship="Self.FK__DriverLic__class__74643BF9" FromRole="LicenseClasses" ToRole="DriverLicenseClass" />
         </EntityType>
         <EntityType Name="MesTypes">
           <Key>
@@ -468,7 +469,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Waybillses" Relationship="Self.FK__Waybillse__mesTy__5708E33C" FromRole="MesTypes" ToRole="Waybillses" />
+          <NavigationProperty Name="Waybillses" Relationship="Self.FK__Waybillse__mesTy__13DCE752" FromRole="MesTypes" ToRole="Waybillses" />
         </EntityType>
         <EntityType Name="org">
           <Key>
@@ -480,8 +481,8 @@
           <Property Name="postcode" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="city" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="street" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Departments" Relationship="Self.FK__Departmen__orgId__3D491139" FromRole="org" ToRole="Departments" />
-          <NavigationProperty Name="Waybillses" Relationship="Self.FK__Waybillse__orgId__5AD97420" FromRole="org" ToRole="Waybillses" />
+          <NavigationProperty Name="Departments" Relationship="Self.FK__Departmen__orgId__7A1D154F" FromRole="org" ToRole="Departments" />
+          <NavigationProperty Name="Waybillses" Relationship="Self.FK__Waybillse__orgId__17AD7836" FromRole="org" ToRole="Waybillses" />
         </EntityType>
         <EntityType Name="Personal">
           <Key>
@@ -499,12 +500,13 @@
           <Property Name="isDis" Type="Boolean" Nullable="false" />
           <Property Name="isAdm" Type="Boolean" Nullable="false" />
           <Property Name="isPer" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="Auth" Relationship="Self.FK__Auth__personId__45DE573A" FromRole="Personal" ToRole="Auth" />
-          <NavigationProperty Name="Departments" Relationship="Self.FK__Personal__depart__40257DE4" FromRole="Personal" ToRole="Departments" />
-          <NavigationProperty Name="DriverLicense" Relationship="Self.FK__Personal__idVU__4119A21D" FromRole="Personal" ToRole="DriverLicense" />
-          <NavigationProperty Name="Waybillses" Relationship="Self.FK__Waybillse__idCus__5CC1BC92" FromRole="Personal" ToRole="Waybillses" />
-          <NavigationProperty Name="Waybillses1" Relationship="Self.FK__Waybillse__idDis__58F12BAE" FromRole="Personal" ToRole="Waybillses" />
-          <NavigationProperty Name="Waybillses2" Relationship="Self.FK__Waybillse__idDri__5BCD9859" FromRole="Personal" ToRole="Waybillses" />
+          <Property Name="isSer" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Auth" Relationship="Self.FK__Auth__personId__02B25B50" FromRole="Personal" ToRole="Auth" />
+          <NavigationProperty Name="Departments" Relationship="Self.FK__Personal__depart__7CF981FA" FromRole="Personal" ToRole="Departments" />
+          <NavigationProperty Name="DriverLicense" Relationship="Self.FK__Personal__idVU__7DEDA633" FromRole="Personal" ToRole="DriverLicense" />
+          <NavigationProperty Name="Waybillses" Relationship="Self.FK__Waybillse__idCus__1995C0A8" FromRole="Personal" ToRole="Waybillses" />
+          <NavigationProperty Name="Waybillses1" Relationship="Self.FK__Waybillse__idDis__15C52FC4" FromRole="Personal" ToRole="Waybillses" />
+          <NavigationProperty Name="Waybillses2" Relationship="Self.FK__Waybillse__idDri__18A19C6F" FromRole="Personal" ToRole="Waybillses" />
         </EntityType>
         <EntityType Name="Photos">
           <Key>
@@ -512,7 +514,7 @@
           </Key>
           <Property Name="URLPhoto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="codeName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Transport" Relationship="Self.FK__Transport__Photo__4F67C174" FromRole="Photos" ToRole="Transport" />
+          <NavigationProperty Name="Transport" Relationship="Self.FK__Transport__Photo__0C3BC58A" FromRole="Photos" ToRole="Transport" />
         </EntityType>
         <EntityType Name="Transport">
           <Key>
@@ -524,10 +526,10 @@
           <Property Name="tsTypeId" Type="Int32" Nullable="false" />
           <Property Name="tsStatusId" Type="Int32" Nullable="false" />
           <Property Name="Photo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Photos" Relationship="Self.FK__Transport__Photo__4F67C174" FromRole="Transport" ToRole="Photos" />
-          <NavigationProperty Name="TsStatus" Relationship="Self.FK__Transport__tsSta__4E739D3B" FromRole="Transport" ToRole="TsStatus" />
-          <NavigationProperty Name="TsTypes" Relationship="Self.FK__Transport__tsTyp__505BE5AD" FromRole="Transport" ToRole="TsTypes" />
-          <NavigationProperty Name="Waybillses" Relationship="Self.FK__Waybillse__trans__59E54FE7" FromRole="Transport" ToRole="Waybillses" />
+          <NavigationProperty Name="Photos" Relationship="Self.FK__Transport__Photo__0C3BC58A" FromRole="Transport" ToRole="Photos" />
+          <NavigationProperty Name="TsStatus" Relationship="Self.FK__Transport__tsSta__0B47A151" FromRole="Transport" ToRole="TsStatus" />
+          <NavigationProperty Name="TsTypes" Relationship="Self.FK__Transport__tsTyp__0D2FE9C3" FromRole="Transport" ToRole="TsTypes" />
+          <NavigationProperty Name="Waybillses" Relationship="Self.FK__Waybillse__trans__16B953FD" FromRole="Transport" ToRole="Waybillses" />
         </EntityType>
         <EntityType Name="TransTypes">
           <Key>
@@ -535,7 +537,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Waybillses" Relationship="Self.FK__Waybillse__trans__57FD0775" FromRole="TransTypes" ToRole="Waybillses" />
+          <NavigationProperty Name="Waybillses" Relationship="Self.FK__Waybillse__trans__14D10B8B" FromRole="TransTypes" ToRole="Waybillses" />
         </EntityType>
         <EntityType Name="TsStatus">
           <Key>
@@ -543,7 +545,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="statusName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Transport" Relationship="Self.FK__Transport__tsSta__4E739D3B" FromRole="TsStatus" ToRole="Transport" />
+          <NavigationProperty Name="Transport" Relationship="Self.FK__Transport__tsSta__0B47A151" FromRole="TsStatus" ToRole="Transport" />
         </EntityType>
         <EntityType Name="TsTypes">
           <Key>
@@ -551,7 +553,7 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name" Type="String" MaxLength="60" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Transport" Relationship="Self.FK__Transport__tsTyp__505BE5AD" FromRole="TsTypes" ToRole="Transport" />
+          <NavigationProperty Name="Transport" Relationship="Self.FK__Transport__tsTyp__0D2FE9C3" FromRole="TsTypes" ToRole="Transport" />
         </EntityType>
         <EntityType Name="Waybillses">
           <Key>
@@ -568,15 +570,15 @@
           <Property Name="orgId" Type="Int32" Nullable="false" />
           <Property Name="routee" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idDri" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="MesTypes" Relationship="Self.FK__Waybillse__mesTy__5708E33C" FromRole="Waybillses" ToRole="MesTypes" />
-          <NavigationProperty Name="org" Relationship="Self.FK__Waybillse__orgId__5AD97420" FromRole="Waybillses" ToRole="org" />
-          <NavigationProperty Name="Personal" Relationship="Self.FK__Waybillse__idCus__5CC1BC92" FromRole="Waybillses" ToRole="Personal" />
-          <NavigationProperty Name="Personal1" Relationship="Self.FK__Waybillse__idDis__58F12BAE" FromRole="Waybillses" ToRole="Personal" />
-          <NavigationProperty Name="Personal2" Relationship="Self.FK__Waybillse__idDri__5BCD9859" FromRole="Waybillses" ToRole="Personal" />
-          <NavigationProperty Name="Transport" Relationship="Self.FK__Waybillse__trans__59E54FE7" FromRole="Waybillses" ToRole="Transport" />
-          <NavigationProperty Name="TransTypes" Relationship="Self.FK__Waybillse__trans__57FD0775" FromRole="Waybillses" ToRole="TransTypes" />
+          <NavigationProperty Name="MesTypes" Relationship="Self.FK__Waybillse__mesTy__13DCE752" FromRole="Waybillses" ToRole="MesTypes" />
+          <NavigationProperty Name="org" Relationship="Self.FK__Waybillse__orgId__17AD7836" FromRole="Waybillses" ToRole="org" />
+          <NavigationProperty Name="Personal" Relationship="Self.FK__Waybillse__idCus__1995C0A8" FromRole="Waybillses" ToRole="Personal" />
+          <NavigationProperty Name="Personal1" Relationship="Self.FK__Waybillse__idDis__15C52FC4" FromRole="Waybillses" ToRole="Personal" />
+          <NavigationProperty Name="Personal2" Relationship="Self.FK__Waybillse__idDri__18A19C6F" FromRole="Waybillses" ToRole="Personal" />
+          <NavigationProperty Name="Transport" Relationship="Self.FK__Waybillse__trans__16B953FD" FromRole="Waybillses" ToRole="Transport" />
+          <NavigationProperty Name="TransTypes" Relationship="Self.FK__Waybillse__trans__14D10B8B" FromRole="Waybillses" ToRole="TransTypes" />
         </EntityType>
-        <Association Name="FK__Auth__personId__45DE573A">
+        <Association Name="FK__Auth__personId__02B25B50">
           <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
           <End Role="Auth" Type="Self.Auth" Multiplicity="*" />
           <ReferentialConstraint>
@@ -588,7 +590,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Departmen__orgId__3D491139">
+        <Association Name="FK__Departmen__orgId__7A1D154F">
           <End Role="org" Type="Self.org" Multiplicity="1" />
           <End Role="Departments" Type="Self.Departments" Multiplicity="*" />
           <ReferentialConstraint>
@@ -600,7 +602,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Personal__depart__40257DE4">
+        <Association Name="FK__Personal__depart__7CF981FA">
           <End Role="Departments" Type="Self.Departments" Multiplicity="1" />
           <End Role="Personal" Type="Self.Personal" Multiplicity="*" />
           <ReferentialConstraint>
@@ -612,7 +614,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DriverLic__licen__38845C1C">
+        <Association Name="FK__DriverLic__licen__75586032">
           <End Role="DriverLicense" Type="Self.DriverLicense" Multiplicity="1" />
           <End Role="DriverLicenseClass" Type="Self.DriverLicenseClass" Multiplicity="*" />
           <ReferentialConstraint>
@@ -624,7 +626,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Personal__idVU__4119A21D">
+        <Association Name="FK__Personal__idVU__7DEDA633">
           <End Role="DriverLicense" Type="Self.DriverLicense" Multiplicity="1" />
           <End Role="Personal" Type="Self.Personal" Multiplicity="*" />
           <ReferentialConstraint>
@@ -636,7 +638,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DriverLic__class__379037E3">
+        <Association Name="FK__DriverLic__class__74643BF9">
           <End Role="LicenseClasses" Type="Self.LicenseClasses" Multiplicity="1" />
           <End Role="DriverLicenseClass" Type="Self.DriverLicenseClass" Multiplicity="*" />
           <ReferentialConstraint>
@@ -648,7 +650,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Waybillse__mesTy__5708E33C">
+        <Association Name="FK__Waybillse__mesTy__13DCE752">
           <End Role="MesTypes" Type="Self.MesTypes" Multiplicity="1" />
           <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -660,7 +662,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Waybillse__orgId__5AD97420">
+        <Association Name="FK__Waybillse__orgId__17AD7836">
           <End Role="org" Type="Self.org" Multiplicity="1" />
           <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -672,7 +674,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Waybillse__idCus__5CC1BC92">
+        <Association Name="FK__Waybillse__idCus__1995C0A8">
           <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
           <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -684,7 +686,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Waybillse__idDis__58F12BAE">
+        <Association Name="FK__Waybillse__idDis__15C52FC4">
           <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
           <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -696,7 +698,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Waybillse__idDri__5BCD9859">
+        <Association Name="FK__Waybillse__idDri__18A19C6F">
           <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
           <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -708,7 +710,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Transport__Photo__4F67C174">
+        <Association Name="FK__Transport__Photo__0C3BC58A">
           <End Role="Photos" Type="Self.Photos" Multiplicity="1" />
           <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
           <ReferentialConstraint>
@@ -720,7 +722,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Transport__tsSta__4E739D3B">
+        <Association Name="FK__Transport__tsSta__0B47A151">
           <End Role="TsStatus" Type="Self.TsStatus" Multiplicity="1" />
           <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
           <ReferentialConstraint>
@@ -732,7 +734,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Transport__tsTyp__505BE5AD">
+        <Association Name="FK__Transport__tsTyp__0D2FE9C3">
           <End Role="TsTypes" Type="Self.TsTypes" Multiplicity="1" />
           <End Role="Transport" Type="Self.Transport" Multiplicity="*" />
           <ReferentialConstraint>
@@ -744,7 +746,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Waybillse__trans__59E54FE7">
+        <Association Name="FK__Waybillse__trans__16B953FD">
           <End Role="Transport" Type="Self.Transport" Multiplicity="1" />
           <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -756,7 +758,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Waybillse__trans__57FD0775">
+        <Association Name="FK__Waybillse__trans__14D10B8B">
           <End Role="TransTypes" Type="Self.TransTypes" Multiplicity="1" />
           <End Role="Waybillses" Type="Self.Waybillses" Multiplicity="*" />
           <ReferentialConstraint>
@@ -783,67 +785,67 @@
           <EntitySet Name="TsStatus" EntityType="Self.TsStatus" />
           <EntitySet Name="TsTypes" EntityType="Self.TsTypes" />
           <EntitySet Name="Waybillses" EntityType="Self.Waybillses" />
-          <AssociationSet Name="FK__Auth__personId__45DE573A" Association="Self.FK__Auth__personId__45DE573A">
+          <AssociationSet Name="FK__Auth__personId__02B25B50" Association="Self.FK__Auth__personId__02B25B50">
             <End Role="Personal" EntitySet="Personal" />
             <End Role="Auth" EntitySet="Auth" />
           </AssociationSet>
-          <AssociationSet Name="FK__Departmen__orgId__3D491139" Association="Self.FK__Departmen__orgId__3D491139">
+          <AssociationSet Name="FK__Departmen__orgId__7A1D154F" Association="Self.FK__Departmen__orgId__7A1D154F">
             <End Role="org" EntitySet="org" />
             <End Role="Departments" EntitySet="Departments" />
           </AssociationSet>
-          <AssociationSet Name="FK__Personal__depart__40257DE4" Association="Self.FK__Personal__depart__40257DE4">
+          <AssociationSet Name="FK__Personal__depart__7CF981FA" Association="Self.FK__Personal__depart__7CF981FA">
             <End Role="Departments" EntitySet="Departments" />
             <End Role="Personal" EntitySet="Personal" />
           </AssociationSet>
-          <AssociationSet Name="FK__DriverLic__licen__38845C1C" Association="Self.FK__DriverLic__licen__38845C1C">
+          <AssociationSet Name="FK__DriverLic__licen__75586032" Association="Self.FK__DriverLic__licen__75586032">
             <End Role="DriverLicense" EntitySet="DriverLicense" />
             <End Role="DriverLicenseClass" EntitySet="DriverLicenseClass" />
           </AssociationSet>
-          <AssociationSet Name="FK__Personal__idVU__4119A21D" Association="Self.FK__Personal__idVU__4119A21D">
+          <AssociationSet Name="FK__Personal__idVU__7DEDA633" Association="Self.FK__Personal__idVU__7DEDA633">
             <End Role="DriverLicense" EntitySet="DriverLicense" />
             <End Role="Personal" EntitySet="Personal" />
           </AssociationSet>
-          <AssociationSet Name="FK__DriverLic__class__379037E3" Association="Self.FK__DriverLic__class__379037E3">
+          <AssociationSet Name="FK__DriverLic__class__74643BF9" Association="Self.FK__DriverLic__class__74643BF9">
             <End Role="LicenseClasses" EntitySet="LicenseClasses" />
             <End Role="DriverLicenseClass" EntitySet="DriverLicenseClass" />
           </AssociationSet>
-          <AssociationSet Name="FK__Waybillse__mesTy__5708E33C" Association="Self.FK__Waybillse__mesTy__5708E33C">
+          <AssociationSet Name="FK__Waybillse__mesTy__13DCE752" Association="Self.FK__Waybillse__mesTy__13DCE752">
             <End Role="MesTypes" EntitySet="MesTypes" />
             <End Role="Waybillses" EntitySet="Waybillses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Waybillse__orgId__5AD97420" Association="Self.FK__Waybillse__orgId__5AD97420">
+          <AssociationSet Name="FK__Waybillse__orgId__17AD7836" Association="Self.FK__Waybillse__orgId__17AD7836">
             <End Role="org" EntitySet="org" />
             <End Role="Waybillses" EntitySet="Waybillses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Waybillse__idCus__5CC1BC92" Association="Self.FK__Waybillse__idCus__5CC1BC92">
+          <AssociationSet Name="FK__Waybillse__idCus__1995C0A8" Association="Self.FK__Waybillse__idCus__1995C0A8">
             <End Role="Personal" EntitySet="Personal" />
             <End Role="Waybillses" EntitySet="Waybillses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Waybillse__idDis__58F12BAE" Association="Self.FK__Waybillse__idDis__58F12BAE">
+          <AssociationSet Name="FK__Waybillse__idDis__15C52FC4" Association="Self.FK__Waybillse__idDis__15C52FC4">
             <End Role="Personal" EntitySet="Personal" />
             <End Role="Waybillses" EntitySet="Waybillses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Waybillse__idDri__5BCD9859" Association="Self.FK__Waybillse__idDri__5BCD9859">
+          <AssociationSet Name="FK__Waybillse__idDri__18A19C6F" Association="Self.FK__Waybillse__idDri__18A19C6F">
             <End Role="Personal" EntitySet="Personal" />
             <End Role="Waybillses" EntitySet="Waybillses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Transport__Photo__4F67C174" Association="Self.FK__Transport__Photo__4F67C174">
+          <AssociationSet Name="FK__Transport__Photo__0C3BC58A" Association="Self.FK__Transport__Photo__0C3BC58A">
             <End Role="Photos" EntitySet="Photos" />
             <End Role="Transport" EntitySet="Transport" />
           </AssociationSet>
-          <AssociationSet Name="FK__Transport__tsSta__4E739D3B" Association="Self.FK__Transport__tsSta__4E739D3B">
+          <AssociationSet Name="FK__Transport__tsSta__0B47A151" Association="Self.FK__Transport__tsSta__0B47A151">
             <End Role="TsStatus" EntitySet="TsStatus" />
             <End Role="Transport" EntitySet="Transport" />
           </AssociationSet>
-          <AssociationSet Name="FK__Transport__tsTyp__505BE5AD" Association="Self.FK__Transport__tsTyp__505BE5AD">
+          <AssociationSet Name="FK__Transport__tsTyp__0D2FE9C3" Association="Self.FK__Transport__tsTyp__0D2FE9C3">
             <End Role="TsTypes" EntitySet="TsTypes" />
             <End Role="Transport" EntitySet="Transport" />
           </AssociationSet>
-          <AssociationSet Name="FK__Waybillse__trans__59E54FE7" Association="Self.FK__Waybillse__trans__59E54FE7">
+          <AssociationSet Name="FK__Waybillse__trans__16B953FD" Association="Self.FK__Waybillse__trans__16B953FD">
             <End Role="Transport" EntitySet="Transport" />
             <End Role="Waybillses" EntitySet="Waybillses" />
           </AssociationSet>
-          <AssociationSet Name="FK__Waybillse__trans__57FD0775" Association="Self.FK__Waybillse__trans__57FD0775">
+          <AssociationSet Name="FK__Waybillse__trans__14D10B8B" Association="Self.FK__Waybillse__trans__14D10B8B">
             <End Role="TransTypes" EntitySet="TransTypes" />
             <End Role="Waybillses" EntitySet="Waybillses" />
           </AssociationSet>
@@ -935,6 +937,7 @@
                 <ScalarProperty Name="isDis" ColumnName="isDis" />
                 <ScalarProperty Name="isAdm" ColumnName="isAdm" />
                 <ScalarProperty Name="isPer" ColumnName="isPer" />
+                <ScalarProperty Name="isSer" ColumnName="isSer" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

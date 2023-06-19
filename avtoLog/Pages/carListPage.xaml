@@ -52,10 +52,10 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border Background="#D9D9D9">
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5" MinWidth="300">
-                            <StackPanel>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" MinWidth="320">
+                            <StackPanel Margin="0,0,10,0">
                                 <!--ФОТО-->
-                                <Image Source="{Binding Path= Photo}" Width="100" Height="100"/>
+                                <Image Source="{Binding Path= Photo, FallbackValue=/Images/noPhoto.png}" Width="100" Height="100"/>
                             </StackPanel>
 
                             <StackPanel VerticalAlignment="Center">

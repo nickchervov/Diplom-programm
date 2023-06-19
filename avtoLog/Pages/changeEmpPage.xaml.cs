@@ -80,6 +80,15 @@ namespace avtoLog.Pages
             {
                 cbIsPer.SelectedIndex = 1;
             }
+
+            if (_emp.isSer == true)
+            {
+                cbIsSer.SelectedIndex = 0;
+            }
+            else
+            {
+                cbIsSer.SelectedIndex = 1;
+            }
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
@@ -88,7 +97,7 @@ namespace avtoLog.Pages
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
         {
-            if (tbAge.Text != "" && tbFIO.Text != "" && tbPosition.Text != "" && tbTabNom.Text != "" && cbDep.SelectedItem != null && cbIsAdm.SelectedItem != null && cbIsDis.SelectedItem != null && cbIsDri.SelectedItem != null && cbIsPer.SelectedItem != null && cbPol.SelectedItem != null)
+            if (tbAge.Text != "" && tbFIO.Text != "" && tbPosition.Text != "" && tbTabNom.Text != "" && cbDep.SelectedItem != null && cbIsAdm.SelectedItem != null && cbIsDis.SelectedItem != null && cbIsDri.SelectedItem != null && cbIsPer.SelectedItem != null && cbPol.SelectedItem != null && cbIsSer.SelectedItem != null)
             {
                 if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
                 {
@@ -137,7 +146,16 @@ namespace avtoLog.Pages
                         _emp.isPer = false;
                     }
 
-                    try { _emp.tabNumber = Convert.ToInt32(tbTabNom); } catch { MessageBox.Show("Табельный номер должен состоять из цифр!", "Предупреждение!"); }
+                    if (cbIsSer.SelectedIndex == 0)
+                    {
+                        _emp.isSer = true;
+                    }
+                    else
+                    {
+                        _emp.isSer = false;
+                    }
+
+                    try { _emp.tabNumber = Convert.ToInt32(tbTabNom.Text); } catch { MessageBox.Show("Табельный номер должен состоять из цифр!", "Предупреждение!"); return; }
 
                     _emp.departmentId = (cbDep.SelectedItem as Departments).id;
 

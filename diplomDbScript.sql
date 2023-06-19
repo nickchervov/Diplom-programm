@@ -49,6 +49,7 @@ CREATE TABLE Personal ("id" int Identity (1,1) NOT NULL,
                        isDis bit NOT NULL,
 					   isAdm bit NOT NULL,
 					   isPer bit NOT NULL,
+					   isSer bit NOT NULL,
                        Primary Key("id"),
 					   Foreign Key(departmentId) REFERENCES Departments("id"),
 					   Foreign Key(idVU) REFERENCES DriverLicense("id"));

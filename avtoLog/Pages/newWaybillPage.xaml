@@ -49,12 +49,11 @@
                           Grid.Row="1"
                           Grid.Column="1"
                           FontSize="14"
-                          Margin="5,0,0,10">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding name}"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
+                          Margin="5,0,0,10"
+                          SelectedValuePath="id"                         
+                          DisplayMemberPath="name"
+                          IsReadOnly="True"
+                          IsEditable="False">
                 </ComboBox>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="2" Grid.Column="0" Text="Диспетчер:" Margin="0,0,0,10"/>
@@ -62,12 +61,11 @@
                           Grid.Row="2"
                           Grid.Column="1"
                           FontSize="14"
-                          Margin="5,0,0,10">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding FIO}"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
+                          Margin="5,0,0,10"
+                          SelectedValuePath="id"                         
+                          DisplayMemberPath="FIO"
+                          IsReadOnly="True"
+                          IsEditable="False">
                 </ComboBox>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="3" Grid.Column="0" Text="Водитель:" Margin="0,0,0,10"/>
@@ -75,12 +73,11 @@
                           Grid.Row="3"
                           Grid.Column="1"
                           FontSize="14"
-                          Margin="5,0,0,10">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding FIO}"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
+                          Margin="5,0,0,10"
+                          SelectedValuePath="id"                         
+                          DisplayMemberPath="FIO"
+                          IsReadOnly="True"
+                          IsEditable="False">
                 </ComboBox>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="4" Grid.Column="0" Text="Заказчик:" Margin="0,0,0,10"/>
@@ -88,12 +85,11 @@
                           Grid.Row="4"
                           Grid.Column="1"
                           FontSize="14"
-                          Margin="5,0,0,10">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding FIO}"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
+                          Margin="5,0,0,10"
+                          SelectedValuePath="id"                          
+                          DisplayMemberPath="FIO"
+                          IsReadOnly="True"
+                          IsEditable="False">
                 </ComboBox>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="5" Grid.Column="0" Text="Автотранспорт:" Margin="0,0,0,10"/>
@@ -101,12 +97,11 @@
                           Grid.Row="5"
                           Grid.Column="1"
                           FontSize="14"
-                          Margin="5,0,0,10">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding tsModel}"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
+                          Margin="5,0,0,10"
+                          SelectedValuePath="id"                         
+                          DisplayMemberPath="tsModel"
+                          IsReadOnly="True"
+                          IsEditable="False">
                 </ComboBox>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="6" Grid.Column="0" Text="Дата начала:" Margin="0,0,0,10"/>
@@ -122,12 +117,11 @@
                           Grid.Row="8"
                           Grid.Column="1"
                           FontSize="14"
-                          Margin="5,0,0,10">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding name}"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
+                          Margin="5,0,0,10"
+                          SelectedValuePath="id"                         
+                          DisplayMemberPath="name"
+                          IsReadOnly="True"
+                          IsEditable="False">
                 </ComboBox>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="9" Grid.Column="0" Text="Вид трансортировки:" Margin="0,0,0,10"/>
@@ -135,12 +129,11 @@
                           Grid.Row="9"
                           Grid.Column="1"
                           FontSize="14"
-                          Margin="5,0,0,10">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding name}"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
+                          Margin="5,0,0,10"
+                          SelectedValuePath="id"                          
+                          DisplayMemberPath="name"
+                          IsReadOnly="True"
+                          IsEditable="False">
                 </ComboBox>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18" Grid.Row="10" Grid.Column="0" Text="Адрес прибытия:" Margin="0,0,0,10"/>

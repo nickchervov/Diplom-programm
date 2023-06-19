@@ -72,10 +72,27 @@ namespace avtoLog.Pages
             {
                 if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите удалить запись?", "Внимание!", MessageBoxButton.YesNo))
                 {
-                    PageHelper.DbConnect.org.Remove(selected);
-                    PageHelper.DbConnect.SaveChanges();
 
-                    connectingDb();
+                    var orgInWay = PageHelper.DbConnect.Waybillses.Select(c => c.orgId).ToArray();
+
+                    var orgInDep = PageHelper.DbConnect.Departments.Select(c => c.orgId).ToArray();
+
+                    if (orgInWay.Contains(selected.id))
+                    {
+                        MessageBox.Show("Не получилось удалить запись!\nДля начала необходимо удалить связанный путевой лист!", "Предупреждение!");
+                        return;
+                    } else if (orgInDep.Contains(selected.id))
+                    {
+                        MessageBox.Show("Не получилось удалить запись!\nДля начала необходимо удалить связанные отделы!", "Предупреждение!");
+                        return;
+                    } else
+                    {
+                        PageHelper.DbConnect.org.Remove(selected);
+                        PageHelper.DbConnect.SaveChanges();
+
+                        connectingDb();
+                    }
+                    
                 }
                 else return;
             }

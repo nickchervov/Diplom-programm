@@ -40,8 +40,7 @@
                           Grid.Column="1"
                           FontSize="14"
                           Margin="5,0,0,10"
-                          SelectedValuePath="id" 
-                          SelectedValue="{Binding Personal.id, Mode=OneTime}"                         
+                          SelectedValuePath="id"                       
                           DisplayMemberPath="FIO"
                           IsReadOnly="True"
                           IsEditable="False">

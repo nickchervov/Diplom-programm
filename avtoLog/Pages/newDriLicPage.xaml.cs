@@ -41,7 +41,16 @@ namespace avtoLog.Pages
 
                 driLic.receiptDate = Convert.ToDateTime(dpRecDate.Text);
 
-                driLic.endDate = Convert.ToDateTime(dpEndDate.Text);
+                if (Convert.ToDateTime(dpEndDate.Text) < Convert.ToDateTime(dpRecDate.Text))
+                {
+                    MessageBox.Show("Дата окончания не может быть раньше даты получения!","Ошибка!");
+                    return;
+                } 
+                else
+                {
+                    driLic.endDate = Convert.ToDateTime(dpEndDate.Text);
+                }
+
 
                 if (MessageBoxResult.Yes == MessageBox.Show("Вы действительно хотите добавить запись?", "Предупреждение", MessageBoxButton.YesNo))
                 {

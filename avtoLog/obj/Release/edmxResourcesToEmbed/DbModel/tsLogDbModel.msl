@@ -82,6 +82,7 @@
           <ScalarProperty Name="isDis" ColumnName="isDis" />
           <ScalarProperty Name="isAdm" ColumnName="isAdm" />
           <ScalarProperty Name="isPer" ColumnName="isPer" />
+          <ScalarProperty Name="isSer" ColumnName="isSer" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

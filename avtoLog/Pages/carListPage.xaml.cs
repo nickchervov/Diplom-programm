@@ -38,6 +38,9 @@ namespace avtoLog.Pages
             {
                 btnChange.Visibility = Visibility.Collapsed;
                 btnDelete.Visibility = Visibility.Collapsed;
+            } else if (PageHelper.role == 2)
+            {
+                btnDelete.Visibility = Visibility.Collapsed;
             }
 
         }
@@ -56,17 +59,20 @@ namespace avtoLog.Pages
 
                 if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите удалить запись?", "Внимание!", MessageBoxButton.YesNo))
                 {
-                    try
+
+                    var carsInWay = PageHelper.DbConnect.Waybillses.Select(c => c.transportId).ToArray();
+
+                    if (carsInWay.Contains(selected.id))
+                    {
+                        MessageBox.Show("Не получилось удалить запись!\n Для начала необходимо удалить связанный путевой лист!", "Предупреждение!");
+                        return;
+                    } 
+                    else
                     {
                         PageHelper.DbConnect.Transport.Remove(selected);
                         PageHelper.DbConnect.SaveChanges();
-                    } 
-                    catch
-                    {
-                        MessageBox.Show("Не получилось удалить запись! Имеется связанная запись", "Предупреждение!");
+                        connectingDb();
                     }
-
-                    connectingDb();
                 }
                 else return;
             }
@@ -110,5 +116,9 @@ namespace avtoLog.Pages
             PageHelper.MainFrame.Navigate(new mainMenu());
         }
 
+        private void btnAddContextMenu_Click(object sender, RoutedEventArgs e)
+        {
+            PageHelper.MainFrame.Navigate(new addCarPage());
+        }
     }
 }

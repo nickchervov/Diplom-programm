@@ -27,7 +27,9 @@ namespace avtoLog.Pages
         {
             InitializeComponent();
 
-            cbEmp.ItemsSource = PageHelper.DbConnect.Personal.ToList();
+            var checkPersonInAuth = PageHelper.DbConnect.Auth.Select(c => c.personId).ToArray();
+
+            cbEmp.ItemsSource = PageHelper.DbConnect.Personal.Where(x => !checkPersonInAuth.Contains(x.id)).ToList();
         }
 
         private void btnBack_Click(object sender, RoutedEventArgs e)

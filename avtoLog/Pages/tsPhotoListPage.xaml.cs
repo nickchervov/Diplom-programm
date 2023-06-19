@@ -26,8 +26,6 @@ namespace avtoLog.Pages
     {
         DbSet<Photos> photos;
 
-        DbSet<Transport> ts;
-
         public tsPhotoListPage()
         {
             InitializeComponent();
@@ -49,15 +47,20 @@ namespace avtoLog.Pages
                 if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите удалить запись?", "Внимание!", MessageBoxButton.YesNo))
                 {
 
-                    try {
+                    var photoInCars = PageHelper.DbConnect.Transport.Select(c => c.Photo).ToArray();
+
+                    if (photoInCars.Contains(selected.URLPhoto))
+                    {
+                        MessageBox.Show("Не получилось удалить запись!\nДля начала необходимо удалить запись транспорта!", "Предупреждение!");
+                        return;
+
+                    }
+                    else
+                    {
                         PageHelper.DbConnect.Photos.Remove(selected);
                         PageHelper.DbConnect.SaveChanges();
-                    } 
-                    catch
-                    {
-                        MessageBox.Show("Не получилось удалить запись! Имеется связанная запись","Предупреждение!");
+                        connectingDb();
                     }
-                    connectingDb();
                 }
                 else return;
             }

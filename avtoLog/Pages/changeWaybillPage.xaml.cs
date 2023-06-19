@@ -49,8 +49,8 @@ namespace avtoLog.Pages
 
         }
         private void btnBack_Click(object sender, RoutedEventArgs e)
-        {
-            PageHelper.MainFrame.GoBack();
+        {   
+            PageHelper.MainFrame.Navigate(new waybillList());
         }
 
         private void btnChange_Click(object sender, RoutedEventArgs e)
@@ -69,9 +69,6 @@ namespace avtoLog.Pages
                     _way.transTypeId = (cbTrans.SelectedItem as TransTypes).id;
 
                     _way.idDis = (cbDis.SelectedItem as Personal).id;
-
-
-
 
                     _way.idCus = (cbCus.SelectedItem as Personal).id;
 

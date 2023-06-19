@@ -67,17 +67,20 @@ namespace avtoLog.Pages
             {
                 if (MessageBoxResult.Yes == MessageBox.Show("Вы точно хотите удалить запись?", "Внимание!", MessageBoxButton.YesNo))
                 {
-                    try
+
+                    var driLicInPersonal = PageHelper.DbConnect.Personal.Select(c => c.idVU).ToArray();
+
+                    if (driLicInPersonal.Contains(selected.id))
+                    {
+                        MessageBox.Show("Не получилось удалить запись!\nДля начала необходимо удалить запись владельца данного В/У!", "Предупреждение!");
+                        return;
+                    } else
                     {
                         PageHelper.DbConnect.DriverLicense.Remove(selected);
                         PageHelper.DbConnect.SaveChanges();
-                    } 
-                    catch
-                    {
-                        MessageBox.Show("Не получилось удалить запись! Имеется связанная запись", "Предупреждение!");
+                        connectingDb();
                     }
-
-                    connectingDb();
+                    
                 }
                 else return;
             }

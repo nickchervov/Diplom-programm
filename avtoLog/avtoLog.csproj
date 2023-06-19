@@ -459,6 +459,15 @@
     <Resource Include="Images\camry.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\fordTransit.png" />
+    <Resource Include="Images\kamazGal.png" />
+    <Resource Include="Images\liaz.png" />
+    <Resource Include="Images\scania.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\noPhoto.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="DbModel\tsLogDbModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>tsLogDbModel.edmx</DependentUpon>

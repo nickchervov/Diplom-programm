@@ -52,7 +52,9 @@
                           Margin="5,0,0,10"
                           SelectedValuePath="id" 
                           SelectedValue="{Binding org.id, Mode=OneTime}"                           
-                          DisplayMemberPath="name">
+                          DisplayMemberPath="name"
+                          IsReadOnly="True"
+                          IsEditable="False">
                 </ComboBox>
 
                 <TextBlock HorizontalAlignment="Right" FontSize="18"  Grid.Row="2" Grid.Column="0" Text="Диспетчер:" Margin="0,0,0,10"/>

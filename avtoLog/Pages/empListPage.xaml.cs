@@ -47,17 +47,34 @@ namespace avtoLog.Pages
                 {
                     auth = PageHelper.DbConnect.Auth;
 
-                    try {
-                        PageHelper.DbConnect.Auth.Remove(auth.Where(x => x.personId == selected.id).FirstOrDefault());
-                        PageHelper.DbConnect.Personal.Remove(selected);
-                        PageHelper.DbConnect.SaveChanges();
-                    } catch
-                    {
-                        PageHelper.DbConnect.Personal.Remove(selected);
-                        PageHelper.DbConnect.SaveChanges();
-                    }
+                    var disInWay = PageHelper.DbConnect.Waybillses.Select(c => c.idDis).ToArray();
 
-                    connectingDb();
+                    var cusInWay = PageHelper.DbConnect.Waybillses.Select(c => c.idCus).ToArray();
+
+                    var driInWay = PageHelper.DbConnect.Waybillses.Select(c => c.idDri).ToArray();
+
+                    var perInLogins = PageHelper.DbConnect.Auth.Select(c => c.personId).ToArray();
+
+                    if (disInWay.Contains(selected.id) || cusInWay.Contains(selected.id) || driInWay.Contains(selected.id))
+                    {
+                        MessageBox.Show("Не получилось удалить запись!\nДля начала необходимо удалить связанный путевой лист!", "Предупреждение!");
+                        return;
+
+                    } else
+                    {
+                        if (perInLogins.Contains(selected.id))
+                        {
+                            PageHelper.DbConnect.Auth.Remove(auth.Where(x => x.personId == selected.id).FirstOrDefault());
+                            PageHelper.DbConnect.Personal.Remove(selected);
+                            PageHelper.DbConnect.SaveChanges();
+                            connectingDb();
+                        } else
+                        {
+                            PageHelper.DbConnect.Personal.Remove(selected);
+                            PageHelper.DbConnect.SaveChanges();
+                            connectingDb();
+                        }                      
+                    }
                 }
                 else return;
             }

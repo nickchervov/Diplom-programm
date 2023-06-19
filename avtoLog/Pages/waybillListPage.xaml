@@ -33,51 +33,53 @@
             </ComboBox>-->
         </StackPanel>
 
-        <ListView Grid.Row="1" x:Name="lvWay" MaxWidth="1450" MaxHeight="700" FontSize="18" Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center" >
+        <ListView Grid.Row="1" x:Name="lvWay" MaxWidth="1450" MaxHeight="700" FontSize="18" Background="Transparent" BorderBrush="Transparent" Margin="0,10,0,0" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalAlignment="Center" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Border Background="#D9D9D9" Margin="0,0,0,10">
                         <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" Margin="20" MinWidth="1000">
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="0,0,20,0" MinWidth="50">
-                                <TextBlock Text="Номер" Margin="0,0,0,5"/>
+                                <TextBlock Text="Номер:" Margin="0,0,0,5"/>
                                 <TextBlock Text="{Binding Path= nom}"/>
                             </StackPanel>
                             <StackPanel Orientation="Vertical" MinWidth="100" VerticalAlignment="Center" Margin="0,0,20,0">
-                                <TextBlock Text="Дата начала" Margin="0,0,0,5"/>
+                                <TextBlock Text="Дата начала:" Margin="0,0,0,5"/>
                                 <TextBlock Text="{Binding Path= startDate ,StringFormat=dd.MM.yyyy}" Margin="0,0,0,5"/>
-                                <TextBlock Text="Дата окончания" Margin="0,0,0,5"/>
+                                <TextBlock Text="Дата окончания:" Margin="0,0,0,5"/>
                                 <TextBlock Text="{Binding Path= endDate,StringFormat=dd.MM.yyyy}"/>
                             </StackPanel>
                             <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="0,0,20,0">
+                                <TextBlock Text="Организация:" Margin="0,0,0,5"/>
                                 <TextBlock Text="{Binding Path= org.name}" Margin="0,0,0,5"/>
-                                <TextBlock Text="Адрес прибытия" Margin="0,0,0,5"/>
+                                <TextBlock Text="Адрес прибытия:" Margin="0,0,0,5"/>
                                 <TextBlock Text="{Binding Path= routee}"/>
                             </StackPanel>
                             <StackPanel Orientation="Vertical" MinWidth="310" VerticalAlignment="Center" Margin="0,0,20,0">
-                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                                    <TextBlock Text="Вид перемещения: "/>
-                                    <TextBlock Text="{Binding Path= MesTypes.name}"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Вид перемещения: " Margin="0,5,0,5"/>
+                                    <TextBlock Text="{Binding Path= MesTypes.name}" Margin="0,5,0,5"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Вид транспортировки: "/>
+                                    <TextBlock Text="Вид транспортировки: " Margin="0,0,0,5"/>
                                     <TextBlock Text="{Binding Path= TransTypes.name}"/>
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel Orientation="Vertical" MinWidth="200" VerticalAlignment="Center" Margin="0,0,20,0">
-                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                                    <TextBlock Text="Диспетчер: " MinWidth="80"/>
-                                    <TextBlock x:Name="idDis" Text="{Binding Path=Personal1.FIO}"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Диспетчер: " MinWidth="80" Margin="0,5,0,5"/>
+                                    <TextBlock x:Name="idDis" Text="{Binding Path=Personal1.FIO}" Margin="0,5,0,5"/>
                                 </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5" >
-                                    <TextBlock Text="Водитель: " MinWidth="80"/>
-                                    <TextBlock x:Name="idDri" Text="{Binding Path= Personal2.FIO}"/>
+                                <StackPanel Orientation="Horizontal" >
+                                    <TextBlock Text="Водитель: " MinWidth="80" Margin="0,0,0,5"/>
+                                    <TextBlock x:Name="idDri" Text="{Binding Path= Personal2.FIO}" Margin="0,0,0,5"/>
                                 </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
-                                    <TextBlock Text="Заказчик: " MinWidth="80"/>
-                                    <TextBlock x:Name="idCus" Text="{Binding Path= Personal.FIO}"/>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Заказчик: " MinWidth="80" Margin="0,0,0,5"/>
+                                    <TextBlock x:Name="idCus" Text="{Binding Path= Personal.FIO}" Margin="0,0,0,5"/>
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel Orientation="Vertical" MinWidth="220" VerticalAlignment="Center">
+                                <TextBlock Text="Автотранспорт:" Margin="0,0,0,5"/>
                                 <TextBlock Text="{Binding Path= Transport.tsModel}" Margin="0,0,0,5"/>
                                 <TextBlock Text="{Binding Path= Transport.GovNumber}"/>
                             </StackPanel>
