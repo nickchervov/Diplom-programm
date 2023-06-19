@@ -55,11 +55,18 @@ namespace avtoLog.Pages
                 {
                     way.nom = Convert.ToInt32(tbNom.Text);
                 }
-                catch { MessageBox.Show("Поле номер листа должен состоять из цифр", "Ошибка"); }
+                catch { MessageBox.Show("Поле номер листа должен состоять из цифр", "Ошибка"); return; }
 
                 way.startDate = Convert.ToDateTime(dpStartDate.Text);
 
-                way.endDate = Convert.ToDateTime(dpEndDate.Text);
+                if (Convert.ToDateTime(dpEndDate.Text) < Convert.ToDateTime(dpStartDate.Text))
+                {
+                    MessageBox.Show("Дата окончания не может быть меньше даты начала!", "Ошибка"); return;
+                } 
+                else
+                {
+                    way.endDate = Convert.ToDateTime(dpEndDate.Text);
+                }
 
                 way.mesTypeId = (cbMes.SelectedItem as MesTypes).id;
 

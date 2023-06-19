@@ -60,10 +60,17 @@ namespace avtoLog.Pages
                 if (MessageBoxResult.Yes == MessageBox.Show("Вы уверены, что хотите изменить запись?", "Внимание!", MessageBoxButton.YesNo))
                 {
 
-                    try { _way.startDate = Convert.ToDateTime(dpStartDate.Text); } catch { MessageBox.Show("Произошла непредвиденная ошибка", "Ошибка!"); }
+                    try { _way.startDate = Convert.ToDateTime(dpStartDate.Text); } catch { MessageBox.Show("Произошла непредвиденная ошибка", "Ошибка!"); return; }
 
-                    try { _way.endDate = Convert.ToDateTime(dpEndDate.Text); } catch { MessageBox.Show("Произошла непредвиденная ошибка", "Ошибка!"); }
-
+                    if (Convert.ToDateTime(dpEndDate.Text) < Convert.ToDateTime(dpStartDate.Text))
+                    {
+                        MessageBox.Show("Дата окончания не может быть меньше даты начала!", "Ошибка"); return;
+                    }
+                    else
+                    {
+                        try { _way.endDate = Convert.ToDateTime(dpEndDate.Text); } catch { MessageBox.Show("Произошла непредвиденная ошибка", "Ошибка!"); return; }
+                    }
+                  
                     _way.mesTypeId = (cbMes.SelectedItem as MesTypes).id;
 
                     _way.transTypeId = (cbTrans.SelectedItem as TransTypes).id;
